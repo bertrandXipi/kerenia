@@ -1,0 +1,173 @@
+import React, { useState } from 'react';
+import { CONTACT_INFO } from '../constants';
+import { Phone, Mail, MapPin, Send } from 'lucide-react';
+
+const Contact: React.FC = () => {
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setTimeout(() => {
+        setIsSubmitted(true);
+    }, 1000);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  return (
+    <div className="pb-20">
+       <div className="bg-stone-50 py-16 mb-16 border-b border-stone-200">
+        <div className="container mx-auto px-6 text-center">
+            <h3 className="font-condensed text-brick-600 uppercase tracking-widest text-sm font-bold mb-2">Une question ?</h3>
+            <h1 className="font-script text-5xl md:text-6xl text-brick-800 mb-6">Contactez-nous</h1>
+            <div className="w-16 h-1 bg-brick-600 mx-auto mb-8"></div>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto font-light">
+            Pour toute demande d’informations, veuillez utiliser le formulaire de contact ci-dessous
+            </p>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+          
+          {/* Form Side */}
+          <div className="bg-white p-8 md:p-10 shadow-lg border border-stone-100">
+            {isSubmitted ? (
+                <div className="h-full flex flex-col items-center justify-center text-center py-20">
+                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <Send className="text-green-600" size={32} />
+                    </div>
+                    <h3 className="font-condensed font-bold text-3xl text-brick-800 mb-4 uppercase">Message envoyé !</h3>
+                    <p className="text-slate-600">Nous vous répondrons dans les plus brefs délais.</p>
+                    <button 
+                        onClick={() => setIsSubmitted(false)}
+                        className="mt-8 text-brick-600 font-bold hover:underline font-condensed uppercase tracking-wide"
+                    >
+                        Envoyer un autre message
+                    </button>
+                </div>
+            ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                    <label htmlFor="name" className="block text-sm font-bold text-brick-800 mb-2 uppercase tracking-wide font-condensed">Nom complet</label>
+                    <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    required
+                    value={formState.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-stone-50 border border-stone-200 focus:border-brick-500 focus:ring-1 focus:ring-brick-500 outline-none transition-all rounded-sm"
+                    />
+                </div>
+                <div>
+                    <label htmlFor="email" className="block text-sm font-bold text-brick-800 mb-2 uppercase tracking-wide font-condensed">Email</label>
+                    <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required
+                    value={formState.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-stone-50 border border-stone-200 focus:border-brick-500 focus:ring-1 focus:ring-brick-500 outline-none transition-all rounded-sm"
+                    />
+                </div>
+                <div>
+                    <label htmlFor="subject" className="block text-sm font-bold text-brick-800 mb-2 uppercase tracking-wide font-condensed">Sujet</label>
+                    <select 
+                        id="subject" 
+                        name="subject"
+                        value={formState.subject}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-stone-50 border border-stone-200 focus:border-brick-500 focus:ring-1 focus:ring-brick-500 outline-none transition-all rounded-sm"
+                    >
+                        <option value="">Sélectionnez un sujet</option>
+                        <option value="reservation">Demande de réservation</option>
+                        <option value="info">Demande d'informations</option>
+                        <option value="other">Autre</option>
+                    </select>
+                </div>
+                <div>
+                    <label htmlFor="message" className="block text-sm font-bold text-brick-800 mb-2 uppercase tracking-wide font-condensed">Message</label>
+                    <textarea 
+                    id="message" 
+                    name="message" 
+                    rows={5}
+                    required
+                    value={formState.message}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-stone-50 border border-stone-200 focus:border-brick-500 focus:ring-1 focus:ring-brick-500 outline-none transition-all rounded-sm"
+                    ></textarea>
+                </div>
+                <button 
+                    type="submit"
+                    className="w-full bg-brick-600 text-white font-condensed font-bold uppercase tracking-widest py-4 hover:bg-brick-700 transition-all shadow-md rounded-sm"
+                >
+                    ENVOYER
+                </button>
+                </form>
+            )}
+          </div>
+
+          {/* Info Side */}
+          <div className="space-y-10">
+            <div className="bg-white border-l-4 border-brick-600 p-8 shadow-lg">
+              <h3 className="font-condensed font-bold text-2xl mb-6 text-brick-800 uppercase">Coordonnées</h3>
+              <ul className="space-y-6">
+                <li className="flex items-start gap-4">
+                  <div className="text-brick-600 mt-1">
+                    <MapPin size={24} />
+                  </div>
+                  <div>
+                    <p className="font-condensed font-bold mb-1 text-brick-800 text-sm uppercase">Adresse</p>
+                    <p className="text-lg leading-relaxed text-slate-600 font-light">{CONTACT_INFO.address}</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="text-brick-600 mt-1">
+                    <Phone size={24} />
+                  </div>
+                  <div>
+                    <p className="font-condensed font-bold mb-1 text-brick-800 text-sm uppercase">Téléphone</p>
+                    <a href={`tel:${CONTACT_INFO.phone}`} className="text-lg text-slate-600 hover:text-brick-600 transition-colors font-light">{CONTACT_INFO.phone}</a>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="text-brick-600 mt-1">
+                    <Mail size={24} />
+                  </div>
+                  <div>
+                    <p className="font-condensed font-bold mb-1 text-brick-800 text-sm uppercase">Email</p>
+                    <a href={`mailto:${CONTACT_INFO.email}`} className="text-lg text-slate-600 hover:text-brick-600 transition-colors font-light">{CONTACT_INFO.email}</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Map */}
+            <div className="h-80 w-full shadow-lg border border-stone-200">
+              <img 
+                 src="https://maps.googleapis.com/maps/api/js/StaticMapService.GetMapImage?1m2&1i8322903&2i6141655&2e1&3u16&4m2&1u600&2u450&5m6&1e0&5sfr&6sfr&10b1&12b1&14i47083502&8e1&client=google-maps-embed&token=52569" 
+                 alt="Carte localisation Ker Enia"
+                 className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Contact;
