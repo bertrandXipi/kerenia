@@ -74,3 +74,44 @@ body {
 a, button, input, select, textarea {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* Accessibility Classes */
+.high-contrast {
+  filter: contrast(1.5);
+}
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+.invert-colors {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.invert-colors img,
+.invert-colors video {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.hide-images img,
+.hide-images video,
+.hide-images [style*="background-image"] {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.readable-font,
+.readable-font * {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/* Apply line height and letter spacing multipliers */
+body {
+  line-height: calc(1.5 * var(--line-height-multiplier, 1));
+  letter-spacing: calc(0em * var(--letter-spacing-multiplier, 1));
+}
+
+p, li, span, div {
+  line-height: calc(1.6 * var(--line-height-multiplier, 1));
+  letter-spacing: calc(0.01em * var(--letter-spacing-multiplier, 1));
+}

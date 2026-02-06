@@ -7,6 +7,7 @@ import { Menu, X, Phone, Mail, MapPin, Instagram, Facebook, Star } from 'lucide-
 import { NAV_ITEMS, CONTACT_INFO } from '@/lib/constants';
 import { motion, AnimatePresence } from 'framer-motion';
 import InstagramFeed from '@/components/InstagramFeed';
+import AccessibilityWidget from '@/components/AccessibilityWidget';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,6 +61,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <div className="flex flex-col min-h-screen font-sans bg-cream-50">
+      <AccessibilityWidget />
+      
       <nav
         ref={navRef}
         className={`fixed w-full z-50 transition-[background-color,padding,box-shadow] duration-500 ease-in-out ${getNavClasses()}`}
