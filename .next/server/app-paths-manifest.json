@@ -1,7 +1,7 @@
 {
-  "/contact/page": "app/contact/page.js",
-  "/galerie/page": "app/galerie/page.js",
   "/page": "app/page.js",
+  "/galerie/page": "app/galerie/page.js",
   "/appartements/page": "app/appartements/page.js",
-  "/autour-de-nous/page": "app/autour-de-nous/page.js"
+  "/autour-de-nous/page": "app/autour-de-nous/page.js",
+  "/contact/page": "app/contact/page.js"
 }
