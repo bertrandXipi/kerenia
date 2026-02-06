@@ -13,6 +13,15 @@ const config: Config = {
         script: ['var(--font-dancing)', 'cursive'],
         serif: ['var(--font-cormorant)', 'serif'],
       },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
+      animation: {
+        marquee: 'marquee 40s linear infinite',
+      },
       colors: {
         cream: {
           50: '#fdfcfa',

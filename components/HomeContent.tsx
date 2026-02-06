@@ -316,54 +316,6 @@ const HomeContent: React.FC = () => {
 
       {/* Reviews Section */}
       <ReviewsSection />
-
-      {/* Feature Split Section */}
-      <section className="py-0">
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="relative h-[450px] group overflow-hidden cursor-pointer">
-            <KenBurnsImage
-              src="https://www.kerenia.fr/wp-content/uploads/2020/07/piscine-kerenia.jpg"
-              alt="Piscine Ker Enia"
-              className="w-full h-full"
-              duration={20}
-              direction="left"
-              overlay={false}
-            />
-            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-500 flex flex-col items-center justify-center text-center p-8">
-              <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}>
-                <h3 className="text-white font-condensed font-light text-4xl uppercase mb-4 drop-shadow-md tracking-[0.2em]">Piscine</h3>
-                <p className="text-white mb-8 max-w-sm font-light drop-shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Venez vous détendre autour de notre piscine chauffée.</p>
-                <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.98 }}>
-                  <Link href="/appartements" className="relative overflow-hidden bg-white text-brick-900 px-8 py-3 font-condensed font-bold uppercase tracking-[0.2em] text-xs hover:bg-brick-700 hover:text-white transition-colors shadow-lg inline-block">
-                    RESERVER
-                  </Link>
-                </motion.div>
-              </motion.div>
-            </div>
-          </div>
-          <div className="relative h-[450px] group overflow-hidden cursor-pointer">
-            <KenBurnsImage
-              src="https://www.kerenia.fr/wp-content/uploads/2017/05/Villa_Arnaga.jpg"
-              alt="Villa Arnaga Cambo"
-              className="w-full h-full"
-              duration={22}
-              direction="right"
-              overlay={false}
-            />
-            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-500 flex flex-col items-center justify-center text-center p-8">
-              <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}>
-                <h3 className="text-white font-condensed font-light text-4xl uppercase mb-4 drop-shadow-md tracking-[0.2em]">Autour de nous</h3>
-                <p className="text-white mb-8 max-w-sm font-light drop-shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Le Pays basque s&apos;offre à vous.</p>
-                <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.98 }}>
-                  <Link href="/autour-de-nous" className="relative overflow-hidden glass-dark border border-white text-white px-8 py-3 font-condensed font-bold uppercase tracking-[0.2em] text-xs hover:bg-white hover:text-brick-800 transition-colors inline-block">
-                    DÉCOUVRIR
-                  </Link>
-                </motion.div>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 };

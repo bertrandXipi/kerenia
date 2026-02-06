@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { Menu, X, Phone, Mail, MapPin, Instagram, Facebook } from 'lucide-react';
 import { NAV_ITEMS, CONTACT_INFO } from '@/lib/constants';
 import { motion, AnimatePresence } from 'framer-motion';
+import InstagramFeed from '@/components/InstagramFeed';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -155,6 +156,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       </nav>
 
       <main className="flex-grow">{children}</main>
+
+      <InstagramFeed />
 
       <footer className="bg-slate-850 text-stone-300 pt-16 pb-8 border-t-4 border-brick-600">
         <div className="container mx-auto px-6">
