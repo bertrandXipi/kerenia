@@ -198,8 +198,8 @@ const HomeContent: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-4xl mx-auto"
           >
             <h2 className="font-condensed font-medium text-3xl md:text-5xl text-brick-800 mb-2 uppercase leading-tight tracking-[0.1em]">
@@ -261,10 +261,10 @@ const HomeContent: React.FC = () => {
             {APARTMENTS.map((apt, index) => (
               <motion.div
                 key={apt.id}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.7, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
                 className="bg-white shadow-lg group hover:shadow-2xl transition-shadow duration-300"
               >
                 <div className="h-64 overflow-hidden relative">
@@ -308,10 +308,10 @@ const HomeContent: React.FC = () => {
             {REVIEWS.map((review, index) => (
               <motion.div 
                 key={review.id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
                 className="bg-stone-50 p-8 border-l-2 border-brick-400 hover:bg-white hover:shadow-xl transition-all duration-300"
               >
                 <div className="flex items-center mb-4">
@@ -346,7 +346,7 @@ const HomeContent: React.FC = () => {
               overlay={false}
             />
             <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-500 flex flex-col items-center justify-center text-center p-8">
-              <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }}>
+              <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}>
                 <h3 className="text-white font-condensed font-light text-4xl uppercase mb-4 drop-shadow-md tracking-[0.2em]">Piscine</h3>
                 <p className="text-white mb-8 max-w-sm font-light drop-shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Venez vous détendre autour de notre piscine chauffée.</p>
                 <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.98 }}>
@@ -367,7 +367,7 @@ const HomeContent: React.FC = () => {
               overlay={false}
             />
             <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-500 flex flex-col items-center justify-center text-center p-8">
-              <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.3 }}>
+              <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}>
                 <h3 className="text-white font-condensed font-light text-4xl uppercase mb-4 drop-shadow-md tracking-[0.2em]">Autour de nous</h3>
                 <p className="text-white mb-8 max-w-sm font-light drop-shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Le Pays basque s&apos;offre à vous.</p>
                 <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.98 }}>

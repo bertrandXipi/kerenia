@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Oswald, Dancing_Script } from 'next/font/google';
 import './globals.css';
+import TransitionProvider from '@/components/TransitionProvider';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -38,7 +39,9 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${inter.variable} ${oswald.variable} ${dancingScript.variable}`}>
       <body className="bg-white text-slate-700 font-sans antialiased">
-        {children}
+        <TransitionProvider>
+          {children}
+        </TransitionProvider>
       </body>
     </html>
   );

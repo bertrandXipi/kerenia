@@ -25,10 +25,10 @@ const AutourContent: React.FC = () => {
           {ACTIVITIES.map((activity, index) => (
             <motion.div 
               key={activity.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="flex flex-col md:flex-row h-full md:h-[400px] group"
             >
               <div className="md:w-1/2 h-64 md:h-full relative overflow-hidden">
