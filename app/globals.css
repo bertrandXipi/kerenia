@@ -6,6 +6,7 @@
   --font-sans: var(--font-inter);
   --font-condensed: var(--font-oswald);
   --font-script: var(--font-dancing);
+  --font-serif: var(--font-cormorant);
 }
 
 html {
@@ -23,6 +24,10 @@ body {
 
 .font-script {
   font-family: var(--font-script), cursive;
+}
+
+.font-serif {
+  font-family: var(--font-serif), serif;
 }
 
 /* Effet de sélection de texte premium */

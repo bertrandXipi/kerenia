@@ -3,10 +3,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Star, Calendar, Users, Search } from 'lucide-react';
+import { Star, Calendar, Users, Search, Home, MapPin, Award } from 'lucide-react';
 import { REVIEWS, APARTMENTS, BOOKING_URL } from '@/lib/constants';
 import CustomCalendar from '@/components/CustomCalendar';
 import { KenBurnsImage } from '@/components/PremiumEffects';
+import GoldSeparator from '@/components/GoldSeparator';
+import AnimatedCounter from '@/components/AnimatedCounter';
 
 const HomeContent: React.FC = () => {
   const [checkIn, setCheckIn] = useState<Date | null>(null);
@@ -99,13 +101,10 @@ const HomeContent: React.FC = () => {
               <p className="font-script text-4xl md:text-6xl mb-6 text-white font-light">
                 L&apos;expérience bien-être,
               </p>
-              <div className="flex items-center justify-center gap-6">
-                <div className="h-px w-12 bg-white/80"></div>
-                <p className="font-sans font-light text-xs md:text-sm tracking-[0.3em] uppercase text-white/90">
-                  un séjour qui vous ressemble
-                </p>
-                <div className="h-px w-12 bg-white/80"></div>
-              </div>
+              <GoldSeparator width="w-16" delay={1.6} className="mb-6" />
+              <p className="font-sans font-light text-xs md:text-sm tracking-[0.3em] uppercase text-white/90">
+                un séjour qui vous ressemble
+              </p>
             </motion.div>
           </motion.div>
         </div>
@@ -193,7 +192,7 @@ const HomeContent: React.FC = () => {
       </section>
 
       {/* Intro Section */}
-      <section className="pt-32 pb-20 md:pb-28 bg-white text-center relative z-20">
+      <section className="pt-32 pb-20 md:pb-28 bg-cream-100 text-center relative z-20">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -202,16 +201,16 @@ const HomeContent: React.FC = () => {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-4xl mx-auto"
           >
-            <h2 className="font-condensed font-medium text-3xl md:text-5xl text-brick-800 mb-2 uppercase leading-tight tracking-[0.1em]">
+            <h2 className="font-serif font-medium text-3xl md:text-5xl text-brick-800 mb-2 leading-tight">
               Ker Enia à Cambo-les-Bains, un lieu confortable<br/>
               pour ceux qui veulent se sentir comme à la maison.
             </h2>
             
-            <h3 className="font-script text-4xl md:text-5xl text-brick-600 mb-12 mt-6 transform -rotate-1">
+            <h3 className="font-script text-4xl md:text-5xl text-gold-700 mb-8 mt-6 transform -rotate-1">
               Réveillez-vous au pied des montagnes basques
             </h3>
 
-            <div className="w-24 h-px bg-brick-300 mx-auto mb-10"></div>
+            <GoldSeparator className="mb-12" />
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-left">
               <div className="text-slate-600 space-y-6 text-lg font-light leading-relaxed">
@@ -233,7 +232,7 @@ const HomeContent: React.FC = () => {
                   alt="Appartement Ker Enia Interior" 
                   className="shadow-2xl w-full rounded-sm"
                 />
-                <div className="absolute -bottom-6 -right-6 bg-white p-6 shadow-xl border border-stone-100 hidden md:block z-20">
+                <div className="absolute -bottom-6 -right-6 bg-cream-50 p-6 shadow-xl border border-gold-200 hidden md:block z-20">
                   <div className="flex items-center gap-2 mb-1">
                     <div className="bg-[#0F9D58] rounded-full p-1"><Star size={14} className="text-white" fill="white"/></div>
                     <span className="font-bold text-slate-800 text-xl">4.9 / 5</span>
@@ -246,12 +245,37 @@ const HomeContent: React.FC = () => {
         </div>
       </section>
 
+      {/* Stats Section */}
+      <section className="py-20 bg-cream-50 border-y border-gold-200">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+            <AnimatedCounter 
+              end={16} 
+              label="Appartements" 
+              icon={<Home size={28} />}
+            />
+            <AnimatedCounter 
+              end={4.9} 
+              decimals={1}
+              label="Note Google" 
+              icon={<Award size={28} />}
+            />
+            <AnimatedCounter 
+              end={20} 
+              suffix=" min"
+              label="De Biarritz" 
+              icon={<MapPin size={28} />}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Apartments Preview */}
-      <section className="py-20 bg-stone-50">
+      <section className="py-20 bg-cream-100">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="font-condensed font-light text-4xl md:text-5xl text-brick-800 mb-4 uppercase tracking-[0.15em]">Nos Appartements</h2>
-            <div className="w-16 h-px bg-brick-400 mx-auto mb-6"></div>
+            <h2 className="font-serif font-light text-4xl md:text-5xl text-brick-800 mb-6">Nos Appartements</h2>
+            <GoldSeparator className="mb-6" />
             <p className="text-slate-600 max-w-2xl mx-auto font-light text-lg">
               Notre résidence dispose de 16 appartements de 25m² à 45m² avec terrasses, entièrement rénovés, une décoration soignée dans une atmosphère chaleureuse.
             </p>
@@ -265,21 +289,21 @@ const HomeContent: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.7, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
-                className="bg-white shadow-lg group hover:shadow-2xl transition-shadow duration-300"
+                className="bg-cream-50 shadow-lg group hover:shadow-2xl transition-shadow duration-300 border border-gold-100"
               >
                 <div className="h-64 overflow-hidden relative">
                   <img src={apt.imageUrl} alt={apt.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute top-0 right-0 bg-brick-700 text-white px-5 py-2 text-xs font-condensed font-bold uppercase tracking-widest">
+                  <div className="absolute top-0 right-0 bg-gold-700 text-white px-5 py-2 text-xs font-condensed font-bold uppercase tracking-widest">
                     Dès {apt.priceFrom}
                   </div>
                 </div>
                 <div className="p-8 text-center">
-                  <h3 className="font-condensed font-medium text-2xl text-brick-800 mb-4 uppercase tracking-wide">{apt.title}</h3>
+                  <h3 className="font-serif font-medium text-2xl text-brick-800 mb-4">{apt.title}</h3>
                   <p className="text-slate-600 mb-6 font-light line-clamp-3 text-sm leading-relaxed">{apt.description}</p>
                   <motion.div whileHover={{ scale: 1.02, y: -2 }} whileTap={{ scale: 0.98 }}>
-                    <Link href="/appartements" className="inline-block relative overflow-hidden group/btn px-8 py-3 border border-brick-700 text-brick-800 font-condensed font-bold text-xs uppercase tracking-[0.2em]">
+                    <Link href="/appartements" className="inline-block relative overflow-hidden group/btn px-8 py-3 border border-gold-600 text-brick-800 font-condensed font-bold text-xs uppercase tracking-[0.2em]">
                       <span className="relative z-10 group-hover/btn:text-white transition-colors duration-300">Découvrir</span>
-                      <div className="absolute inset-0 bg-brick-700 transform -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-300 ease-in-out"></div>
+                      <div className="absolute inset-0 bg-gold-700 transform -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-300 ease-in-out"></div>
                     </Link>
                   </motion.div>
                 </div>
@@ -290,11 +314,11 @@ const HomeContent: React.FC = () => {
       </section>
 
       {/* Reviews Section */}
-      <section className="py-20 bg-white border-t border-stone-100">
+      <section className="py-20 bg-cream-50 border-t border-gold-200">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between mb-12">
             <div className="mb-6 md:mb-0">
-              <h2 className="font-condensed font-light text-3xl text-brick-800 uppercase tracking-[0.15em]">Avis Clients</h2>
+              <h2 className="font-serif font-light text-3xl text-brick-800">Avis Clients</h2>
               <div className="flex items-center gap-2 mt-3">
                 <div className="flex text-gold-500">
                   {[...Array(5)].map((_, i) => <Star key={i} fill="currentColor" size={18} />)}
@@ -312,10 +336,10 @@ const HomeContent: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
-                className="bg-stone-50 p-8 border-l-2 border-brick-400 hover:bg-white hover:shadow-xl transition-all duration-300"
+                className="bg-cream-100 p-8 border-l-2 border-gold-500 hover:bg-cream-50 hover:shadow-xl transition-all duration-300"
               >
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 rounded-full bg-stone-200 flex items-center justify-center font-bold text-brick-700 font-condensed text-lg mr-3">
+                  <div className="w-10 h-10 rounded-full bg-gold-100 flex items-center justify-center font-bold text-gold-800 font-condensed text-lg mr-3">
                     {review.author.charAt(0)}
                   </div>
                   <div>

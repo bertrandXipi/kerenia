@@ -11,8 +11,16 @@ const config: Config = {
         sans: ['var(--font-inter)', 'sans-serif'],
         condensed: ['var(--font-oswald)', 'sans-serif'],
         script: ['var(--font-dancing)', 'cursive'],
+        serif: ['var(--font-cormorant)', 'serif'],
       },
       colors: {
+        cream: {
+          50: '#fdfcfa',
+          100: '#faf8f5',
+          200: '#f5f1eb',
+          300: '#ebe4da',
+          400: '#ddd2c3',
+        },
         sage: {
           50: '#f2f7f4',
           100: '#e1ede6',
@@ -38,7 +46,14 @@ const config: Config = {
           900: '#421a0f',
         },
         gold: {
+          100: '#faf6f0',
+          200: '#f0e6d2',
+          300: '#e8d7b8',
+          400: '#dcc89a',
           500: '#D4A574',
+          600: '#c89555',
+          700: '#b8803d',
+          800: '#9a6a2f',
         },
         slate: {
           850: '#313131',

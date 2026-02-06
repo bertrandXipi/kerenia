@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Oswald, Dancing_Script } from 'next/font/google';
+import { Inter, Oswald, Dancing_Script, Cormorant_Garamond } from 'next/font/google';
 import './globals.css';
 import TransitionProvider from '@/components/TransitionProvider';
 
@@ -16,6 +16,12 @@ const oswald = Oswald({
 const dancingScript = Dancing_Script({ 
   subsets: ['latin'],
   variable: '--font-dancing',
+});
+
+const cormorant = Cormorant_Garamond({ 
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-cormorant',
 });
 
 export const metadata: Metadata = {
@@ -37,8 +43,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" className={`${inter.variable} ${oswald.variable} ${dancingScript.variable}`}>
-      <body className="bg-white text-slate-700 font-sans antialiased">
+    <html lang="fr" className={`${inter.variable} ${oswald.variable} ${dancingScript.variable} ${cormorant.variable}`}>
+      <body className="bg-cream-50 text-slate-700 font-sans antialiased">
         <TransitionProvider>
           {children}
         </TransitionProvider>

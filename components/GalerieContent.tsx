@@ -42,12 +42,12 @@ const GalerieContent: React.FC = () => {
   }, [selectedImageIndex, navigateImage]);
 
   return (
-    <div className="pb-20 min-h-screen bg-white pt-24">
-      <div className="bg-stone-50 py-16 mb-12 border-b border-stone-200">
+    <div className="pb-20 min-h-screen bg-cream-50 pt-24">
+      <div className="bg-cream-100 py-16 mb-12 border-b border-gold-200">
         <div className="container mx-auto px-6 text-center">
-          <h3 className="font-condensed text-brick-600 uppercase tracking-widest text-sm font-bold mb-2">Visite guidée</h3>
-          <h1 className="font-script text-5xl md:text-6xl text-brick-800 mb-6">Galerie Photos</h1>
-          <div className="w-16 h-1 bg-brick-600 mx-auto mb-8"></div>
+          <h3 className="font-condensed text-gold-700 uppercase tracking-widest text-sm font-bold mb-2">Visite guidée</h3>
+          <h1 className="font-serif text-5xl md:text-6xl text-brick-800 mb-6 font-light">Galerie Photos</h1>
+          <div className="w-16 h-1 bg-gold-600 mx-auto mb-8"></div>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto font-light">
             Plongez dans l&apos;atmosphère de Ker Enia.
           </p>
@@ -61,8 +61,8 @@ const GalerieContent: React.FC = () => {
             onClick={() => setFilter(cat)}
             className={`px-6 py-2 rounded-full text-sm font-condensed font-bold uppercase tracking-wider transition-all duration-300 border-2 ${
               filter === cat
-                ? 'bg-brick-600 text-white border-brick-600 shadow-md'
-                : 'bg-white text-slate-500 border-stone-200 hover:border-brick-600 hover:text-brick-600'
+                ? 'bg-gold-600 text-white border-gold-600 shadow-md'
+                : 'bg-cream-50 text-slate-500 border-gold-200 hover:border-gold-600 hover:text-gold-700'
             }`}
           >
             {cat}

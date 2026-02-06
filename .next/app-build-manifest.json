@@ -16,16 +16,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/appartements/page.js"
     ],
-    "/autour-de-nous/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/autour-de-nous/page.js"
-    ],
-    "/contact/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/contact/page.js"
-    ],
     "/galerie/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
