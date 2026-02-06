@@ -48,7 +48,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const getNavClasses = () => {
     if (isMobileMenuOpen) return 'bg-brick-900 shadow-none py-2';
     if (isTransparent) return 'bg-transparent py-4 shadow-none';
-    return 'bg-cream-50/95 backdrop-blur-sm py-2 shadow-sm border-b border-gold-200';
+    return 'bg-cream-50/95 backdrop-blur-sm py-2 shadow-sm border-b border-brick-200';
   };
 
   const logoClasses = () => {
@@ -93,7 +93,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               className={`font-condensed font-bold uppercase tracking-wide px-8 py-3 transition-all transform hover:scale-105 shadow-md rounded-sm border-2 ${
                 isTransparent 
                   ? 'bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-brick-900' 
-                  : 'bg-gold-600 border-gold-600 text-white hover:bg-gold-700 hover:border-gold-700'
+                  : 'bg-brick-600 border-brick-600 text-white hover:bg-brick-700 hover:border-brick-700'
               }`}
             >
               Réserver
@@ -156,7 +156,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
       <main className="flex-grow">{children}</main>
 
-      <footer className="bg-slate-850 text-stone-300 pt-16 pb-8 border-t-4 border-gold-600">
+      <footer className="bg-slate-850 text-stone-300 pt-16 pb-8 border-t-4 border-brick-600">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             <div>

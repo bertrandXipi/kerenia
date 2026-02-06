@@ -29,11 +29,11 @@ const ContactContent: React.FC = () => {
 
   return (
     <div className="pb-20 pt-24 bg-cream-50">
-      <div className="bg-cream-100 py-16 mb-16 border-b border-gold-200">
+      <div className="bg-cream-100 py-16 mb-16 border-b border-brick-200">
         <div className="container mx-auto px-6 text-center">
-          <h3 className="font-condensed text-gold-700 uppercase tracking-widest text-sm font-bold mb-2">Une question ?</h3>
-          <h1 className="font-serif text-5xl md:text-6xl text-brick-800 mb-6 font-light">Contactez-nous</h1>
-          <div className="w-16 h-1 bg-gold-600 mx-auto mb-8"></div>
+          <h3 className="font-condensed text-brick-600 uppercase tracking-widest text-sm font-bold mb-2">Une question ?</h3>
+          <h1 className="font-script text-5xl md:text-6xl text-brick-600 mb-6">Contactez-nous</h1>
+          <div className="w-16 h-1 bg-brick-600 mx-auto mb-8"></div>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto font-light">
             Pour toute demande d&apos;informations, veuillez utiliser le formulaire de contact ci-dessous
           </p>
@@ -42,7 +42,7 @@ const ContactContent: React.FC = () => {
 
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
-          <div className="bg-cream-50 p-8 md:p-10 shadow-lg border border-gold-200">
+          <div className="bg-cream-50 p-8 md:p-10 shadow-lg border border-brick-200">
             {isSubmitted ? (
               <div className="h-full flex flex-col items-center justify-center text-center py-20">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
@@ -112,7 +112,7 @@ const ContactContent: React.FC = () => {
                 </div>
                 <button 
                   type="submit"
-                  className="w-full bg-gold-600 text-white font-condensed font-bold uppercase tracking-widest py-4 hover:bg-gold-700 transition-all shadow-md rounded-sm"
+                  className="w-full bg-brick-600 text-white font-condensed font-bold uppercase tracking-widest py-4 hover:bg-brick-700 transition-all shadow-md rounded-sm"
                 >
                   ENVOYER
                 </button>
@@ -121,28 +121,28 @@ const ContactContent: React.FC = () => {
           </div>
 
           <div className="space-y-10">
-            <div className="bg-cream-50 border-l-4 border-gold-600 p-8 shadow-lg">
-              <h3 className="font-serif font-medium text-2xl mb-6 text-brick-800">Coordonnées</h3>
+            <div className="bg-cream-50 border-l-4 border-brick-600 p-8 shadow-lg">
+              <h3 className="font-script text-3xl mb-6 text-brick-600">Coordonnées</h3>
               <ul className="space-y-6">
                 <li className="flex items-start gap-4">
-                  <div className="text-gold-700 mt-1"><MapPin size={24} /></div>
+                  <div className="text-brick-600 mt-1"><MapPin size={24} /></div>
                   <div>
                     <p className="font-condensed font-bold mb-1 text-brick-800 text-sm uppercase">Adresse</p>
                     <p className="text-lg leading-relaxed text-slate-600 font-light">{CONTACT_INFO.address}</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <div className="text-gold-700 mt-1"><Phone size={24} /></div>
+                  <div className="text-brick-600 mt-1"><Phone size={24} /></div>
                   <div>
                     <p className="font-condensed font-bold mb-1 text-brick-800 text-sm uppercase">Téléphone</p>
-                    <a href={`tel:${CONTACT_INFO.phone}`} className="text-lg text-slate-600 hover:text-gold-700 transition-colors font-light">{CONTACT_INFO.phone}</a>
+                    <a href={`tel:${CONTACT_INFO.phone}`} className="text-lg text-slate-600 hover:text-brick-600 transition-colors font-light">{CONTACT_INFO.phone}</a>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <div className="text-gold-700 mt-1"><Mail size={24} /></div>
+                  <div className="text-brick-600 mt-1"><Mail size={24} /></div>
                   <div>
                     <p className="font-condensed font-bold mb-1 text-brick-800 text-sm uppercase">Email</p>
-                    <a href={`mailto:${CONTACT_INFO.email}`} className="text-lg text-slate-600 hover:text-gold-700 transition-colors font-light">{CONTACT_INFO.email}</a>
+                    <a href={`mailto:${CONTACT_INFO.email}`} className="text-lg text-slate-600 hover:text-brick-600 transition-colors font-light">{CONTACT_INFO.email}</a>
                   </div>
                 </li>
               </ul>

@@ -51,7 +51,7 @@ export const REVIEWS: Review[] = [
     rating: 5,
     text: 'Magnifique bâtisse de style basque. Calme absolu tout proche du centre. Studio très cosy, très bien équipé et très propre. Un gros plus, la piscine chauffée très agréable.',
     source: 'Google',
-    date: 'Il y a 3 ans'
+    date: 'Il y a 3 mois'
   },
   {
     id: '2',
@@ -59,7 +59,7 @@ export const REVIEWS: Review[] = [
     rating: 5,
     text: 'Résidence bien située, au calme. Appartement très spacieux bien agencé, équipé avec goût et des matériaux de qualité. Piscine chauffée centrale dans la résidence.',
     source: 'Google',
-    date: 'Il y a 3 ans'
+    date: 'Il y a 2 mois'
   },
   {
     id: '3',
@@ -67,7 +67,47 @@ export const REVIEWS: Review[] = [
     rating: 5,
     text: 'Magnifique résidence. Accueil chaleureux, personnel discret et disponible. Proche du centre ville et calme à la fois. Nous recommandons vivement !',
     source: 'Google',
-    date: 'Il y a 3 ans'
+    date: 'Il y a 1 mois'
+  },
+  {
+    id: '4',
+    author: 'Philippe Martin',
+    rating: 5,
+    text: 'Séjour parfait pour notre cure thermale. L\'appartement est impeccable, la literie excellente. La piscine chauffée est un vrai bonheur après les soins. On reviendra !',
+    source: 'Google',
+    date: 'Il y a 3 semaines'
+  },
+  {
+    id: '5',
+    author: 'Sophie Durand',
+    rating: 5,
+    text: 'Cadre idyllique au pied des montagnes basques. Appartement décoré avec beaucoup de goût, cuisine parfaitement équipée. Les enfants ont adoré la piscine.',
+    source: 'Google',
+    date: 'Il y a 2 semaines'
+  },
+  {
+    id: '6',
+    author: 'Jean-Pierre Etcheverry',
+    rating: 5,
+    text: 'En tant que Basque, je suis fier de recommander cette résidence. L\'authenticité du lieu, le calme, la propreté irréprochable. Un vrai havre de paix.',
+    source: 'Google',
+    date: 'Il y a 1 semaine'
+  },
+  {
+    id: '7',
+    author: 'Catherine Blanc',
+    rating: 4,
+    text: 'Très bel endroit, bien situé entre mer et montagne. L\'appartement confort est spacieux et lumineux. Seul petit bémol : le parking un peu juste en haute saison.',
+    source: 'Google',
+    date: 'Il y a 5 jours'
+  },
+  {
+    id: '8',
+    author: 'Marc Lefebvre',
+    rating: 5,
+    text: 'Troisième séjour à Ker Enia et toujours aussi enchanté. La résidence est magnifiquement entretenue, le personnel aux petits soins. Notre adresse incontournable au Pays Basque.',
+    source: 'Google',
+    date: 'Il y a 2 jours'
   }
 ];
 

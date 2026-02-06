@@ -63,7 +63,7 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
     >
       {icon && (
         <div className="flex justify-center mb-4">
-          <div className="w-16 h-16 rounded-full bg-gold-100 flex items-center justify-center text-gold-700">
+          <div className="w-16 h-16 rounded-full bg-brick-100 flex items-center justify-center text-brick-700">
             {icon}
           </div>
         </div>

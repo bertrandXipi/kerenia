@@ -886,10 +886,17 @@ video {
 .container {
   width: 100%;
 }
+.\!container {
+  width: 100% !important;
+}
 @media (min-width: 640px) {
 
   .container {
     max-width: 640px;
+  }
+
+  .\!container {
+    max-width: 640px !important;
   }
 }
 @media (min-width: 768px) {
@@ -897,11 +904,19 @@ video {
   .container {
     max-width: 768px;
   }
+
+  .\!container {
+    max-width: 768px !important;
+  }
 }
 @media (min-width: 1024px) {
 
   .container {
     max-width: 1024px;
+  }
+
+  .\!container {
+    max-width: 1024px !important;
   }
 }
 @media (min-width: 1280px) {
@@ -909,11 +924,19 @@ video {
   .container {
     max-width: 1280px;
   }
+
+  .\!container {
+    max-width: 1280px !important;
+  }
 }
 @media (min-width: 1536px) {
 
   .container {
     max-width: 1536px;
+  }
+
+  .\!container {
+    max-width: 1536px !important;
   }
 }
 .pointer-events-none {
@@ -1011,6 +1034,10 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -1070,6 +1097,12 @@ video {
 }
 .mt-8 {
   margin-top: 2rem;
+}
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+.mt-10 {
+  margin-top: 2.5rem;
 }
 .line-clamp-3 {
   overflow: hidden;
@@ -1155,6 +1188,9 @@ video {
 .h-2 {
   height: 0.5rem;
 }
+.h-6 {
+  height: 1.5rem;
+}
 .max-h-\[80vh\] {
   max-height: 80vh;
 }
@@ -1205,6 +1241,9 @@ video {
 }
 .w-2 {
   width: 0.5rem;
+}
+.w-6 {
+  width: 1.5rem;
 }
 .max-w-2xl {
   max-width: 42rem;
@@ -1275,6 +1314,9 @@ video {
 .cursor-pointer {
   cursor: pointer;
 }
+.cursor-grab {
+  cursor: grab;
+}
 .appearance-none {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -1333,6 +1375,12 @@ video {
 }
 .gap-8 {
   gap: 2rem;
+}
+.gap-0 {
+  gap: 0px;
+}
+.gap-0\.5 {
+  gap: 0.125rem;
 }
 .gap-y-1 {
   row-gap: 0.25rem;
@@ -1437,6 +1485,9 @@ video {
 .border-t-4 {
   border-top-width: 4px;
 }
+.border-b-2 {
+  border-bottom-width: 2px;
+}
 .border-none {
   border-style: none;
 }
@@ -1489,6 +1540,14 @@ video {
 .border-gold-500 {
   --tw-border-opacity: 1;
   border-color: rgb(212 165 116 / var(--tw-border-opacity));
+}
+.border-brick-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(237 210 201 / var(--tw-border-opacity));
+}
+.border-brick-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(159 52 26 / var(--tw-border-opacity));
 }
 .bg-\[\#0F9D58\] {
   --tw-bg-opacity: 1;
@@ -1581,6 +1640,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(212 165 116 / var(--tw-bg-opacity));
 }
+.bg-brick-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(159 52 26 / var(--tw-bg-opacity));
+}
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
@@ -1616,6 +1679,10 @@ video {
 .via-gold-500 {
   --tw-gradient-to: rgb(212 165 116 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #D4A574 var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+.via-brick-400 {
+  --tw-gradient-to: rgb(206 133 111 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #ce856f var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 .to-black\/20 {
   --tw-gradient-to: rgb(0 0 0 / 0.2) var(--tw-gradient-to-position);
@@ -1917,6 +1984,14 @@ video {
 }
 .text-white\/90 {
   color: rgb(255 255 255 / 0.9);
+}
+.text-amber-400 {
+  --tw-text-opacity: 1;
+  color: rgb(251 191 36 / var(--tw-text-opacity));
+}
+.text-slate-200 {
+  --tw-text-opacity: 1;
+  color: rgb(226 232 240 / var(--tw-text-opacity));
 }
 .antialiased {
   -webkit-font-smoothing: antialiased;
@@ -2231,6 +2306,9 @@ a, button, input, select, textarea {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(159 52 26 / var(--tw-ring-opacity));
 }
+.active\:cursor-grabbing:active {
+  cursor: grabbing;
+}
 .group\/btn:hover .group-hover\/btn\:translate-x-0 {
   --tw-translate-x: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2319,6 +2397,10 @@ a, button, input, select, textarea {
     width: auto;
   }
 
+  .md\:w-\[400px\] {
+    width: 400px;
+  }
+
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2375,6 +2457,10 @@ a, button, input, select, textarea {
 
   .md\:pb-28 {
     padding-bottom: 7rem;
+  }
+
+  .md\:text-left {
+    text-align: left;
   }
 
   .md\:text-4xl {
