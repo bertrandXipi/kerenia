@@ -1662,6 +1662,10 @@ video {
   --tw-gradient-to: rgb(255 255 255 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), rgb(255 255 255 / 0.2) var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
+.via-black\/40 {
+  --tw-gradient-to: rgb(0 0 0 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), rgb(0 0 0 / 0.4) var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
 .to-black\/20 {
   --tw-gradient-to: rgb(0 0 0 / 0.2) var(--tw-gradient-to-position);
 }
@@ -1670,6 +1674,9 @@ video {
 }
 .to-transparent {
   --tw-gradient-to: transparent var(--tw-gradient-to-position);
+}
+.to-black\/50 {
+  --tw-gradient-to: rgb(0 0 0 / 0.5) var(--tw-gradient-to-position);
 }
 .object-contain {
   -o-object-fit: contain;
@@ -1970,6 +1977,9 @@ video {
 .text-brick-200 {
   --tw-text-opacity: 1;
   color: rgb(237 210 201 / var(--tw-text-opacity));
+}
+.text-white\/80 {
+  color: rgb(255 255 255 / 0.8);
 }
 .antialiased {
   -webkit-font-smoothing: antialiased;
@@ -2387,6 +2397,10 @@ a, button, input, select, textarea {
     height: 100%;
   }
 
+  .md\:h-\[500px\] {
+    height: 500px;
+  }
+
   .md\:w-1\/2 {
     width: 50%;
   }
@@ -2484,6 +2498,11 @@ a, button, input, select, textarea {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
 }
 @media (min-width: 1024px) {
 
@@ -2521,6 +2540,11 @@ a, button, input, select, textarea {
 
   .lg\:gap-20 {
     gap: 5rem;
+  }
+
+  .lg\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
   }
 }
 

@@ -314,6 +314,45 @@ const HomeContent: React.FC = () => {
         </div>
       </section>
 
+      {/* Parallax Quote Banner */}
+      <section className="relative h-[400px] md:h-[500px] overflow-hidden">
+        {/* Parallax Background */}
+        <motion.div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'url(https://es.cambolesbains.com/wp-content/uploads/2024/03/Vue-drone-Cambo-les-Bains-Pays-basque-Komcebo-Mathieu-Mengaillou.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50"></div>
+        </motion.div>
+
+        {/* Content */}
+        <div className="relative z-10 h-full flex items-center justify-center px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="text-center max-w-4xl"
+          >
+            <div className="mb-6">
+              <svg className="w-16 h-16 mx-auto text-brick-300 opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+              </svg>
+            </div>
+            <p className="font-script text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-relaxed">
+              Le bonheur n&apos;est réel que lorsqu&apos;il est partagé
+            </p>
+            <p className="text-white/80 text-lg md:text-xl font-light tracking-wide">
+              — Christopher McCandless
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Reviews Section */}
       <ReviewsSection />
     </>
