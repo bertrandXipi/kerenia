@@ -1,13 +1,14 @@
 'use client';
 
 import React from 'react';
-import { ACTIVITIES } from '@/lib/constants';
+import { getActivities } from '@/lib/constants';
 import { motion } from 'framer-motion';
 import { ExternalLink, MapPin } from 'lucide-react';
 import { useLocale } from '@/components/LocaleProvider';
 
 const AutourContent: React.FC = () => {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
+  const activities = getActivities(locale);
   
   return (
     <div className="pb-20 pt-24 bg-cream-50">
@@ -24,7 +25,7 @@ const AutourContent: React.FC = () => {
 
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 gap-16">
-          {ACTIVITIES.map((activity, index) => (
+          {activities.map((activity, index) => (
             <motion.div 
               key={activity.id}
               initial={{ opacity: 0, y: 40 }}

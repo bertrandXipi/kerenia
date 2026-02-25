@@ -4,18 +4,23 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 import { GALLERY_IMAGES } from '@/lib/constants';
+import { GALLERY_CATEGORIES } from '@/lib/data';
 import { useLocale } from '@/components/LocaleProvider';
 
 const GalerieContent: React.FC = () => {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const [filter, setFilter] = useState(t.gallery.all);
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+  
+  const translateCategory = (category: string) => {
+    return GALLERY_CATEGORIES[locale]?.[category] || category;
+  };
 
-  const categories = [t.gallery.all, ...Array.from(new Set(GALLERY_IMAGES.map(img => img.category)))];
+  const categories = [t.gallery.all, ...Array.from(new Set(GALLERY_IMAGES.map(img => translateCategory(img.category))))];
 
   const filteredImages = filter === t.gallery.all 
     ? GALLERY_IMAGES 
-    : GALLERY_IMAGES.filter(img => img.category === filter);
+    : GALLERY_IMAGES.filter(img => translateCategory(img.category) === filter);
 
   const navigateImage = useCallback((direction: number) => {
     if (selectedImageIndex === null) return;
@@ -91,7 +96,7 @@ const GalerieContent: React.FC = () => {
                 </div>
                 <div className="absolute inset-0 bg-brick-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white">
                   <ZoomIn size={32} className="mb-2" />
-                  <span className="font-condensed uppercase tracking-widest text-sm font-bold">{image.category}</span>
+                  <span className="font-condensed uppercase tracking-widest text-sm font-bold">{translateCategory(image.category)}</span>
                 </div>
               </motion.div>
             ))}

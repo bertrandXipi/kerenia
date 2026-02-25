@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Star, Calendar, Users, Search, Home, MapPin, Award } from 'lucide-react';
-import { REVIEWS, APARTMENTS, BOOKING_URL } from '@/lib/constants';
+import { REVIEWS, BOOKING_URL, getApartments } from '@/lib/constants';
 import CustomCalendar from '@/components/CustomCalendar';
 import { KenBurnsImage } from '@/components/PremiumEffects';
 import GoldSeparator from '@/components/GoldSeparator';
@@ -17,7 +17,8 @@ const HomeContent: React.FC = () => {
   const [checkOut, setCheckOut] = useState<Date | null>(null);
   const [adults, setAdults] = useState(2);
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
+  const apartments = getApartments(locale);
   
   const calendarRef = useRef<HTMLDivElement>(null);
   const targetRef = useRef<HTMLDivElement>(null);
@@ -284,7 +285,7 @@ const HomeContent: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {APARTMENTS.map((apt, index) => (
+            {apartments.map((apt, index) => (
               <motion.div
                 key={apt.id}
                 initial={{ opacity: 0, y: 40 }}
