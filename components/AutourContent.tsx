@@ -59,14 +59,40 @@ const AutourContent: React.FC = () => {
           ))}
         </div>
 
-        <div className="mt-20 bg-brick-800 rounded-sm p-10 md:p-16 text-center text-white relative overflow-hidden shadow-2xl border-t-4 border-brick-500">
-          <div className="relative z-10">
-            <MapPin className="w-12 h-12 mx-auto text-brick-400 mb-6" />
-            <h2 className="font-script text-4xl md:text-5xl mb-6 text-brick-300">Un emplacement idéal</h2>
-            <p className="max-w-2xl mx-auto text-brick-100 text-lg mb-8 font-light">
-              Située à 5 minutes à pied du centre de Cambo-les-Bains et à proximité immédiate des navettes thermales.
-              Vous êtes à 20 minutes de Bayonne et 30 minutes des plages de Biarritz.
-            </p>
+        <div className="mt-20 bg-brick-800 rounded-sm text-white relative overflow-hidden shadow-2xl border-t-4 border-brick-500">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+            {/* Image des thermes */}
+            <div className="relative h-72 lg:h-auto overflow-hidden">
+              <img 
+                src="https://www.kerenia.fr/wp-content/uploads/2017/05/thermes-de-cambo_chaine-thermale-du-soleil_13.jpg?id=1329"
+                alt="Thermes de Cambo-les-Bains"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-brick-800/40 hidden lg:block"></div>
+            </div>
+
+            {/* Contenu */}
+            <div className="p-10 md:p-16 flex flex-col justify-center text-center lg:text-left">
+              <MapPin className="w-12 h-12 text-brick-400 mb-6 mx-auto lg:mx-0" />
+              <h2 className="font-script text-4xl md:text-5xl mb-6 text-brick-300">Un emplacement idéal</h2>
+              <p className="max-w-2xl text-brick-100 text-lg mb-8 font-light">
+                Située à 5 minutes à pied du centre de Cambo-les-Bains et à proximité immédiate des navettes thermales.
+                Vous êtes à 20 minutes de Bayonne et 30 minutes des plages de Biarritz.
+              </p>
+
+              {/* Logo Thermes partenaire */}
+              <div className="flex items-center gap-4 pt-6 border-t border-brick-700 justify-center lg:justify-start">
+                <img 
+                  src="https://www.kerenia.fr/wp-content/uploads/2020/05/LOGO-THERMES.jpg"
+                  alt="Logo Thermes de Cambo-les-Bains"
+                  className="h-16 w-auto rounded bg-white p-1"
+                />
+                <div className="text-left">
+                  <p className="text-brick-200 font-condensed font-bold uppercase tracking-wider text-xs">Partenaire</p>
+                  <p className="text-white font-medium">Thermes de Cambo-les-Bains</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
