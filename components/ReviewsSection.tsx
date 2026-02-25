@@ -4,6 +4,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Star, ExternalLink } from 'lucide-react';
 import { REVIEWS } from '@/lib/constants';
+import { useLocale } from '@/components/LocaleProvider';
 
 const GOOGLE_REVIEWS_URL = 'https://www.google.com/maps/place/R%C3%A9sidence+Ker+Enia/@43.3598538,-1.4026367,17z/data=!4m8!3m7!1s0xd511674338e530b:0xd49b2915832a8e1a!8m2!3d43.3598538!4d-1.4000618!9m1!1b1!16s%2Fg%2F11c1p3_8jy';
 
@@ -51,6 +52,7 @@ const ReviewCard: React.FC<{ review: typeof REVIEWS[0] }> = ({ review }) => (
 const ReviewsSection: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
+  const { t } = useLocale();
 
   // Duplicate reviews for infinite scroll effect
   const allReviews = [...REVIEWS, ...REVIEWS];
@@ -90,10 +92,10 @@ const ReviewsSection: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
             <h2 className="font-script text-5xl md:text-6xl text-brick-600 mb-3">
-              Ce qu&apos;ils en disent
+              {t.home.reviews.whatTheySay}
             </h2>
             <p className="text-slate-500 font-light text-lg">
-              Avis vérifiés de nos voyageurs
+              {t.home.reviews.verifiedReviews}
             </p>
           </div>
 
@@ -120,7 +122,7 @@ const ReviewsSection: React.FC = () => {
                   <Star key={i} size={14} className="text-amber-400" fill="currentColor" />
                 ))}
               </div>
-              <span className="text-xs text-slate-500">{totalReviews} avis</span>
+              <span className="text-xs text-slate-500">{totalReviews} {t.home.reviews.reviews}</span>
             </div>
 
             <div className="h-14 w-px bg-cream-300" />
@@ -131,7 +133,7 @@ const ReviewsSection: React.FC = () => {
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-brick-600 hover:text-brick-800 transition-colors font-condensed font-bold text-xs uppercase tracking-wider"
             >
-              Voir tous<br/>les avis
+              {t.home.reviews.viewAll}<br/>{t.home.reviews.theReviews}
               <ExternalLink size={14} />
             </a>
           </motion.div>
@@ -159,7 +161,7 @@ const ReviewsSection: React.FC = () => {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-brick-600 hover:text-brick-800 transition-colors font-condensed font-bold text-sm uppercase tracking-wider border-b-2 border-brick-300 hover:border-brick-600 pb-1"
         >
-          Lire tous les avis sur Google
+          {t.home.reviews.seeAllGoogle}
           <ExternalLink size={16} />
         </a>
       </div>

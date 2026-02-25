@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Phone, Mail, MapPin, Instagram, Facebook, Star } from 'lucide-react';
-import { CONTACT_INFO } from '@/lib/constants';
+import { CONTACT_INFO, BOOKING_URL, NAV_ITEMS } from '@/lib/constants';
 import { motion, AnimatePresence } from 'framer-motion';
 import InstagramFeed from '@/components/InstagramFeed';
 import AccessibilityWidget from '@/components/AccessibilityWidget';
@@ -105,8 +105,10 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             
             <LanguageSwitcher isTransparent={isTransparent} />
             
-            <Link
-              href="/contact"
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`font-condensed font-bold uppercase tracking-wide px-8 py-3 transition-all transform hover:scale-105 shadow-md rounded-sm border-2 ${
                 isTransparent 
                   ? 'bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-brick-900' 
@@ -114,7 +116,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               }`}
             >
               {t.nav.book}
-            </Link>
+            </a>
           </div>
 
           <button
