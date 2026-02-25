@@ -4,18 +4,20 @@ import React from 'react';
 import { ACTIVITIES } from '@/lib/constants';
 import { motion } from 'framer-motion';
 import { ExternalLink, MapPin } from 'lucide-react';
+import { useLocale } from '@/components/LocaleProvider';
 
 const AutourContent: React.FC = () => {
+  const { t } = useLocale();
+  
   return (
     <div className="pb-20 pt-24 bg-cream-50">
       <div className="bg-cream-100 py-16 mb-16 border-b border-brick-200">
         <div className="container mx-auto px-6 text-center">
-          <h3 className="font-condensed text-brick-600 uppercase tracking-widest text-sm font-bold mb-2">Le Pays Basque</h3>
-          <h1 className="font-script text-5xl md:text-6xl text-brick-600 mb-6">S&apos;offre à vous</h1>
+          <h3 className="font-condensed text-brick-600 uppercase tracking-widest text-sm font-bold mb-2">{t.surroundings.subtitle}</h3>
+          <h1 className="font-script text-5xl md:text-6xl text-brick-600 mb-6">{t.surroundings.title}</h1>
           <div className="w-16 h-1 bg-brick-600 mx-auto mb-8"></div>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto font-light">
-            Peu de destinations ont le privilège d&apos;offrir autant de possibilités.
-            Retrouvez ici les coups de cœur de Ker Enia autour de Cambo-les-Bains.
+            {t.surroundings.intro}
           </p>
         </div>
       </div>
@@ -51,7 +53,7 @@ const AutourContent: React.FC = () => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-brick-600 font-bold hover:text-brick-800 transition-colors font-condensed uppercase tracking-wider text-sm border-b border-brick-600 pb-1 self-start"
                   >
-                    DÉCOUVRIR <ExternalLink size={16} className="ml-2" />
+                    {t.surroundings.discover} <ExternalLink size={16} className="ml-2" />
                   </a>
                 )}
               </div>
@@ -74,10 +76,9 @@ const AutourContent: React.FC = () => {
             {/* Contenu */}
             <div className="p-10 md:p-16 flex flex-col justify-center text-center lg:text-left">
               <MapPin className="w-12 h-12 text-brick-400 mb-6 mx-auto lg:mx-0" />
-              <h2 className="font-script text-4xl md:text-5xl mb-6 text-brick-300">Un emplacement idéal</h2>
+              <h2 className="font-script text-4xl md:text-5xl mb-6 text-brick-300">{t.surroundings.idealLocation}</h2>
               <p className="max-w-2xl text-brick-100 text-lg mb-8 font-light">
-                Située à 5 minutes à pied du centre de Cambo-les-Bains et à proximité immédiate des navettes thermales.
-                Vous êtes à 20 minutes de Bayonne et 30 minutes des plages de Biarritz.
+                {t.surroundings.locationDescription}
               </p>
 
               {/* Logo Thermes partenaire */}
@@ -88,8 +89,8 @@ const AutourContent: React.FC = () => {
                   className="h-16 w-auto rounded bg-white p-1"
                 />
                 <div className="text-left">
-                  <p className="text-brick-200 font-condensed font-bold uppercase tracking-wider text-xs">Partenaire</p>
-                  <p className="text-white font-medium">Thermes de Cambo-les-Bains</p>
+                  <p className="text-brick-200 font-condensed font-bold uppercase tracking-wider text-xs">{t.surroundings.partner}</p>
+                  <p className="text-white font-medium">{t.surroundings.thermalSpa}</p>
                 </div>
               </div>
             </div>

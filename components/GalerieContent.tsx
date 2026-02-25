@@ -4,14 +4,16 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 import { GALLERY_IMAGES } from '@/lib/constants';
+import { useLocale } from '@/components/LocaleProvider';
 
 const GalerieContent: React.FC = () => {
-  const [filter, setFilter] = useState('Tous');
+  const { t } = useLocale();
+  const [filter, setFilter] = useState(t.gallery.all);
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
-  const categories = ['Tous', ...Array.from(new Set(GALLERY_IMAGES.map(img => img.category)))];
+  const categories = [t.gallery.all, ...Array.from(new Set(GALLERY_IMAGES.map(img => img.category)))];
 
-  const filteredImages = filter === 'Tous' 
+  const filteredImages = filter === t.gallery.all 
     ? GALLERY_IMAGES 
     : GALLERY_IMAGES.filter(img => img.category === filter);
 
@@ -45,11 +47,11 @@ const GalerieContent: React.FC = () => {
     <div className="pb-20 min-h-screen bg-cream-50 pt-24">
       <div className="bg-cream-100 py-16 mb-12 border-b border-brick-200">
         <div className="container mx-auto px-6 text-center">
-          <h3 className="font-condensed text-brick-600 uppercase tracking-widest text-sm font-bold mb-2">Visite guidée</h3>
-          <h1 className="font-script text-5xl md:text-6xl text-brick-600 mb-6">Galerie Photos</h1>
+          <h3 className="font-condensed text-brick-600 uppercase tracking-widest text-sm font-bold mb-2">{t.gallery.guidedTour}</h3>
+          <h1 className="font-script text-5xl md:text-6xl text-brick-600 mb-6">{t.gallery.title}</h1>
           <div className="w-16 h-1 bg-brick-600 mx-auto mb-8"></div>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto font-light">
-            Plongez dans l&apos;atmosphère de Ker Enia.
+            {t.gallery.atmosphere}
           </p>
         </div>
       </div>

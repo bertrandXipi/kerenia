@@ -3,8 +3,10 @@
 import React, { useState } from 'react';
 import { CONTACT_INFO } from '@/lib/constants';
 import { Phone, Mail, MapPin, Send } from 'lucide-react';
+import { useLocale } from '@/components/LocaleProvider';
 
 const ContactContent: React.FC = () => {
+  const { t } = useLocale();
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -31,11 +33,11 @@ const ContactContent: React.FC = () => {
     <div className="pb-20 pt-24 bg-cream-50">
       <div className="bg-cream-100 py-16 mb-16 border-b border-brick-200">
         <div className="container mx-auto px-6 text-center">
-          <h3 className="font-condensed text-brick-600 uppercase tracking-widest text-sm font-bold mb-2">Une question ?</h3>
-          <h1 className="font-script text-5xl md:text-6xl text-brick-600 mb-6">Contactez-nous</h1>
+          <h3 className="font-condensed text-brick-600 uppercase tracking-widest text-sm font-bold mb-2">{t.contact.question}</h3>
+          <h1 className="font-script text-5xl md:text-6xl text-brick-600 mb-6">{t.contact.title}</h1>
           <div className="w-16 h-1 bg-brick-600 mx-auto mb-8"></div>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto font-light">
-            Pour toute demande d&apos;informations, veuillez utiliser le formulaire de contact ci-dessous
+            {t.contact.formIntro}
           </p>
         </div>
       </div>
@@ -48,19 +50,19 @@ const ContactContent: React.FC = () => {
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
                   <Send className="text-green-600" size={32} />
                 </div>
-                <h3 className="font-condensed font-bold text-3xl text-brick-800 mb-4 uppercase">Message envoyé !</h3>
-                <p className="text-slate-600">Nous vous répondrons dans les plus brefs délais.</p>
+                <h3 className="font-condensed font-bold text-3xl text-brick-800 mb-4 uppercase">{t.contact.messageSent}</h3>
+                <p className="text-slate-600">{t.contact.willReply}</p>
                 <button 
                   onClick={() => setIsSubmitted(false)}
                   className="mt-8 text-brick-600 font-bold hover:underline font-condensed uppercase tracking-wide"
                 >
-                  Envoyer un autre message
+                  {t.contact.sendAnother}
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-bold text-brick-800 mb-2 uppercase tracking-wide font-condensed">Nom complet</label>
+                  <label htmlFor="name" className="block text-sm font-bold text-brick-800 mb-2 uppercase tracking-wide font-condensed">{t.contact.fullName}</label>
                   <input 
                     type="text" 
                     id="name" 
@@ -84,7 +86,7 @@ const ContactContent: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-bold text-brick-800 mb-2 uppercase tracking-wide font-condensed">Sujet</label>
+                  <label htmlFor="subject" className="block text-sm font-bold text-brick-800 mb-2 uppercase tracking-wide font-condensed">{t.contact.subject}</label>
                   <select 
                     id="subject" 
                     name="subject"
@@ -92,14 +94,14 @@ const ContactContent: React.FC = () => {
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-stone-50 border border-stone-200 focus:border-brick-500 focus:ring-1 focus:ring-brick-500 outline-none transition-all rounded-sm"
                   >
-                    <option value="">Sélectionnez un sujet</option>
-                    <option value="reservation">Demande de réservation</option>
-                    <option value="info">Demande d&apos;informations</option>
-                    <option value="other">Autre</option>
+                    <option value="">{t.contact.selectSubject}</option>
+                    <option value="reservation">{t.contact.reservation}</option>
+                    <option value="info">{t.contact.information}</option>
+                    <option value="other">{t.contact.other}</option>
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-bold text-brick-800 mb-2 uppercase tracking-wide font-condensed">Message</label>
+                  <label htmlFor="message" className="block text-sm font-bold text-brick-800 mb-2 uppercase tracking-wide font-condensed">{t.contact.message}</label>
                   <textarea 
                     id="message" 
                     name="message" 
@@ -114,7 +116,7 @@ const ContactContent: React.FC = () => {
                   type="submit"
                   className="w-full bg-brick-600 text-white font-condensed font-bold uppercase tracking-widest py-4 hover:bg-brick-700 transition-all shadow-md rounded-sm"
                 >
-                  ENVOYER
+                  {t.contact.send}
                 </button>
               </form>
             )}
@@ -122,19 +124,19 @@ const ContactContent: React.FC = () => {
 
           <div className="space-y-10">
             <div className="bg-cream-50 border-l-4 border-brick-600 p-8 shadow-lg">
-              <h3 className="font-script text-3xl mb-6 text-brick-600">Coordonnées</h3>
+              <h3 className="font-script text-3xl mb-6 text-brick-600">{t.contact.coordinates}</h3>
               <ul className="space-y-6">
                 <li className="flex items-start gap-4">
                   <div className="text-brick-600 mt-1"><MapPin size={24} /></div>
                   <div>
-                    <p className="font-condensed font-bold mb-1 text-brick-800 text-sm uppercase">Adresse</p>
+                    <p className="font-condensed font-bold mb-1 text-brick-800 text-sm uppercase">{t.contact.address}</p>
                     <p className="text-lg leading-relaxed text-slate-600 font-light">{CONTACT_INFO.address}</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
                   <div className="text-brick-600 mt-1"><Phone size={24} /></div>
                   <div>
-                    <p className="font-condensed font-bold mb-1 text-brick-800 text-sm uppercase">Téléphone</p>
+                    <p className="font-condensed font-bold mb-1 text-brick-800 text-sm uppercase">{t.contact.phone}</p>
                     <a href={`tel:${CONTACT_INFO.phone}`} className="text-lg text-slate-600 hover:text-brick-600 transition-colors font-light">{CONTACT_INFO.phone}</a>
                   </div>
                 </li>
