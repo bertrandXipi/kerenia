@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Instagram } from 'lucide-react';
+import { useLocale } from '@/components/LocaleProvider';
 
 const INSTAGRAM_URL = 'https://www.instagram.com/kerenia_residence/';
 
@@ -39,6 +40,7 @@ const PostCard: React.FC<{ post: typeof INSTAGRAM_POSTS[0] }> = ({ post }) => (
 );
 
 const InstagramFeed: React.FC = () => {
+  const { t } = useLocale();
   // Double les posts pour le loop infini
   const allPosts = [...INSTAGRAM_POSTS, ...INSTAGRAM_POSTS];
 
@@ -65,10 +67,10 @@ const InstagramFeed: React.FC = () => {
             </span>
           </a>
           <h2 className="font-script text-5xl md:text-6xl text-brick-600 mb-3">
-            Suivez-nous
+            {t.instagram.title}
           </h2>
           <p className="text-slate-500 font-light text-lg max-w-lg mx-auto">
-            Partagez vos plus beaux moments au Pays Basque avec nous
+            {t.instagram.subtitle}
           </p>
         </motion.div>
       </div>
@@ -93,7 +95,7 @@ const InstagramFeed: React.FC = () => {
           whileTap={{ scale: 0.98 }}
         >
           <Instagram size={18} />
-          Rejoignez-nous sur Instagram
+          {t.instagram.cta}
         </motion.a>
       </div>
     </section>

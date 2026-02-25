@@ -10,12 +10,14 @@ import { KenBurnsImage } from '@/components/PremiumEffects';
 import GoldSeparator from '@/components/GoldSeparator';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import ReviewsSection from '@/components/ReviewsSection';
+import { useLocale } from '@/components/LocaleProvider';
 
 const HomeContent: React.FC = () => {
   const [checkIn, setCheckIn] = useState<Date | null>(null);
   const [checkOut, setCheckOut] = useState<Date | null>(null);
   const [adults, setAdults] = useState(2);
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+  const { t } = useLocale();
   
   const calendarRef = useRef<HTMLDivElement>(null);
   const targetRef = useRef<HTMLDivElement>(null);
@@ -88,7 +90,7 @@ const HomeContent: React.FC = () => {
                 className="relative z-10 px-8 py-6 md:px-16 md:py-8"
               >
                 <h1 className="font-condensed font-light text-3xl md:text-6xl text-white uppercase tracking-[0.2em] leading-tight">
-                  Résidence Ker Enia <span className="text-gold-500 text-2xl md:text-4xl align-top ml-2">***</span>
+                  {t.home.heroTitle} <span className="text-gold-500 text-2xl md:text-4xl align-top ml-2">***</span>
                 </h1>
               </motion.div>
             </div>
@@ -100,11 +102,11 @@ const HomeContent: React.FC = () => {
               className="text-white drop-shadow-lg"
             >
               <p className="font-script text-4xl md:text-6xl mb-6 text-white font-light">
-                L&apos;expérience bien-être,
+                {t.home.tagline},
               </p>
               <GoldSeparator width="w-16" delay={1.6} className="mb-6" />
               <p className="font-sans font-light text-xs md:text-sm tracking-[0.3em] uppercase text-white/90">
-                un séjour qui vous ressemble
+                {t.home.subtitle}
               </p>
             </motion.div>
           </motion.div>
@@ -127,12 +129,12 @@ const HomeContent: React.FC = () => {
                 <Calendar size={18} />
               </div>
               <div className="text-left w-full">
-                <p className="font-condensed font-bold uppercase text-brick-800 text-[10px] tracking-[0.2em] mb-1">Arrivée - Départ</p>
+                <p className="font-condensed font-bold uppercase text-brick-800 text-[10px] tracking-[0.2em] mb-1">{t.booking.arrival} - {t.booking.departure}</p>
                 <div className="flex items-center gap-2 text-slate-600 text-sm font-light uppercase tracking-widest w-full min-h-[24px]">
                   {checkIn ? (
                     <span className="text-brick-700 font-medium border-b border-brick-300">{formatDateForDisplay(checkIn)}</span>
                   ) : (
-                    <span className="opacity-50 border-b border-transparent text-xs">Sélectionner</span>
+                    <span className="opacity-50 border-b border-transparent text-xs">{t.booking.select}</span>
                   )}
                   <span className="text-stone-300 mx-1">-</span>
                   {checkOut ? (
@@ -165,14 +167,14 @@ const HomeContent: React.FC = () => {
                 <Users size={18} />
               </div>
               <div className="text-left w-full">
-                <p className="font-condensed font-bold uppercase text-brick-800 text-[10px] tracking-[0.2em] mb-1">Voyageurs</p>
+                <p className="font-condensed font-bold uppercase text-brick-800 text-[10px] tracking-[0.2em] mb-1">{t.booking.travelers}</p>
                 <select 
                   value={adults}
                   onChange={(e) => setAdults(Number(e.target.value))}
                   className="bg-transparent w-full text-brick-700 font-medium text-sm border-none focus:ring-0 p-0 cursor-pointer appearance-none outline-none tracking-wider"
                 >
                   {[1, 2, 3, 4, 5, 6].map((num) => (
-                    <option key={num} value={num}>{num} Adulte{num > 1 ? 's' : ''}</option>
+                    <option key={num} value={num}>{num} {num > 1 ? t.booking.adults : t.booking.adult}</option>
                   ))}
                 </select>
               </div>
@@ -186,7 +188,7 @@ const HomeContent: React.FC = () => {
             >
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
               <Search size={18} className="group-hover:scale-110 transition-transform relative z-10" />
-              <span className="font-condensed font-bold uppercase tracking-[0.15em] text-xs whitespace-nowrap relative z-10">Disponibilités</span>
+              <span className="font-condensed font-bold uppercase tracking-[0.15em] text-xs whitespace-nowrap relative z-10">{t.booking.availability}</span>
             </motion.button>
           </div>
         </motion.div>
@@ -203,12 +205,11 @@ const HomeContent: React.FC = () => {
             className="max-w-4xl mx-auto"
           >
             <h2 className="font-serif font-medium text-3xl md:text-5xl text-brick-800 mb-2 leading-tight">
-              Ker Enia à Cambo-les-Bains, un lieu confortable<br/>
-              pour ceux qui veulent se sentir comme à la maison.
+              {t.home.intro.title}
             </h2>
             
             <h3 className="font-script text-4xl md:text-5xl text-brick-600 mb-12 mt-6 transform -rotate-1">
-              Réveillez-vous au pied des montagnes basques
+              {t.home.intro.subtitle}
             </h3>
 
             <GoldSeparator className="mb-12" />
@@ -216,13 +217,13 @@ const HomeContent: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-left">
               <div className="text-slate-600 space-y-6 text-lg font-light leading-relaxed">
                 <p>
-                  Ici, nous célébrons la générosité et l&apos;authenticité, nous accueillons autour de l&apos;esprit convivial, chaleureux et festif du Pays basque.
+                  {t.home.intro.p1}
                 </p>
                 <p>
-                  Installez-vous confortablement, <strong className="font-medium text-brick-800">vous êtes chez vous.</strong>
+                  {t.home.intro.p2.split('vous êtes chez vous')[0]}<strong className="font-medium text-brick-800">{t.home.intro.p2.match(/vous êtes chez vous/)?.[0]}</strong>{t.home.intro.p2.split('vous êtes chez vous')[1]}
                 </p>
                 <p>
-                  Faîtes l&apos;expérience d&apos;un séjour qui vous ressemble – une plus grande liberté qu&apos;à l&apos;hôtel tout en conservant vos habitudes, <strong className="font-medium text-brick-800">comme à la maison !</strong>
+                  {t.home.intro.p3.split('comme à la maison')[0]}<strong className="font-medium text-brick-800">{t.home.intro.p3.match(/comme à la maison|just like home|como en casa/)?.[0]}</strong>{t.home.intro.p3.split(/comme à la maison|just like home|como en casa/)[1]}
                 </p>
               </div>
               <div className="relative group">
@@ -252,19 +253,19 @@ const HomeContent: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
             <AnimatedCounter 
               end={16} 
-              label="Appartements" 
+              label={t.home.stats.apartments}
               icon={<Home size={28} />}
             />
             <AnimatedCounter 
               end={4.9} 
               decimals={1}
-              label="Note Google" 
+              label={t.home.stats.rating}
               icon={<Award size={28} />}
             />
             <AnimatedCounter 
               end={20} 
               suffix=" min"
-              label="De Biarritz" 
+              label={t.home.stats.distance}
               icon={<MapPin size={28} />}
             />
           </div>
@@ -275,10 +276,10 @@ const HomeContent: React.FC = () => {
       <section className="py-20 bg-cream-100">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="font-script text-5xl md:text-6xl text-brick-600 mb-6">Nos Appartements</h2>
+            <h2 className="font-script text-5xl md:text-6xl text-brick-600 mb-6">{t.home.apartments.title}</h2>
             <GoldSeparator className="mb-6" />
             <p className="text-slate-600 max-w-2xl mx-auto font-light text-lg">
-              Notre résidence dispose de 16 appartements de 25m² à 45m² avec terrasses, entièrement rénovés, une décoration soignée dans une atmosphère chaleureuse.
+              {t.home.apartments.description}
             </p>
           </div>
 
@@ -295,7 +296,7 @@ const HomeContent: React.FC = () => {
                 <div className="h-64 overflow-hidden relative">
                   <img src={apt.imageUrl} alt={apt.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute top-0 right-0 bg-brick-700 text-white px-5 py-2 text-xs font-condensed font-bold uppercase tracking-widest">
-                    Dès {apt.priceFrom}
+                    {t.home.apartments.from} {apt.priceFrom}
                   </div>
                 </div>
                 <div className="p-8 text-center">
@@ -303,7 +304,7 @@ const HomeContent: React.FC = () => {
                   <p className="text-slate-600 mb-6 font-light line-clamp-3 text-sm leading-relaxed">{apt.description}</p>
                   <motion.div whileHover={{ scale: 1.02, y: -2 }} whileTap={{ scale: 0.98 }}>
                     <Link href="/appartements" className="inline-block relative overflow-hidden group/btn px-8 py-3 border border-brick-600 text-brick-800 font-condensed font-bold text-xs uppercase tracking-[0.2em]">
-                      <span className="relative z-10 group-hover/btn:text-white transition-colors duration-300">Découvrir</span>
+                      <span className="relative z-10 group-hover/btn:text-white transition-colors duration-300">{t.home.apartments.discover}</span>
                       <div className="absolute inset-0 bg-brick-700 transform -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-300 ease-in-out"></div>
                     </Link>
                   </motion.div>
@@ -344,7 +345,7 @@ const HomeContent: React.FC = () => {
               </svg>
             </div>
             <p className="font-script text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-relaxed">
-              Le bonheur n&apos;est réel que lorsqu&apos;il est partagé
+              {t.home.quote}
             </p>
             <p className="text-white/80 text-lg md:text-xl font-light tracking-wide">
               — Christopher McCandless

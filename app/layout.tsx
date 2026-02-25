@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Oswald, Dancing_Script, Cormorant_Garamond } from 'next/font/google';
 import './globals.css';
 import TransitionProvider from '@/components/TransitionProvider';
+import { LocaleProvider } from '@/components/LocaleProvider';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -45,9 +46,11 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${inter.variable} ${oswald.variable} ${dancingScript.variable} ${cormorant.variable}`}>
       <body className="bg-cream-50 text-slate-700 font-sans antialiased">
-        <TransitionProvider>
-          {children}
-        </TransitionProvider>
+        <LocaleProvider>
+          <TransitionProvider>
+            {children}
+          </TransitionProvider>
+        </LocaleProvider>
       </body>
     </html>
   );

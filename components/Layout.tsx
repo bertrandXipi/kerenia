@@ -4,18 +4,29 @@ import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Phone, Mail, MapPin, Instagram, Facebook, Star } from 'lucide-react';
-import { NAV_ITEMS, CONTACT_INFO } from '@/lib/constants';
+import { CONTACT_INFO } from '@/lib/constants';
 import { motion, AnimatePresence } from 'framer-motion';
 import InstagramFeed from '@/components/InstagramFeed';
 import AccessibilityWidget from '@/components/AccessibilityWidget';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { useLocale } from '@/components/LocaleProvider';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const navRef = useRef<HTMLElement>(null);
+  const { t } = useLocale();
   
   const isHomePage = pathname === '/';
+
+  const NAV_ITEMS = [
+    { label: t.nav.home, path: '/' },
+    { label: t.nav.apartments, path: '/appartements' },
+    { label: t.nav.gallery, path: '/galerie' },
+    { label: t.nav.surroundings, path: '/autour-de-nous' },
+    { label: t.nav.contact, path: '/contact' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -92,6 +103,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               </Link>
             ))}
             
+            <LanguageSwitcher isTransparent={isTransparent} />
+            
             <Link
               href="/contact"
               className={`font-condensed font-bold uppercase tracking-wide px-8 py-3 transition-all transform hover:scale-105 shadow-md rounded-sm border-2 ${
@@ -100,7 +113,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                   : 'bg-brick-600 border-brick-600 text-white hover:bg-brick-700 hover:border-brick-700'
               }`}
             >
-              Réserver
+              {t.nav.book}
             </Link>
           </div>
 
@@ -140,6 +153,15 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                     </Link>
                   </motion.div>
                 ))}
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: NAV_ITEMS.length * 0.1 }}
+                  className="pt-4"
+                >
+                  <LanguageSwitcher isTransparent={true} />
+                </motion.div>
               </div>
 
               <motion.div 
@@ -178,11 +200,10 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                   />
                 </div>
                 <p className="font-script text-3xl md:text-4xl text-brick-300 mb-6 transform -rotate-1">
-                  L&apos;expérience bien-être
+                  {t.footer.tagline}
                 </p>
                 <p className="text-brick-200 text-lg leading-relaxed mb-8 font-light max-w-lg">
-                  Au cœur du Pays Basque, notre résidence 3 étoiles vous accueille dans un cadre authentique et chaleureux. 
-                  Profitez de notre piscine chauffée et de nos appartements tout confort pour un séjour inoubliable.
+                  {t.footer.description}
                 </p>
                 <div className="flex gap-4">
                   <a 
@@ -206,9 +227,9 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
               {/* Colonne droite - CTA Réservation */}
               <div className="bg-brick-700 rounded-2xl p-8 md:p-10 shadow-2xl border border-brick-600">
-                <h3 className="font-script text-4xl text-brick-200 mb-4">Réservez votre séjour</h3>
+                <h3 className="font-script text-4xl text-brick-200 mb-4">{t.footer.bookYourStay}</h3>
                 <p className="text-brick-200 mb-6 font-light">
-                  Découvrez nos appartements et profitez de tarifs directs avantageux
+                  {t.footer.bookDescription}
                 </p>
                 
                 {/* Google Rating */}
@@ -230,8 +251,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                     </div>
                   </div>
                   <div className="text-brick-200 text-sm font-light">
-                    <span className="font-bold text-white">Excellent</span><br/>
-                    Basé sur 127 avis
+                    <span className="font-bold text-white">{t.footer.excellent}</span><br/>
+                    {t.footer.basedOn} 127 {t.footer.reviews}
                   </div>
                 </div>
 
@@ -239,10 +260,10 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                   href="/contact"
                   className="block w-full bg-white hover:bg-cream-50 text-brick-800 text-center px-8 py-4 rounded-full font-condensed font-bold text-sm uppercase tracking-[0.15em] shadow-lg hover:shadow-xl transition-all hover:scale-105"
                 >
-                  Voir les disponibilités
+                  {t.footer.seeAvailability}
                 </Link>
                 <p className="text-brick-300 text-xs text-center mt-4 font-light">
-                  Meilleur tarif garanti · Sans frais de réservation
+                  {t.footer.bestRate} · {t.footer.noFees}
                 </p>
               </div>
             </div>
@@ -256,7 +277,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               {/* Contact */}
               <div>
                 <h4 className="text-white font-condensed font-bold uppercase tracking-wider mb-6 text-sm border-b border-brick-700 pb-3">
-                  Contact
+                  {t.footer.contact}
                 </h4>
                 <ul className="space-y-4 text-sm font-light text-brick-200">
                   <li className="flex items-start gap-3 group">
@@ -277,46 +298,46 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               {/* Navigation */}
               <div>
                 <h4 className="text-white font-condensed font-bold uppercase tracking-wider mb-6 text-sm border-b border-brick-700 pb-3">
-                  Navigation
+                  {t.footer.navigation}
                 </h4>
                 <ul className="space-y-3 text-sm font-light text-brick-200">
-                  <li><Link href="/" className="hover:text-white transition-colors hover:translate-x-1 inline-block">Accueil</Link></li>
-                  <li><Link href="/appartements" className="hover:text-white transition-colors hover:translate-x-1 inline-block">Nos Appartements</Link></li>
-                  <li><Link href="/galerie" className="hover:text-white transition-colors hover:translate-x-1 inline-block">Galerie Photos</Link></li>
-                  <li><Link href="/autour-de-nous" className="hover:text-white transition-colors hover:translate-x-1 inline-block">Autour de Nous</Link></li>
-                  <li><Link href="/contact" className="hover:text-white transition-colors hover:translate-x-1 inline-block">Contact & Réservation</Link></li>
+                  <li><Link href="/" className="hover:text-white transition-colors hover:translate-x-1 inline-block">{t.nav.home}</Link></li>
+                  <li><Link href="/appartements" className="hover:text-white transition-colors hover:translate-x-1 inline-block">{t.nav.apartments}</Link></li>
+                  <li><Link href="/galerie" className="hover:text-white transition-colors hover:translate-x-1 inline-block">{t.nav.gallery}</Link></li>
+                  <li><Link href="/autour-de-nous" className="hover:text-white transition-colors hover:translate-x-1 inline-block">{t.nav.surroundings}</Link></li>
+                  <li><Link href="/contact" className="hover:text-white transition-colors hover:translate-x-1 inline-block">{t.nav.contact}</Link></li>
                 </ul>
               </div>
 
               {/* Infos pratiques */}
               <div>
                 <h4 className="text-white font-condensed font-bold uppercase tracking-wider mb-6 text-sm border-b border-brick-700 pb-3">
-                  Infos Pratiques
+                  {t.footer.practicalInfo}
                 </h4>
                 <ul className="space-y-3 text-sm font-light text-brick-200">
                   <li className="flex items-start gap-2">
                     <span className="text-brick-400">•</span>
-                    <span>Arrivée : 16h - 19h</span>
+                    <span>{t.footer.arrival}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-brick-400">•</span>
-                    <span>Départ : avant 10h</span>
+                    <span>{t.footer.checkout}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-brick-400">•</span>
-                    <span>Parking privé gratuit</span>
+                    <span>{t.footer.parking}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-brick-400">•</span>
-                    <span>Piscine chauffée</span>
+                    <span>{t.footer.pool}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-brick-400">•</span>
-                    <a href="https://www.chainethermale.fr/cambo-les-bains" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">Thermes à 5 min</a>
+                    <a href="https://www.chainethermale.fr/cambo-les-bains" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">{t.footer.spa}</a>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-brick-400">•</span>
-                    <span>Animaux acceptés</span>
+                    <span>{t.footer.pets}</span>
                   </li>
                 </ul>
               </div>
@@ -324,7 +345,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               {/* Certifications */}
               <div>
                 <h4 className="text-white font-condensed font-bold uppercase tracking-wider mb-6 text-sm border-b border-brick-700 pb-3">
-                  Certifications
+                  {t.footer.certifications}
                 </h4>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
@@ -333,20 +354,20 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                         <Star key={i} size={20} className="text-amber-400" fill="currentColor" />
                       ))}
                     </div>
-                    <span className="text-sm text-brick-200 font-light">Résidence 3 étoiles</span>
+                    <span className="text-sm text-brick-200 font-light">{t.footer.residence}</span>
                   </div>
                   <div className="text-sm text-brick-200 font-light space-y-2">
                     <p className="flex items-start gap-2">
                       <span className="text-brick-400">✓</span>
-                      <span>Classement Atout France</span>
+                      <span>{t.footer.atoutFrance}</span>
                     </p>
                     <p className="flex items-start gap-2">
                       <span className="text-brick-400">✓</span>
-                      <span>Partenaire Chaîne Thermale</span>
+                      <span>{t.footer.thermalPartner}</span>
                     </p>
                     <p className="flex items-start gap-2">
                       <span className="text-brick-400">✓</span>
-                      <span>Tourisme Pays Basque</span>
+                      <span>{t.footer.tourism}</span>
                     </p>
                   </div>
                 </div>
@@ -359,13 +380,13 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <div className="bg-brick-950 border-t border-brick-800">
           <div className="container mx-auto px-6 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-brick-400">
-              <p>&copy; {new Date().getFullYear()} Résidence Ker Enia. Tous droits réservés.</p>
+              <p>&copy; {new Date().getFullYear()} Résidence Ker Enia. {t.footer.rights}</p>
               <div className="flex gap-6">
-                <Link href="#" className="hover:text-brick-200 transition-colors">Mentions légales</Link>
-                <Link href="#" className="hover:text-brick-200 transition-colors">Politique de confidentialité</Link>
-                <Link href="#" className="hover:text-brick-200 transition-colors">CGV</Link>
+                <Link href="#" className="hover:text-brick-200 transition-colors">{t.footer.legal}</Link>
+                <Link href="#" className="hover:text-brick-200 transition-colors">{t.footer.privacy}</Link>
+                <Link href="#" className="hover:text-brick-200 transition-colors">{t.footer.terms}</Link>
               </div>
-              <p className="font-script text-base text-brick-300">L&apos;expérience bien-être.</p>
+              <p className="font-script text-base text-brick-300">{t.footer.tagline}</p>
             </div>
           </div>
         </div>
