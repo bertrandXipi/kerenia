@@ -15,10 +15,8 @@ const LocaleContext = createContext<LocaleContextType | undefined>(undefined);
 export function LocaleProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(defaultLocale);
   const [t, setT] = useState<TranslationKeys>(getTranslations(defaultLocale));
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const saved = localStorage.getItem('locale') as Locale;
     if (saved && ['fr', 'en', 'es'].includes(saved)) {
       setLocaleState(saved);
@@ -31,13 +29,6 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
     setT(getTranslations(newLocale));
     localStorage.setItem('locale', newLocale);
   };
-
-  // Prevent hydration mismatch by not rendering until mounted
-  if (!mounted) {
-    return <LocaleContext.Provider value={{ locale: defaultLocale, setLocale: () => {}, t: getTranslations(defaultLocale) }}>
-      {children}
-    </LocaleContext.Provider>;
-  }
 
   return (
     <LocaleContext.Provider value={{ locale, setLocale, t }}>

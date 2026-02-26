@@ -6,7 +6,7 @@ import { Phone, Mail, MapPin, Send } from 'lucide-react';
 import { useLocale } from '@/components/LocaleProvider';
 
 const ContactContent: React.FC = () => {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -52,7 +52,7 @@ const ContactContent: React.FC = () => {
                 </div>
                 <h3 className="font-condensed font-bold text-3xl text-brick-800 mb-4 uppercase">{t.contact.messageSent}</h3>
                 <p className="text-slate-600">{t.contact.willReply}</p>
-                <button 
+                <button
                   onClick={() => setIsSubmitted(false)}
                   className="mt-8 text-brick-600 font-bold hover:underline font-condensed uppercase tracking-wide"
                 >
@@ -63,10 +63,10 @@ const ContactContent: React.FC = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-bold text-brick-800 mb-2 uppercase tracking-wide font-condensed">{t.contact.fullName}</label>
-                  <input 
-                    type="text" 
-                    id="name" 
-                    name="name" 
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
                     required
                     value={formState.name}
                     onChange={handleChange}
@@ -75,10 +75,10 @@ const ContactContent: React.FC = () => {
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-bold text-brick-800 mb-2 uppercase tracking-wide font-condensed">Email</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
                     required
                     value={formState.email}
                     onChange={handleChange}
@@ -87,8 +87,8 @@ const ContactContent: React.FC = () => {
                 </div>
                 <div>
                   <label htmlFor="subject" className="block text-sm font-bold text-brick-800 mb-2 uppercase tracking-wide font-condensed">{t.contact.subject}</label>
-                  <select 
-                    id="subject" 
+                  <select
+                    id="subject"
                     name="subject"
                     value={formState.subject}
                     onChange={handleChange}
@@ -102,9 +102,9 @@ const ContactContent: React.FC = () => {
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-bold text-brick-800 mb-2 uppercase tracking-wide font-condensed">{t.contact.message}</label>
-                  <textarea 
-                    id="message" 
-                    name="message" 
+                  <textarea
+                    id="message"
+                    name="message"
                     rows={5}
                     required
                     value={formState.message}
@@ -112,7 +112,7 @@ const ContactContent: React.FC = () => {
                     className="w-full px-4 py-3 bg-stone-50 border border-stone-200 focus:border-brick-500 focus:ring-1 focus:ring-brick-500 outline-none transition-all rounded-sm"
                   ></textarea>
                 </div>
-                <button 
+                <button
                   type="submit"
                   className="w-full bg-brick-600 text-white font-condensed font-bold uppercase tracking-widest py-4 hover:bg-brick-700 transition-all shadow-md rounded-sm"
                 >

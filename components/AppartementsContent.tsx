@@ -2,21 +2,25 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { APARTMENTS, AMENITIES } from '@/lib/constants';
+import { BOOKING_URL, getApartments, getAmenities } from '@/lib/constants';
 import { Check } from 'lucide-react';
+import { useLocale } from '@/components/LocaleProvider';
 
 const AppartementsContent: React.FC = () => {
+  const { t, locale } = useLocale();
+  const apartments = getApartments(locale);
+  const amenities = getAmenities(locale);
+
   return (
-    <div className="pb-20 pt-24 bg-cream-50">
+    <div key={locale} className="pb-20 pt-24 bg-cream-50">
       {/* Header */}
       <div className="bg-cream-100 py-16 mb-16 border-b border-brick-200">
         <div className="container mx-auto px-6 text-center">
-          <h3 className="font-condensed text-brick-600 uppercase tracking-widest text-sm font-bold mb-2">Le confort d&apos;un appartement</h3>
-          <h1 className="font-script text-5xl md:text-6xl text-brick-600 mb-6">Comme à la maison</h1>
+          <h3 className="font-condensed text-brick-600 uppercase tracking-widest text-sm font-bold mb-2">{t.apartments.comfort}</h3>
+          <h1 className="font-script text-5xl md:text-6xl text-brick-600 mb-6">{t.apartments.likeHome}</h1>
           <div className="w-16 h-1 bg-brick-600 mx-auto mb-8"></div>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto font-light">
-            16 appartements de 25m² à 45m² avec terrasses, entièrement rénovés. Une décoration soignée dans une atmosphère chaleureuse.
+            {t.apartments.fullDescription}
           </p>
         </div>
       </div>
@@ -24,7 +28,7 @@ const AppartementsContent: React.FC = () => {
       {/* Global Amenities */}
       <div className="container mx-auto px-6 mb-20">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-          {AMENITIES.map((amenity, idx) => (
+          {amenities.map((amenity, idx) => (
             <div key={idx} className="flex flex-col items-center text-center p-6 border border-brick-200 bg-cream-50 rounded-lg hover:shadow-md hover:bg-cream-100 transition-all">
               <amenity.icon className="w-8 h-8 text-brick-600 mb-3" />
               <span className="text-xs font-bold uppercase tracking-wider text-slate-700">{amenity.label}</span>
@@ -35,8 +39,8 @@ const AppartementsContent: React.FC = () => {
 
       {/* Listings */}
       <div className="container mx-auto px-6 space-y-24">
-        {APARTMENTS.map((apt, index) => (
-          <motion.div 
+        {apartments.map((apt, index) => (
+          <motion.div
             key={apt.id}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -46,9 +50,9 @@ const AppartementsContent: React.FC = () => {
           >
             <div className="w-full md:w-1/2">
               <div className="relative shadow-xl">
-                <img 
-                  src={apt.imageUrl} 
-                  alt={apt.title} 
+                <img
+                  src={apt.imageUrl}
+                  alt={apt.title}
                   className="w-full h-[400px] object-cover"
                 />
                 <div className="absolute top-4 left-4 w-full h-full border-2 border-brick-600 -z-10 hidden md:block"></div>
@@ -62,12 +66,12 @@ const AppartementsContent: React.FC = () => {
                 <span className="text-brick-300">|</span>
                 <span>{apt.capacity}</span>
                 <span className="text-brick-300">|</span>
-                <span>Dès {apt.priceFrom}</span>
+                <span>{t.home.apartments.from} {apt.priceFrom}</span>
               </div>
               <p className="text-slate-600 leading-relaxed text-lg font-light">
                 {apt.description}
               </p>
-              
+
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 {apt.features.map((feature, i) => (
                   <li key={i} className="flex items-center gap-2 text-slate-700 text-sm">
@@ -78,12 +82,14 @@ const AppartementsContent: React.FC = () => {
               </ul>
 
               <div className="pt-6">
-                <Link 
-                  href="/contact" 
+                <a
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block bg-brick-600 text-white px-8 py-4 font-condensed font-bold uppercase tracking-wider hover:bg-brick-700 transition-colors shadow-lg rounded-sm"
                 >
-                  RÉSERVER CE SÉJOUR
-                </Link>
+                  {t.apartments.bookThisStay}
+                </a>
               </div>
             </div>
           </motion.div>
@@ -93,9 +99,9 @@ const AppartementsContent: React.FC = () => {
       {/* PMR Note */}
       <div className="container mx-auto px-6 mt-24">
         <div className="bg-cream-100 p-8 text-center border-l-4 border-brick-600">
-          <h3 className="font-script text-3xl text-brick-600 mb-2">Accessibilité</h3>
+          <h3 className="font-script text-3xl text-brick-600 mb-2">{t.apartments.accessibility}</h3>
           <p className="text-slate-600 font-light">
-            Nous disposons de deux appartements en rez-de-chaussée spécialement aménagés pour accueillir les personnes à mobilité réduite (PMR).
+            {t.apartments.accessibilityText}
           </p>
         </div>
       </div>
