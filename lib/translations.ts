@@ -10,6 +10,7 @@ export const translations = {
       surroundings: 'Autour de nous',
       contact: 'Contact',
       book: 'Réserver',
+      livret: 'Livret d\'accueil',
     },
     // Home page
     home: {
@@ -153,6 +154,27 @@ export const translations = {
       hours: 'Horaires',
       hoursValue: 'Lun - Dim : 8h - 20h',
     },
+    // Livret d'accueil
+    livret: {
+      title: 'Livret d\'accueil',
+      subtitle: 'Bienvenue chez Ker Enia',
+      intro: 'Toutes les informations utiles pour vous guider lors de votre séjour.',
+      tabs: {
+        welcome: 'Bienvenue',
+        values: 'Nos Valeurs',
+        residence: 'La Résidence',
+        services: 'Services',
+        getaways: 'Escapades',
+      },
+      sections: {
+        eco: 'Engagement Environnemental',
+        rules: 'Règles de vie',
+        amenities: 'Équipements',
+        tv: 'Chaînes TV',
+        ac: 'Climatisation / Chauffage',
+        usefulContacts: 'Contacts utiles',
+      }
+    },
   },
   en: {
     // Navigation
@@ -163,6 +185,7 @@ export const translations = {
       surroundings: 'Surroundings',
       contact: 'Contact',
       book: 'Book',
+      livret: 'Welcome Booklet',
     },
     // Home page
     home: {
@@ -306,6 +329,27 @@ export const translations = {
       hours: 'Hours',
       hoursValue: 'Mon - Sun: 8am - 8pm',
     },
+    // Welcome Booklet
+    livret: {
+      title: 'Welcome Booklet',
+      subtitle: 'Welcome to Ker Enia',
+      intro: 'All the useful information to guide you during your stay.',
+      tabs: {
+        welcome: 'Welcome',
+        values: 'Our Values',
+        residence: 'The Residence',
+        services: 'Services',
+        getaways: 'Getaways',
+      },
+      sections: {
+        eco: 'Environmental Commitment',
+        rules: 'Living Rules',
+        amenities: 'Amenities',
+        tv: 'TV Channels',
+        ac: 'Air Conditioning / Heating',
+        usefulContacts: 'Useful Contacts',
+      }
+    },
   },
   es: {
     // Navigation
@@ -316,6 +360,7 @@ export const translations = {
       surroundings: 'Alrededores',
       contact: 'Contacto',
       book: 'Reservar',
+      livret: 'Guía de Bienvenida',
     },
     // Home page
     home: {
@@ -459,6 +504,27 @@ export const translations = {
       hours: 'Horarios',
       hoursValue: 'Lun - Dom: 8h - 20h',
     },
+    // Guía de Bienvenida
+    livret: {
+      title: 'Guía de Bienvenida',
+      subtitle: 'Bienvenido a Ker Enia',
+      intro: 'Toda la información útil para guiarle durante su estancia.',
+      tabs: {
+        welcome: 'Bienvenido',
+        values: 'Nuestros Valores',
+        residence: 'La Residencia',
+        services: 'Servicios',
+        getaways: 'Escapadas',
+      },
+      sections: {
+        eco: 'Compromiso Ambiental',
+        rules: 'Reglas de convivencia',
+        amenities: 'Comodidades',
+        tv: 'Canales de TV',
+        ac: 'Aire Acondicionado / Calefacción',
+        usefulContacts: 'Contactos útiles',
+      }
+    },
   },
   eu: {
     // Navigation
@@ -469,6 +535,7 @@ export const translations = {
       surroundings: 'Inguruak',
       contact: 'Harremanetarako',
       book: 'Erreserbatu',
+      livret: 'Ongietorri Liburuxka',
     },
     // Home page
     home: {
@@ -611,6 +678,27 @@ export const translations = {
       coordinates: 'Harremanetarako datuak',
       hours: 'Ordutegiak',
       hoursValue: 'Astelehena - Igandea: 08:00 - 20:00',
+    },
+    // Ongietorri Liburuxka
+    livret: {
+      title: 'Ongietorri Liburuxka',
+      subtitle: 'Ongi etorri Ker Eniara',
+      intro: 'Zure egonaldian zehar gidatzeko informazio erabilgarri guztia.',
+      tabs: {
+        welcome: 'Ongi etorri',
+        values: 'Gure Balioak',
+        residence: 'Egoitza',
+        services: 'Zerbitzuak',
+        getaways: 'Txangoak',
+      },
+      sections: {
+        eco: 'Ingurumen Konpromisoa',
+        rules: 'Bizikidetza arauak',
+        amenities: 'Ekipamenduak',
+        tv: 'Telebista Kateak',
+        ac: 'Aire Girotua / Berogailua',
+        usefulContacts: 'Kontaktu erabilgarriak',
+      }
     },
   },
 };

@@ -357,3 +357,1299 @@ export const REVIEWS: Review[] = [
     date: 'sept. 2025'
   }
 ];
+
+// Livret d'Accueil Data (Currently in French for all locales, structural translation only at UI level if needed)
+export const LIVRET_DATA: Record<Locale, import('./types').Livret> = {
+  fr: {
+  "titre": "Livret d'accueil & d'expériences",
+  "residence": "KER ENIA",
+  "localisation": "Cambo Les Bains",
+  "mot_de_bienvenue": {
+    "texte": "Du fonctionnement de la Résidence, aux services que nous vous proposons en passant par nos suggestions d'escapades et nos coups de coeur sur Cambo Les Bains et ses environs, vous trouverez dans ce livret toutes les informations utiles pour vous guider lors de votre séjour.",
+    "salutation_basque": "Ongi Etorri",
+    "signataire": "Stéphanie Bergeret"
+  },
+  "valeurs": {
+    "engagement_environnemental": "L'établissement a décidé d'agir pour les générations futures en limitant son impact sur l'environnement grâce à un fonctionnement et une gestion durable.",
+    "consignes_eco": [
+      "Éteindre les lumières et la veille du téléviseur en quittant l'appartement",
+      "Fermer les fenêtres lors de l'utilisation de la climatisation ou du chauffage",
+      "Consommer l'eau avec modération",
+      "Ne pas jeter dans les toilettes : produits toxiques, médicaments, huiles, coton-tiges, protections hygiéniques",
+      "Respecter la nature lors des sorties",
+      "Participer au tri sélectif (documentation disponible à l'entrée, contenant devant la résidence)"
+    ],
+    "biodiversite": "Vive la biodiversité au Pays Basque !"
+  },
+  "la_residence": {
+    "description": {
+      "nombre_appartements": 16,
+      "superficie": "28m² à 40m²",
+      "terrasses": true,
+      "renovation": "Entièrement rénovés",
+      "decoration": "Soignée dans une atmosphère chaleureuse",
+      "climatises": true,
+      "insonorises": true
+    },
+    "equipements_appartements": [
+      "Accès Wi-Fi",
+      "Literie de qualité",
+      "Cuisine équipée",
+      "Lave-vaisselle",
+      "Four",
+      "Micro-ondes",
+      "TV écran plat",
+      "Nécessaire de repassage",
+      "Interrupteur pour applique dans la chambre"
+    ],
+    "wifi": {
+      "reseau": "KER ENIA",
+      "code": "kerenia2022",
+      "disponible": "à la réception"
+    },
+    "reception": {
+      "horaires": "Du lundi au dimanche, de 8h30 à 12h"
+    },
+    "check_in_out": {
+      "arrivee": "À partir de 15h",
+      "depart": "À 10h"
+    },
+    "parking": {
+      "type": "Privé et gratuit",
+      "reservation": "Sur réservation"
+    },
+    "regles": [
+      "Ne pas laisser ses objets de valeur dans l'appartement",
+      "Les animaux ne sont pas acceptés",
+      "Les appartements sont non-fumeur",
+      "Consignes incendie affichées derrière la porte de l'appartement"
+    ],
+    "accessibilite": {
+      "appartements_pmr": 2,
+      "description": "Deux appartements aménagés pour les personnes à mobilité réduite"
+    },
+    "services_disponibles_reception": [
+      "Dépôt de bagages possible",
+      "Oreillers disponibles",
+      "Adaptateurs électriques",
+      "Lit pliant, chaise haute et baignoire pour bébé",
+      "Suivi de courrier",
+      "Réservation de restaurants"
+    ],
+    "piscine": {
+      "surveillance": "Non surveillée",
+      "acces": "Réservée aux clients"
+    },
+    "moyens_de_paiement": [
+      "Cartes Visa",
+      "Eurocard/Mastercard",
+      "Chèques",
+      "Chèques vacances"
+    ],
+    "contacts_utiles": {
+      "office_du_tourisme_cambo": "05 59 29 70 25",
+      "taxis": [
+        "05 59 29 71 59",
+        "06 71 40 55 58"
+      ],
+      "police_municipale": "05 59 93 74 35",
+      "sos_medecin_bayonne": "05 59 03 30 00",
+      "hopital_bayonne_urgences": [
+        "15",
+        "18"
+      ]
+    },
+    "climatisation_chauffage": {
+      "type": "Individuel (froid en été, chaud en hiver)",
+      "mode_emploi": {
+        "ON_OFF": "Allumer/Éteindre",
+        "TEMP": "Ajuster la température avec les flèches",
+        "FAN": "Puissance de la ventilation"
+      }
+    },
+    "chaines_tv": {
+      "1": "TF1",
+      "2": "FRANCE 2",
+      "3": "FRANCE 3",
+      "5": "FRANCE 5",
+      "6": "M6",
+      "7": "ARTE",
+      "8": "C8",
+      "9": "W9",
+      "10": "TMC",
+      "11": "TFX",
+      "12": "NRJ12",
+      "13": "LCP",
+      "14": "FRANCE 4",
+      "15": "BFM TV",
+      "16": "CNEWS",
+      "17": "CSTAR",
+      "18": "GULLI",
+      "19": "France Ô",
+      "20": "TF1 SÉRIES FILMS",
+      "21": "L'ÉQUIPE 21",
+      "22": "6TER",
+      "23": "RMC STORY",
+      "24": "RMC DÉCOUVERTE",
+      "25": "CHÉRIE 25",
+      "26": "LCI",
+      "27": "FRANCE INFO",
+      "28": "CANAL+ CINÉMA",
+      "30": "TVPI",
+      "31": "CANAL+ SPORT360",
+      "32": "DISNEY CHANNEL",
+      "33": "CANAL+",
+      "34": "CANAL+ CINÉMA (VO)",
+      "36": "CANAL+ SPORT360 (VO)",
+      "37": "CHAÎNE À LA UNE",
+      "53": "DISNEY CHANNEL (VO)",
+      "57": "ETB 1",
+      "58": "ETB 2",
+      "59": "ETB 3",
+      "60": "ETB 4"
+    }
+  },
+  "les_services": {
+    "restauration": {
+      "petit_dejeuner": {
+        "description": "Service dans votre appartement",
+        "prix": "10€"
+      },
+      "point_boulangerie": {
+        "disponible_a_partir_de": "8h30",
+        "lieu": "À la réception",
+        "commande": "À commander la veille",
+        "service": "Payant"
+      },
+      "reservation_restaurant": "Possible à la réception"
+    },
+    "buanderie_libre_service": {
+      "lave_linge": {
+        "disponible": true,
+        "prix": "5€ (jeton)"
+      },
+      "seche_linge": {
+        "disponible": true,
+        "prix": "3€ (jeton)"
+      },
+      "dosette_lessive": {
+        "disponible": true,
+        "prix": "1€"
+      },
+      "localisation": "À côté de la réception"
+    },
+    "nettoyage_a_la_demande": {
+      "renouvellement_draps": {
+        "prix": "10€ le pack",
+        "pour": "1 ou 2 personnes"
+      },
+      "renouvellement_linge_toilette": {
+        "prix": "10€ le pack",
+        "pour": "1 personne"
+      },
+      "menage_appartement": "40€",
+      "menage_fin_sejour": "50€"
+    }
+  },
+  "les_escapades": {
+    "a_cambo_les_bains": [
+      {
+        "id": 1,
+        "nom": "Villa Arnaga",
+        "description": "Petit 'Versailles du Pays Basque', visite incontournable retraçant la vie d'Edmond Rostand."
+      },
+      {
+        "id": 2,
+        "nom": "Institut de beauté / Spa des Thermes",
+        "description": "Parenthèse détente, idéal pour se ressourcer.",
+        "avantage_ker_enia": "-15% pour toute réservation d'un Spa pour les clients de Ker Enia",
+        "tel": "05 59 29 39 02"
+      },
+      {
+        "id": 3,
+        "nom": "Colline de la Bergerie",
+        "description": "Belvédère offrant une vue imprenable sur Cambo les Bains. Possibilité de visiter la chapelle peinte par l'artiste basque Albert Proux."
+      }
+    ],
+    "plus_loin": [
+      {
+        "id": 4,
+        "nom": "Chocolaterie-Musée Puyodebat",
+        "description": "Histoire de l'artisanat du chocolat au Pays Basque. Machines à broyer, pierres à chocolat, dégustation de grands crus.",
+        "adresse": "Av. de Navarre à Cambo les Bains",
+        "tel": "05 59 59 48 42"
+      },
+      {
+        "id": 5,
+        "nom": "Ferme Harizkazuia",
+        "description": "Apiculteur passionné produisant un miel bio de qualité. Dégustation des produits de la ferme, également productrice de piment d'Espelette AOP.",
+        "adresse": "Chemin Harizkazuia",
+        "tel": "06 63 79 43 54"
+      },
+      {
+        "id": 6,
+        "nom": "Grottes d'Isturitz et d'Oxocelhaya",
+        "description": "Classées aux Monuments Historiques. Grottes ornées de la chaîne Pyrénéo-cantabrique et joyau minéral.",
+        "adresse": "64640 Saint Martin d'Arberoue",
+        "tel": "05 59 29 64 72"
+      },
+      {
+        "id": 7,
+        "nom": "Vallée de Saint-Étienne de Baïgorry et des Aldudes",
+        "description": "Cinq communes : Ossès, Saint-Étienne-de-Baïgorry, les Aldudes, Banca et Urepel. Idéale pour randonnées et découverte de la gastronomie locale."
+      },
+      {
+        "id": 8,
+        "nom": "Pont suspendu d'Holzarte",
+        "description": "Construit en 1920 par des ouvriers italiens employés de l'aciérie de Tardets, pour passer d'une rive à l'autre.",
+        "adresse": "Larrau 64560",
+        "tel": "05 59 28 62 80"
+      }
+    ],
+    "autres_produits_du_terroir": [
+      "L'atelier du Piment à Espelette",
+      "Le vignoble d'Irouleguy",
+      "L'atelier de Makila à Larressore",
+      "La Poterie Goicoechea à Ossès"
+    ],
+    "marches": [
+      {
+        "lieu": "Cambo Les Bains",
+        "jour": "Vendredi matin",
+        "adresse": "Rue Chiquito"
+      },
+      {
+        "lieu": "Espelette",
+        "jour": "Mercredi matin",
+        "adresse": "Place du marché"
+      },
+      {
+        "lieu": "Saint Jean Pied de Port",
+        "jour": "Lundi toute la journée"
+      },
+      {
+        "lieu": "Bayonne",
+        "jour": "Non précisé"
+      },
+      {
+        "lieu": "Donostia",
+        "jour": "Non précisé"
+      }
+    ],
+    "villes_voisines": [
+      "Espelette",
+      "Saint Jean Pied de Port",
+      "Bayonne",
+      "Saint Jean de Luz",
+      "Hondarribia",
+      "Donostia"
+    ],
+    "restaurants": [
+      {
+        "nom": "Mendi Berdea",
+        "type": "Cuisine traditionnelle",
+        "tel": "05 59 29 86 30"
+      },
+      {
+        "nom": "Le Central",
+        "type": "Brasserie",
+        "tel": "05 59 08 66 63"
+      },
+      {
+        "nom": "Ama",
+        "type": "Cuisine gastronomique locale",
+        "tel": "05 59 29 22 29"
+      },
+      {
+        "nom": "Le Pavillon Bleu",
+        "type": "Cuisine bistronomique",
+        "tel": "05 59 29 38 38"
+      },
+      {
+        "nom": "Le Bellevue",
+        "type": "Cuisine régionale",
+        "tel": "05 59 93 75 75"
+      },
+      {
+        "nom": "Auberge chez tante Ursule",
+        "type": "Cuisine traditionnelle régionale",
+        "tel": "05 59 29 78 23"
+      },
+      {
+        "nom": "Salon Cyrano",
+        "type": "Salon de thé, salades, tartes salées",
+        "tel": "05 59 52 32 07"
+      }
+    ]
+  }
+},
+  en: {
+  "titre": "Livret d'accueil & d'expériences",
+  "residence": "KER ENIA",
+  "localisation": "Cambo Les Bains",
+  "mot_de_bienvenue": {
+    "texte": "Du fonctionnement de la Résidence, aux services que nous vous proposons en passant par nos suggestions d'escapades et nos coups de coeur sur Cambo Les Bains et ses environs, vous trouverez dans ce livret toutes les informations utiles pour vous guider lors de votre séjour.",
+    "salutation_basque": "Ongi Etorri",
+    "signataire": "Stéphanie Bergeret"
+  },
+  "valeurs": {
+    "engagement_environnemental": "L'établissement a décidé d'agir pour les générations futures en limitant son impact sur l'environnement grâce à un fonctionnement et une gestion durable.",
+    "consignes_eco": [
+      "Éteindre les lumières et la veille du téléviseur en quittant l'appartement",
+      "Fermer les fenêtres lors de l'utilisation de la climatisation ou du chauffage",
+      "Consommer l'eau avec modération",
+      "Ne pas jeter dans les toilettes : produits toxiques, médicaments, huiles, coton-tiges, protections hygiéniques",
+      "Respecter la nature lors des sorties",
+      "Participer au tri sélectif (documentation disponible à l'entrée, contenant devant la résidence)"
+    ],
+    "biodiversite": "Vive la biodiversité au Pays Basque !"
+  },
+  "la_residence": {
+    "description": {
+      "nombre_appartements": 16,
+      "superficie": "28m² à 40m²",
+      "terrasses": true,
+      "renovation": "Entièrement rénovés",
+      "decoration": "Soignée dans une atmosphère chaleureuse",
+      "climatises": true,
+      "insonorises": true
+    },
+    "equipements_appartements": [
+      "Accès Wi-Fi",
+      "Literie de qualité",
+      "Cuisine équipée",
+      "Lave-vaisselle",
+      "Four",
+      "Micro-ondes",
+      "TV écran plat",
+      "Nécessaire de repassage",
+      "Interrupteur pour applique dans la chambre"
+    ],
+    "wifi": {
+      "reseau": "KER ENIA",
+      "code": "kerenia2022",
+      "disponible": "à la réception"
+    },
+    "reception": {
+      "horaires": "Du lundi au dimanche, de 8h30 à 12h"
+    },
+    "check_in_out": {
+      "arrivee": "À partir de 15h",
+      "depart": "À 10h"
+    },
+    "parking": {
+      "type": "Privé et gratuit",
+      "reservation": "Sur réservation"
+    },
+    "regles": [
+      "Ne pas laisser ses objets de valeur dans l'appartement",
+      "Les animaux ne sont pas acceptés",
+      "Les appartements sont non-fumeur",
+      "Consignes incendie affichées derrière la porte de l'appartement"
+    ],
+    "accessibilite": {
+      "appartements_pmr": 2,
+      "description": "Deux appartements aménagés pour les personnes à mobilité réduite"
+    },
+    "services_disponibles_reception": [
+      "Dépôt de bagages possible",
+      "Oreillers disponibles",
+      "Adaptateurs électriques",
+      "Lit pliant, chaise haute et baignoire pour bébé",
+      "Suivi de courrier",
+      "Réservation de restaurants"
+    ],
+    "piscine": {
+      "surveillance": "Non surveillée",
+      "acces": "Réservée aux clients"
+    },
+    "moyens_de_paiement": [
+      "Cartes Visa",
+      "Eurocard/Mastercard",
+      "Chèques",
+      "Chèques vacances"
+    ],
+    "contacts_utiles": {
+      "office_du_tourisme_cambo": "05 59 29 70 25",
+      "taxis": [
+        "05 59 29 71 59",
+        "06 71 40 55 58"
+      ],
+      "police_municipale": "05 59 93 74 35",
+      "sos_medecin_bayonne": "05 59 03 30 00",
+      "hopital_bayonne_urgences": [
+        "15",
+        "18"
+      ]
+    },
+    "climatisation_chauffage": {
+      "type": "Individuel (froid en été, chaud en hiver)",
+      "mode_emploi": {
+        "ON_OFF": "Allumer/Éteindre",
+        "TEMP": "Ajuster la température avec les flèches",
+        "FAN": "Puissance de la ventilation"
+      }
+    },
+    "chaines_tv": {
+      "1": "TF1",
+      "2": "FRANCE 2",
+      "3": "FRANCE 3",
+      "5": "FRANCE 5",
+      "6": "M6",
+      "7": "ARTE",
+      "8": "C8",
+      "9": "W9",
+      "10": "TMC",
+      "11": "TFX",
+      "12": "NRJ12",
+      "13": "LCP",
+      "14": "FRANCE 4",
+      "15": "BFM TV",
+      "16": "CNEWS",
+      "17": "CSTAR",
+      "18": "GULLI",
+      "19": "France Ô",
+      "20": "TF1 SÉRIES FILMS",
+      "21": "L'ÉQUIPE 21",
+      "22": "6TER",
+      "23": "RMC STORY",
+      "24": "RMC DÉCOUVERTE",
+      "25": "CHÉRIE 25",
+      "26": "LCI",
+      "27": "FRANCE INFO",
+      "28": "CANAL+ CINÉMA",
+      "30": "TVPI",
+      "31": "CANAL+ SPORT360",
+      "32": "DISNEY CHANNEL",
+      "33": "CANAL+",
+      "34": "CANAL+ CINÉMA (VO)",
+      "36": "CANAL+ SPORT360 (VO)",
+      "37": "CHAÎNE À LA UNE",
+      "53": "DISNEY CHANNEL (VO)",
+      "57": "ETB 1",
+      "58": "ETB 2",
+      "59": "ETB 3",
+      "60": "ETB 4"
+    }
+  },
+  "les_services": {
+    "restauration": {
+      "petit_dejeuner": {
+        "description": "Service dans votre appartement",
+        "prix": "10€"
+      },
+      "point_boulangerie": {
+        "disponible_a_partir_de": "8h30",
+        "lieu": "À la réception",
+        "commande": "À commander la veille",
+        "service": "Payant"
+      },
+      "reservation_restaurant": "Possible à la réception"
+    },
+    "buanderie_libre_service": {
+      "lave_linge": {
+        "disponible": true,
+        "prix": "5€ (jeton)"
+      },
+      "seche_linge": {
+        "disponible": true,
+        "prix": "3€ (jeton)"
+      },
+      "dosette_lessive": {
+        "disponible": true,
+        "prix": "1€"
+      },
+      "localisation": "À côté de la réception"
+    },
+    "nettoyage_a_la_demande": {
+      "renouvellement_draps": {
+        "prix": "10€ le pack",
+        "pour": "1 ou 2 personnes"
+      },
+      "renouvellement_linge_toilette": {
+        "prix": "10€ le pack",
+        "pour": "1 personne"
+      },
+      "menage_appartement": "40€",
+      "menage_fin_sejour": "50€"
+    }
+  },
+  "les_escapades": {
+    "a_cambo_les_bains": [
+      {
+        "id": 1,
+        "nom": "Villa Arnaga",
+        "description": "Petit 'Versailles du Pays Basque', visite incontournable retraçant la vie d'Edmond Rostand."
+      },
+      {
+        "id": 2,
+        "nom": "Institut de beauté / Spa des Thermes",
+        "description": "Parenthèse détente, idéal pour se ressourcer.",
+        "avantage_ker_enia": "-15% pour toute réservation d'un Spa pour les clients de Ker Enia",
+        "tel": "05 59 29 39 02"
+      },
+      {
+        "id": 3,
+        "nom": "Colline de la Bergerie",
+        "description": "Belvédère offrant une vue imprenable sur Cambo les Bains. Possibilité de visiter la chapelle peinte par l'artiste basque Albert Proux."
+      }
+    ],
+    "plus_loin": [
+      {
+        "id": 4,
+        "nom": "Chocolaterie-Musée Puyodebat",
+        "description": "Histoire de l'artisanat du chocolat au Pays Basque. Machines à broyer, pierres à chocolat, dégustation de grands crus.",
+        "adresse": "Av. de Navarre à Cambo les Bains",
+        "tel": "05 59 59 48 42"
+      },
+      {
+        "id": 5,
+        "nom": "Ferme Harizkazuia",
+        "description": "Apiculteur passionné produisant un miel bio de qualité. Dégustation des produits de la ferme, également productrice de piment d'Espelette AOP.",
+        "adresse": "Chemin Harizkazuia",
+        "tel": "06 63 79 43 54"
+      },
+      {
+        "id": 6,
+        "nom": "Grottes d'Isturitz et d'Oxocelhaya",
+        "description": "Classées aux Monuments Historiques. Grottes ornées de la chaîne Pyrénéo-cantabrique et joyau minéral.",
+        "adresse": "64640 Saint Martin d'Arberoue",
+        "tel": "05 59 29 64 72"
+      },
+      {
+        "id": 7,
+        "nom": "Vallée de Saint-Étienne de Baïgorry et des Aldudes",
+        "description": "Cinq communes : Ossès, Saint-Étienne-de-Baïgorry, les Aldudes, Banca et Urepel. Idéale pour randonnées et découverte de la gastronomie locale."
+      },
+      {
+        "id": 8,
+        "nom": "Pont suspendu d'Holzarte",
+        "description": "Construit en 1920 par des ouvriers italiens employés de l'aciérie de Tardets, pour passer d'une rive à l'autre.",
+        "adresse": "Larrau 64560",
+        "tel": "05 59 28 62 80"
+      }
+    ],
+    "autres_produits_du_terroir": [
+      "L'atelier du Piment à Espelette",
+      "Le vignoble d'Irouleguy",
+      "L'atelier de Makila à Larressore",
+      "La Poterie Goicoechea à Ossès"
+    ],
+    "marches": [
+      {
+        "lieu": "Cambo Les Bains",
+        "jour": "Vendredi matin",
+        "adresse": "Rue Chiquito"
+      },
+      {
+        "lieu": "Espelette",
+        "jour": "Mercredi matin",
+        "adresse": "Place du marché"
+      },
+      {
+        "lieu": "Saint Jean Pied de Port",
+        "jour": "Lundi toute la journée"
+      },
+      {
+        "lieu": "Bayonne",
+        "jour": "Non précisé"
+      },
+      {
+        "lieu": "Donostia",
+        "jour": "Non précisé"
+      }
+    ],
+    "villes_voisines": [
+      "Espelette",
+      "Saint Jean Pied de Port",
+      "Bayonne",
+      "Saint Jean de Luz",
+      "Hondarribia",
+      "Donostia"
+    ],
+    "restaurants": [
+      {
+        "nom": "Mendi Berdea",
+        "type": "Cuisine traditionnelle",
+        "tel": "05 59 29 86 30"
+      },
+      {
+        "nom": "Le Central",
+        "type": "Brasserie",
+        "tel": "05 59 08 66 63"
+      },
+      {
+        "nom": "Ama",
+        "type": "Cuisine gastronomique locale",
+        "tel": "05 59 29 22 29"
+      },
+      {
+        "nom": "Le Pavillon Bleu",
+        "type": "Cuisine bistronomique",
+        "tel": "05 59 29 38 38"
+      },
+      {
+        "nom": "Le Bellevue",
+        "type": "Cuisine régionale",
+        "tel": "05 59 93 75 75"
+      },
+      {
+        "nom": "Auberge chez tante Ursule",
+        "type": "Cuisine traditionnelle régionale",
+        "tel": "05 59 29 78 23"
+      },
+      {
+        "nom": "Salon Cyrano",
+        "type": "Salon de thé, salades, tartes salées",
+        "tel": "05 59 52 32 07"
+      }
+    ]
+  }
+},
+  es: {
+  "titre": "Livret d'accueil & d'expériences",
+  "residence": "KER ENIA",
+  "localisation": "Cambo Les Bains",
+  "mot_de_bienvenue": {
+    "texte": "Du fonctionnement de la Résidence, aux services que nous vous proposons en passant par nos suggestions d'escapades et nos coups de coeur sur Cambo Les Bains et ses environs, vous trouverez dans ce livret toutes les informations utiles pour vous guider lors de votre séjour.",
+    "salutation_basque": "Ongi Etorri",
+    "signataire": "Stéphanie Bergeret"
+  },
+  "valeurs": {
+    "engagement_environnemental": "L'établissement a décidé d'agir pour les générations futures en limitant son impact sur l'environnement grâce à un fonctionnement et une gestion durable.",
+    "consignes_eco": [
+      "Éteindre les lumières et la veille du téléviseur en quittant l'appartement",
+      "Fermer les fenêtres lors de l'utilisation de la climatisation ou du chauffage",
+      "Consommer l'eau avec modération",
+      "Ne pas jeter dans les toilettes : produits toxiques, médicaments, huiles, coton-tiges, protections hygiéniques",
+      "Respecter la nature lors des sorties",
+      "Participer au tri sélectif (documentation disponible à l'entrée, contenant devant la résidence)"
+    ],
+    "biodiversite": "Vive la biodiversité au Pays Basque !"
+  },
+  "la_residence": {
+    "description": {
+      "nombre_appartements": 16,
+      "superficie": "28m² à 40m²",
+      "terrasses": true,
+      "renovation": "Entièrement rénovés",
+      "decoration": "Soignée dans une atmosphère chaleureuse",
+      "climatises": true,
+      "insonorises": true
+    },
+    "equipements_appartements": [
+      "Accès Wi-Fi",
+      "Literie de qualité",
+      "Cuisine équipée",
+      "Lave-vaisselle",
+      "Four",
+      "Micro-ondes",
+      "TV écran plat",
+      "Nécessaire de repassage",
+      "Interrupteur pour applique dans la chambre"
+    ],
+    "wifi": {
+      "reseau": "KER ENIA",
+      "code": "kerenia2022",
+      "disponible": "à la réception"
+    },
+    "reception": {
+      "horaires": "Du lundi au dimanche, de 8h30 à 12h"
+    },
+    "check_in_out": {
+      "arrivee": "À partir de 15h",
+      "depart": "À 10h"
+    },
+    "parking": {
+      "type": "Privé et gratuit",
+      "reservation": "Sur réservation"
+    },
+    "regles": [
+      "Ne pas laisser ses objets de valeur dans l'appartement",
+      "Les animaux ne sont pas acceptés",
+      "Les appartements sont non-fumeur",
+      "Consignes incendie affichées derrière la porte de l'appartement"
+    ],
+    "accessibilite": {
+      "appartements_pmr": 2,
+      "description": "Deux appartements aménagés pour les personnes à mobilité réduite"
+    },
+    "services_disponibles_reception": [
+      "Dépôt de bagages possible",
+      "Oreillers disponibles",
+      "Adaptateurs électriques",
+      "Lit pliant, chaise haute et baignoire pour bébé",
+      "Suivi de courrier",
+      "Réservation de restaurants"
+    ],
+    "piscine": {
+      "surveillance": "Non surveillée",
+      "acces": "Réservée aux clients"
+    },
+    "moyens_de_paiement": [
+      "Cartes Visa",
+      "Eurocard/Mastercard",
+      "Chèques",
+      "Chèques vacances"
+    ],
+    "contacts_utiles": {
+      "office_du_tourisme_cambo": "05 59 29 70 25",
+      "taxis": [
+        "05 59 29 71 59",
+        "06 71 40 55 58"
+      ],
+      "police_municipale": "05 59 93 74 35",
+      "sos_medecin_bayonne": "05 59 03 30 00",
+      "hopital_bayonne_urgences": [
+        "15",
+        "18"
+      ]
+    },
+    "climatisation_chauffage": {
+      "type": "Individuel (froid en été, chaud en hiver)",
+      "mode_emploi": {
+        "ON_OFF": "Allumer/Éteindre",
+        "TEMP": "Ajuster la température avec les flèches",
+        "FAN": "Puissance de la ventilation"
+      }
+    },
+    "chaines_tv": {
+      "1": "TF1",
+      "2": "FRANCE 2",
+      "3": "FRANCE 3",
+      "5": "FRANCE 5",
+      "6": "M6",
+      "7": "ARTE",
+      "8": "C8",
+      "9": "W9",
+      "10": "TMC",
+      "11": "TFX",
+      "12": "NRJ12",
+      "13": "LCP",
+      "14": "FRANCE 4",
+      "15": "BFM TV",
+      "16": "CNEWS",
+      "17": "CSTAR",
+      "18": "GULLI",
+      "19": "France Ô",
+      "20": "TF1 SÉRIES FILMS",
+      "21": "L'ÉQUIPE 21",
+      "22": "6TER",
+      "23": "RMC STORY",
+      "24": "RMC DÉCOUVERTE",
+      "25": "CHÉRIE 25",
+      "26": "LCI",
+      "27": "FRANCE INFO",
+      "28": "CANAL+ CINÉMA",
+      "30": "TVPI",
+      "31": "CANAL+ SPORT360",
+      "32": "DISNEY CHANNEL",
+      "33": "CANAL+",
+      "34": "CANAL+ CINÉMA (VO)",
+      "36": "CANAL+ SPORT360 (VO)",
+      "37": "CHAÎNE À LA UNE",
+      "53": "DISNEY CHANNEL (VO)",
+      "57": "ETB 1",
+      "58": "ETB 2",
+      "59": "ETB 3",
+      "60": "ETB 4"
+    }
+  },
+  "les_services": {
+    "restauration": {
+      "petit_dejeuner": {
+        "description": "Service dans votre appartement",
+        "prix": "10€"
+      },
+      "point_boulangerie": {
+        "disponible_a_partir_de": "8h30",
+        "lieu": "À la réception",
+        "commande": "À commander la veille",
+        "service": "Payant"
+      },
+      "reservation_restaurant": "Possible à la réception"
+    },
+    "buanderie_libre_service": {
+      "lave_linge": {
+        "disponible": true,
+        "prix": "5€ (jeton)"
+      },
+      "seche_linge": {
+        "disponible": true,
+        "prix": "3€ (jeton)"
+      },
+      "dosette_lessive": {
+        "disponible": true,
+        "prix": "1€"
+      },
+      "localisation": "À côté de la réception"
+    },
+    "nettoyage_a_la_demande": {
+      "renouvellement_draps": {
+        "prix": "10€ le pack",
+        "pour": "1 ou 2 personnes"
+      },
+      "renouvellement_linge_toilette": {
+        "prix": "10€ le pack",
+        "pour": "1 personne"
+      },
+      "menage_appartement": "40€",
+      "menage_fin_sejour": "50€"
+    }
+  },
+  "les_escapades": {
+    "a_cambo_les_bains": [
+      {
+        "id": 1,
+        "nom": "Villa Arnaga",
+        "description": "Petit 'Versailles du Pays Basque', visite incontournable retraçant la vie d'Edmond Rostand."
+      },
+      {
+        "id": 2,
+        "nom": "Institut de beauté / Spa des Thermes",
+        "description": "Parenthèse détente, idéal pour se ressourcer.",
+        "avantage_ker_enia": "-15% pour toute réservation d'un Spa pour les clients de Ker Enia",
+        "tel": "05 59 29 39 02"
+      },
+      {
+        "id": 3,
+        "nom": "Colline de la Bergerie",
+        "description": "Belvédère offrant une vue imprenable sur Cambo les Bains. Possibilité de visiter la chapelle peinte par l'artiste basque Albert Proux."
+      }
+    ],
+    "plus_loin": [
+      {
+        "id": 4,
+        "nom": "Chocolaterie-Musée Puyodebat",
+        "description": "Histoire de l'artisanat du chocolat au Pays Basque. Machines à broyer, pierres à chocolat, dégustation de grands crus.",
+        "adresse": "Av. de Navarre à Cambo les Bains",
+        "tel": "05 59 59 48 42"
+      },
+      {
+        "id": 5,
+        "nom": "Ferme Harizkazuia",
+        "description": "Apiculteur passionné produisant un miel bio de qualité. Dégustation des produits de la ferme, également productrice de piment d'Espelette AOP.",
+        "adresse": "Chemin Harizkazuia",
+        "tel": "06 63 79 43 54"
+      },
+      {
+        "id": 6,
+        "nom": "Grottes d'Isturitz et d'Oxocelhaya",
+        "description": "Classées aux Monuments Historiques. Grottes ornées de la chaîne Pyrénéo-cantabrique et joyau minéral.",
+        "adresse": "64640 Saint Martin d'Arberoue",
+        "tel": "05 59 29 64 72"
+      },
+      {
+        "id": 7,
+        "nom": "Vallée de Saint-Étienne de Baïgorry et des Aldudes",
+        "description": "Cinq communes : Ossès, Saint-Étienne-de-Baïgorry, les Aldudes, Banca et Urepel. Idéale pour randonnées et découverte de la gastronomie locale."
+      },
+      {
+        "id": 8,
+        "nom": "Pont suspendu d'Holzarte",
+        "description": "Construit en 1920 par des ouvriers italiens employés de l'aciérie de Tardets, pour passer d'une rive à l'autre.",
+        "adresse": "Larrau 64560",
+        "tel": "05 59 28 62 80"
+      }
+    ],
+    "autres_produits_du_terroir": [
+      "L'atelier du Piment à Espelette",
+      "Le vignoble d'Irouleguy",
+      "L'atelier de Makila à Larressore",
+      "La Poterie Goicoechea à Ossès"
+    ],
+    "marches": [
+      {
+        "lieu": "Cambo Les Bains",
+        "jour": "Vendredi matin",
+        "adresse": "Rue Chiquito"
+      },
+      {
+        "lieu": "Espelette",
+        "jour": "Mercredi matin",
+        "adresse": "Place du marché"
+      },
+      {
+        "lieu": "Saint Jean Pied de Port",
+        "jour": "Lundi toute la journée"
+      },
+      {
+        "lieu": "Bayonne",
+        "jour": "Non précisé"
+      },
+      {
+        "lieu": "Donostia",
+        "jour": "Non précisé"
+      }
+    ],
+    "villes_voisines": [
+      "Espelette",
+      "Saint Jean Pied de Port",
+      "Bayonne",
+      "Saint Jean de Luz",
+      "Hondarribia",
+      "Donostia"
+    ],
+    "restaurants": [
+      {
+        "nom": "Mendi Berdea",
+        "type": "Cuisine traditionnelle",
+        "tel": "05 59 29 86 30"
+      },
+      {
+        "nom": "Le Central",
+        "type": "Brasserie",
+        "tel": "05 59 08 66 63"
+      },
+      {
+        "nom": "Ama",
+        "type": "Cuisine gastronomique locale",
+        "tel": "05 59 29 22 29"
+      },
+      {
+        "nom": "Le Pavillon Bleu",
+        "type": "Cuisine bistronomique",
+        "tel": "05 59 29 38 38"
+      },
+      {
+        "nom": "Le Bellevue",
+        "type": "Cuisine régionale",
+        "tel": "05 59 93 75 75"
+      },
+      {
+        "nom": "Auberge chez tante Ursule",
+        "type": "Cuisine traditionnelle régionale",
+        "tel": "05 59 29 78 23"
+      },
+      {
+        "nom": "Salon Cyrano",
+        "type": "Salon de thé, salades, tartes salées",
+        "tel": "05 59 52 32 07"
+      }
+    ]
+  }
+},
+  eu: {
+  "titre": "Livret d'accueil & d'expériences",
+  "residence": "KER ENIA",
+  "localisation": "Cambo Les Bains",
+  "mot_de_bienvenue": {
+    "texte": "Du fonctionnement de la Résidence, aux services que nous vous proposons en passant par nos suggestions d'escapades et nos coups de coeur sur Cambo Les Bains et ses environs, vous trouverez dans ce livret toutes les informations utiles pour vous guider lors de votre séjour.",
+    "salutation_basque": "Ongi Etorri",
+    "signataire": "Stéphanie Bergeret"
+  },
+  "valeurs": {
+    "engagement_environnemental": "L'établissement a décidé d'agir pour les générations futures en limitant son impact sur l'environnement grâce à un fonctionnement et une gestion durable.",
+    "consignes_eco": [
+      "Éteindre les lumières et la veille du téléviseur en quittant l'appartement",
+      "Fermer les fenêtres lors de l'utilisation de la climatisation ou du chauffage",
+      "Consommer l'eau avec modération",
+      "Ne pas jeter dans les toilettes : produits toxiques, médicaments, huiles, coton-tiges, protections hygiéniques",
+      "Respecter la nature lors des sorties",
+      "Participer au tri sélectif (documentation disponible à l'entrée, contenant devant la résidence)"
+    ],
+    "biodiversite": "Vive la biodiversité au Pays Basque !"
+  },
+  "la_residence": {
+    "description": {
+      "nombre_appartements": 16,
+      "superficie": "28m² à 40m²",
+      "terrasses": true,
+      "renovation": "Entièrement rénovés",
+      "decoration": "Soignée dans une atmosphère chaleureuse",
+      "climatises": true,
+      "insonorises": true
+    },
+    "equipements_appartements": [
+      "Accès Wi-Fi",
+      "Literie de qualité",
+      "Cuisine équipée",
+      "Lave-vaisselle",
+      "Four",
+      "Micro-ondes",
+      "TV écran plat",
+      "Nécessaire de repassage",
+      "Interrupteur pour applique dans la chambre"
+    ],
+    "wifi": {
+      "reseau": "KER ENIA",
+      "code": "kerenia2022",
+      "disponible": "à la réception"
+    },
+    "reception": {
+      "horaires": "Du lundi au dimanche, de 8h30 à 12h"
+    },
+    "check_in_out": {
+      "arrivee": "À partir de 15h",
+      "depart": "À 10h"
+    },
+    "parking": {
+      "type": "Privé et gratuit",
+      "reservation": "Sur réservation"
+    },
+    "regles": [
+      "Ne pas laisser ses objets de valeur dans l'appartement",
+      "Les animaux ne sont pas acceptés",
+      "Les appartements sont non-fumeur",
+      "Consignes incendie affichées derrière la porte de l'appartement"
+    ],
+    "accessibilite": {
+      "appartements_pmr": 2,
+      "description": "Deux appartements aménagés pour les personnes à mobilité réduite"
+    },
+    "services_disponibles_reception": [
+      "Dépôt de bagages possible",
+      "Oreillers disponibles",
+      "Adaptateurs électriques",
+      "Lit pliant, chaise haute et baignoire pour bébé",
+      "Suivi de courrier",
+      "Réservation de restaurants"
+    ],
+    "piscine": {
+      "surveillance": "Non surveillée",
+      "acces": "Réservée aux clients"
+    },
+    "moyens_de_paiement": [
+      "Cartes Visa",
+      "Eurocard/Mastercard",
+      "Chèques",
+      "Chèques vacances"
+    ],
+    "contacts_utiles": {
+      "office_du_tourisme_cambo": "05 59 29 70 25",
+      "taxis": [
+        "05 59 29 71 59",
+        "06 71 40 55 58"
+      ],
+      "police_municipale": "05 59 93 74 35",
+      "sos_medecin_bayonne": "05 59 03 30 00",
+      "hopital_bayonne_urgences": [
+        "15",
+        "18"
+      ]
+    },
+    "climatisation_chauffage": {
+      "type": "Individuel (froid en été, chaud en hiver)",
+      "mode_emploi": {
+        "ON_OFF": "Allumer/Éteindre",
+        "TEMP": "Ajuster la température avec les flèches",
+        "FAN": "Puissance de la ventilation"
+      }
+    },
+    "chaines_tv": {
+      "1": "TF1",
+      "2": "FRANCE 2",
+      "3": "FRANCE 3",
+      "5": "FRANCE 5",
+      "6": "M6",
+      "7": "ARTE",
+      "8": "C8",
+      "9": "W9",
+      "10": "TMC",
+      "11": "TFX",
+      "12": "NRJ12",
+      "13": "LCP",
+      "14": "FRANCE 4",
+      "15": "BFM TV",
+      "16": "CNEWS",
+      "17": "CSTAR",
+      "18": "GULLI",
+      "19": "France Ô",
+      "20": "TF1 SÉRIES FILMS",
+      "21": "L'ÉQUIPE 21",
+      "22": "6TER",
+      "23": "RMC STORY",
+      "24": "RMC DÉCOUVERTE",
+      "25": "CHÉRIE 25",
+      "26": "LCI",
+      "27": "FRANCE INFO",
+      "28": "CANAL+ CINÉMA",
+      "30": "TVPI",
+      "31": "CANAL+ SPORT360",
+      "32": "DISNEY CHANNEL",
+      "33": "CANAL+",
+      "34": "CANAL+ CINÉMA (VO)",
+      "36": "CANAL+ SPORT360 (VO)",
+      "37": "CHAÎNE À LA UNE",
+      "53": "DISNEY CHANNEL (VO)",
+      "57": "ETB 1",
+      "58": "ETB 2",
+      "59": "ETB 3",
+      "60": "ETB 4"
+    }
+  },
+  "les_services": {
+    "restauration": {
+      "petit_dejeuner": {
+        "description": "Service dans votre appartement",
+        "prix": "10€"
+      },
+      "point_boulangerie": {
+        "disponible_a_partir_de": "8h30",
+        "lieu": "À la réception",
+        "commande": "À commander la veille",
+        "service": "Payant"
+      },
+      "reservation_restaurant": "Possible à la réception"
+    },
+    "buanderie_libre_service": {
+      "lave_linge": {
+        "disponible": true,
+        "prix": "5€ (jeton)"
+      },
+      "seche_linge": {
+        "disponible": true,
+        "prix": "3€ (jeton)"
+      },
+      "dosette_lessive": {
+        "disponible": true,
+        "prix": "1€"
+      },
+      "localisation": "À côté de la réception"
+    },
+    "nettoyage_a_la_demande": {
+      "renouvellement_draps": {
+        "prix": "10€ le pack",
+        "pour": "1 ou 2 personnes"
+      },
+      "renouvellement_linge_toilette": {
+        "prix": "10€ le pack",
+        "pour": "1 personne"
+      },
+      "menage_appartement": "40€",
+      "menage_fin_sejour": "50€"
+    }
+  },
+  "les_escapades": {
+    "a_cambo_les_bains": [
+      {
+        "id": 1,
+        "nom": "Villa Arnaga",
+        "description": "Petit 'Versailles du Pays Basque', visite incontournable retraçant la vie d'Edmond Rostand."
+      },
+      {
+        "id": 2,
+        "nom": "Institut de beauté / Spa des Thermes",
+        "description": "Parenthèse détente, idéal pour se ressourcer.",
+        "avantage_ker_enia": "-15% pour toute réservation d'un Spa pour les clients de Ker Enia",
+        "tel": "05 59 29 39 02"
+      },
+      {
+        "id": 3,
+        "nom": "Colline de la Bergerie",
+        "description": "Belvédère offrant une vue imprenable sur Cambo les Bains. Possibilité de visiter la chapelle peinte par l'artiste basque Albert Proux."
+      }
+    ],
+    "plus_loin": [
+      {
+        "id": 4,
+        "nom": "Chocolaterie-Musée Puyodebat",
+        "description": "Histoire de l'artisanat du chocolat au Pays Basque. Machines à broyer, pierres à chocolat, dégustation de grands crus.",
+        "adresse": "Av. de Navarre à Cambo les Bains",
+        "tel": "05 59 59 48 42"
+      },
+      {
+        "id": 5,
+        "nom": "Ferme Harizkazuia",
+        "description": "Apiculteur passionné produisant un miel bio de qualité. Dégustation des produits de la ferme, également productrice de piment d'Espelette AOP.",
+        "adresse": "Chemin Harizkazuia",
+        "tel": "06 63 79 43 54"
+      },
+      {
+        "id": 6,
+        "nom": "Grottes d'Isturitz et d'Oxocelhaya",
+        "description": "Classées aux Monuments Historiques. Grottes ornées de la chaîne Pyrénéo-cantabrique et joyau minéral.",
+        "adresse": "64640 Saint Martin d'Arberoue",
+        "tel": "05 59 29 64 72"
+      },
+      {
+        "id": 7,
+        "nom": "Vallée de Saint-Étienne de Baïgorry et des Aldudes",
+        "description": "Cinq communes : Ossès, Saint-Étienne-de-Baïgorry, les Aldudes, Banca et Urepel. Idéale pour randonnées et découverte de la gastronomie locale."
+      },
+      {
+        "id": 8,
+        "nom": "Pont suspendu d'Holzarte",
+        "description": "Construit en 1920 par des ouvriers italiens employés de l'aciérie de Tardets, pour passer d'une rive à l'autre.",
+        "adresse": "Larrau 64560",
+        "tel": "05 59 28 62 80"
+      }
+    ],
+    "autres_produits_du_terroir": [
+      "L'atelier du Piment à Espelette",
+      "Le vignoble d'Irouleguy",
+      "L'atelier de Makila à Larressore",
+      "La Poterie Goicoechea à Ossès"
+    ],
+    "marches": [
+      {
+        "lieu": "Cambo Les Bains",
+        "jour": "Vendredi matin",
+        "adresse": "Rue Chiquito"
+      },
+      {
+        "lieu": "Espelette",
+        "jour": "Mercredi matin",
+        "adresse": "Place du marché"
+      },
+      {
+        "lieu": "Saint Jean Pied de Port",
+        "jour": "Lundi toute la journée"
+      },
+      {
+        "lieu": "Bayonne",
+        "jour": "Non précisé"
+      },
+      {
+        "lieu": "Donostia",
+        "jour": "Non précisé"
+      }
+    ],
+    "villes_voisines": [
+      "Espelette",
+      "Saint Jean Pied de Port",
+      "Bayonne",
+      "Saint Jean de Luz",
+      "Hondarribia",
+      "Donostia"
+    ],
+    "restaurants": [
+      {
+        "nom": "Mendi Berdea",
+        "type": "Cuisine traditionnelle",
+        "tel": "05 59 29 86 30"
+      },
+      {
+        "nom": "Le Central",
+        "type": "Brasserie",
+        "tel": "05 59 08 66 63"
+      },
+      {
+        "nom": "Ama",
+        "type": "Cuisine gastronomique locale",
+        "tel": "05 59 29 22 29"
+      },
+      {
+        "nom": "Le Pavillon Bleu",
+        "type": "Cuisine bistronomique",
+        "tel": "05 59 29 38 38"
+      },
+      {
+        "nom": "Le Bellevue",
+        "type": "Cuisine régionale",
+        "tel": "05 59 93 75 75"
+      },
+      {
+        "nom": "Auberge chez tante Ursule",
+        "type": "Cuisine traditionnelle régionale",
+        "tel": "05 59 29 78 23"
+      },
+      {
+        "nom": "Salon Cyrano",
+        "type": "Salon de thé, salades, tartes salées",
+        "tel": "05 59 52 32 07"
+      }
+    ]
+  }
+}
+};
