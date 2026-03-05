@@ -1,40 +1,77 @@
 {
   "pages": {
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+    "/_not-found/page": [
+      "static/chunks/webpack-e5714bf66625afb9.js",
+      "static/chunks/fd9d1056-6922f449a204c2cc.js",
+      "static/chunks/117-c86a41b869f6b521.js",
+      "static/chunks/main-app-20b8bb53c86f9798.js",
+      "static/chunks/app/_not-found/page-98467b0ee1cfb9b0.js"
     ],
     "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
-    ],
-    "/contact/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/contact/page.js"
-    ],
-    "/autour-de-nous/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/autour-de-nous/page.js"
-    ],
-    "/appartements/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/appartements/page.js"
+      "static/chunks/webpack-e5714bf66625afb9.js",
+      "static/chunks/fd9d1056-6922f449a204c2cc.js",
+      "static/chunks/117-c86a41b869f6b521.js",
+      "static/chunks/main-app-20b8bb53c86f9798.js",
+      "static/css/8f3621ce183f39b6.css",
+      "static/chunks/859-60b8dbb280be5ccc.js",
+      "static/chunks/258-1e0eedbfc7100a06.js",
+      "static/chunks/app/layout-bab1cbe7e3f83dd0.js"
     ],
     "/galerie/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/galerie/page.js"
+      "static/chunks/webpack-e5714bf66625afb9.js",
+      "static/chunks/fd9d1056-6922f449a204c2cc.js",
+      "static/chunks/117-c86a41b869f6b521.js",
+      "static/chunks/main-app-20b8bb53c86f9798.js",
+      "static/chunks/859-60b8dbb280be5ccc.js",
+      "static/chunks/396-81b89bb31dc0d7b2.js",
+      "static/chunks/258-1e0eedbfc7100a06.js",
+      "static/chunks/426-ef20d52a958ab304.js",
+      "static/chunks/app/galerie/page-17bf3218072f597c.js"
     ],
-    "/_not-found/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
+    "/appartements/page": [
+      "static/chunks/webpack-e5714bf66625afb9.js",
+      "static/chunks/fd9d1056-6922f449a204c2cc.js",
+      "static/chunks/117-c86a41b869f6b521.js",
+      "static/chunks/main-app-20b8bb53c86f9798.js",
+      "static/chunks/859-60b8dbb280be5ccc.js",
+      "static/chunks/396-81b89bb31dc0d7b2.js",
+      "static/chunks/258-1e0eedbfc7100a06.js",
+      "static/chunks/426-ef20d52a958ab304.js",
+      "static/chunks/app/appartements/page-bf756755308913e7.js"
+    ],
+    "/contact/page": [
+      "static/chunks/webpack-e5714bf66625afb9.js",
+      "static/chunks/fd9d1056-6922f449a204c2cc.js",
+      "static/chunks/117-c86a41b869f6b521.js",
+      "static/chunks/main-app-20b8bb53c86f9798.js",
+      "static/chunks/859-60b8dbb280be5ccc.js",
+      "static/chunks/396-81b89bb31dc0d7b2.js",
+      "static/chunks/258-1e0eedbfc7100a06.js",
+      "static/chunks/426-ef20d52a958ab304.js",
+      "static/chunks/app/contact/page-ad183b61848984f5.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-e5714bf66625afb9.js",
+      "static/chunks/fd9d1056-6922f449a204c2cc.js",
+      "static/chunks/117-c86a41b869f6b521.js",
+      "static/chunks/main-app-20b8bb53c86f9798.js",
+      "static/chunks/859-60b8dbb280be5ccc.js",
+      "static/chunks/396-81b89bb31dc0d7b2.js",
+      "static/chunks/579-e5f328cdebb04b11.js",
+      "static/chunks/258-1e0eedbfc7100a06.js",
+      "static/chunks/426-ef20d52a958ab304.js",
+      "static/chunks/app/page-cb8b1fd737299e13.js"
+    ],
+    "/autour-de-nous/page": [
+      "static/chunks/webpack-e5714bf66625afb9.js",
+      "static/chunks/fd9d1056-6922f449a204c2cc.js",
+      "static/chunks/117-c86a41b869f6b521.js",
+      "static/chunks/main-app-20b8bb53c86f9798.js",
+      "static/chunks/859-60b8dbb280be5ccc.js",
+      "static/chunks/396-81b89bb31dc0d7b2.js",
+      "static/chunks/258-1e0eedbfc7100a06.js",
+      "static/chunks/426-ef20d52a958ab304.js",
+      "static/chunks/app/autour-de-nous/page-3ea549daf5d30e90.js"
     ]
   }
 }

@@ -108,7 +108,7 @@ export const APARTMENTS_DATA: Record<Locale, Apartment[]> = {
       capacity: '2 pertsona',
       description: 'Beheko solairuan kokatua, estudio eroso honek lo egiteko eremua eta egongela banatzen ditu gortina dotore baten bidez. Bikoteentzat edo bainuetxeko bezeroentzat aproposa.',
       features: ['Ohe bikoitza 140cm', 'Beheko solairua', 'Aire girotua', 'Dohainikako Wifi-a', 'Sukalde hornitua'],
-      imageUrl: '/images/studio-kerenia.jpg',
+      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2021/04/DSC_7223.jpg',
       priceFrom: '65€ / gaua'
     },
     {
@@ -118,7 +118,7 @@ export const APARTMENTS_DATA: Record<Locale, Apartment[]> = {
       capacity: '2 pertsona',
       description: 'Gune argitsua logela bereizi batekin pribatutasun handiagoa izateko. Dekorazio zaindua eta ekipamendu modernoa etxean bezala egoteko.',
       features: ['Logela bereizia (140cm-ko ohea)', 'Aire girotua', 'Dohainikako Wifi-a', 'Terraza', 'Ontzi-garbigailua'],
-      imageUrl: '/images/standard-kerenia.jpg',
+      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2021/04/DSC_7309.jpg',
       priceFrom: '75€ / gaua'
     },
     {
@@ -128,7 +128,7 @@ export const APARTMENTS_DATA: Record<Locale, Apartment[]> = {
       capacity: '2 - 3 pertsona',
       description: 'Gure apartamenturik handienak. Zabala, ohe handi batekin eta sofa ohe batekin. Ezin hobea egonaldi luzeetarako edo familia txikientzat.',
       features: ['Ohe handia (140 edo 160cm)', 'Sofa ohea', 'Egongela zabala', 'Terraza handia', 'Sukalde osoa'],
-      imageUrl: '/images/confort-kerenia.jpg',
+      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2021/04/DSC_7357.jpg',
       priceFrom: '90€ / gaua'
     }
   ]
@@ -210,21 +210,21 @@ export const ACTIVITIES_DATA: Record<Locale, Activity[]> = {
       id: 'arnaga',
       title: 'Arnaga Etxea',
       description: 'Edmond Rostanden ohiz kanpoko egoitza. Frantziako Museoa, parke miresgarri eta frantziar lorategi batez inguratua.',
-      imageUrl: '/images/villa-arnaga.jpg',
+      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2017/05/Villa_Arnaga.jpg',
       link: 'http://www.arnaga.com/'
     },
     {
       id: 'pas-de-roland',
       title: 'Errolanen Urratsa',
       description: 'Ibilaldi polit eta erraza Errobi ibaian zehar, Itsasun. Ibaiak zulatutako haitzartea, euskal kondairen lekua.',
-      imageUrl: '/images/pas-de-roland.jpg',
+      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2020/02/5191788684_a9edc8110e_c.jpg',
       link: '#'
     },
     {
       id: 'rhune',
       title: 'Larrun',
       description: 'Euskal Herriko gailur mitikoa. Oinez ala kremailera-tren txikian irits daiteke 360°-ko ikuspegiaz gozatzeko.',
-      imageUrl: '/images/la-rhune.jpg',
+      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2020/02/2948014906_ca81a12c2d_z.jpg',
       link: 'https://www.rhune.com/eu/'
     }
   ]
