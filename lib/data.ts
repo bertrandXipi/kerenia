@@ -294,66 +294,66 @@ export const GALLERY_CATEGORIES: Record<Locale, Record<string, string>> = {
 export const REVIEWS: Review[] = [
   {
     id: '1',
-    author: 'Valerie Flauder',
+    author: 'Jean-Luc REMY',
     rating: 5,
-    text: 'Magnifique bâtisse de style basque. Calme absolu tout proche du centre. Studio très cosy, très bien équipé et très propre. Un gros plus, la piscine chauffée très agréable.',
+    text: 'Appartement propre, bien équipé et très calme. Accueil irréprochable.',
     source: 'Google',
-    date: 'Il y a 3 mois'
+    date: 'sept. 2025' // Note: Kept date exactly as provided in user's prompt
   },
   {
     id: '2',
-    author: 'Laurent Fouchard',
+    author: 'wonderbasque',
     rating: 5,
-    text: 'Résidence bien située, au calme. Appartement très spacieux bien agencé, équipé avec goût et des matériaux de qualité. Piscine chauffée centrale dans la résidence.',
-    source: 'Google',
-    date: 'Il y a 2 mois'
+    text: 'Qualité de l\'appartement et réactivité du personnel excellentes.',
+    source: 'Tripadvisor', // Note: Using source from prompt
+    date: 'il y a 4 mois'
   },
   {
     id: '3',
-    author: 'Maéva Izquierdo',
+    author: 'LUCIE',
     rating: 5,
-    text: 'Magnifique résidence. Accueil chaleureux, personnel discret et disponible. Proche du centre ville et calme à la fois. Nous recommandons vivement !',
+    text: 'Résidence très confortable. Le calme a permis de bien récupérer.',
     source: 'Google',
-    date: 'Il y a 1 mois'
+    date: 'août 2025'
   },
   {
     id: '4',
-    author: 'Philippe Martin',
+    author: 'Véronique Ls',
     rating: 5,
-    text: 'Séjour parfait pour notre cure thermale. L\'appartement est impeccable, la literie excellente. La piscine chauffée est un vrai bonheur après les soins. On reviendra !',
+    text: 'Accueil exceptionval par une personne souriante et délicate.',
     source: 'Google',
-    date: 'Il y a 3 semaines'
+    date: 'juil. 2025'
   },
   {
     id: '5',
-    author: 'Sophie Durand',
+    author: 'Titouan FEVRE',
     rating: 5,
-    text: 'Cadre idyllique au pied des montagnes basques. Appartement décoré avec beaucoup de goût, cuisine parfaitement équipée. Les enfants ont adoré la piscine.',
+    text: 'Une expérience parfaite du début à la fin !',
     source: 'Google',
-    date: 'Il y a 2 semaines'
+    date: 'sept. 2024'
   },
   {
     id: '6',
-    author: 'Jean-Pierre Etcheverry',
+    author: 'Marta',
     rating: 5,
-    text: 'En tant que Basque, je suis fier de recommander cette résidence. L\'authenticité du lieu, le calme, la propreté irréprochable. Un vrai havre de paix.',
+    text: 'Lieu parfait pour se reposer. Gentillesse du personnel excellente.',
     source: 'Google',
-    date: 'Il y a 1 semaine'
+    date: 'janv. 2025'
   },
   {
     id: '7',
-    author: 'Catherine Blanc',
-    rating: 4,
-    text: 'Très bel endroit, bien situé entre mer et montagne. L\'appartement confort est spacieux et lumineux. Seul petit bémol : le parking un peu juste en haute saison.',
+    author: 'Rémy Legeay',
+    rating: 5,
+    text: 'Logements spacieux, très propres et parfaitement aménagés.',
     source: 'Google',
-    date: 'Il y a 5 jours'
+    date: 'août 2025'
   },
   {
     id: '8',
-    author: 'Marc Lefebvre',
+    author: 'Isa',
     rating: 5,
-    text: 'Troisième séjour à Ker Enia et toujours aussi enchanté. La résidence est magnifiquement entretenue, le personnel aux petits soins. Notre adresse incontournable au Pays Basque.',
+    text: 'Très bien située proche du centre. La responsable est adorable.',
     source: 'Google',
-    date: 'Il y a 2 jours'
+    date: 'sept. 2025'
   }
 ];
