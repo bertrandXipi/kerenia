@@ -156,7 +156,7 @@ export const translations = {
     },
     // Livret d'accueil
     livret: {
-      title: 'Livret d\'accueil',
+      title: 'Informations pratiques',
       subtitle: 'Bienvenue chez Ker Enia',
       intro: 'Toutes les informations utiles pour vous guider lors de votre séjour.',
       tabs: {
@@ -345,7 +345,7 @@ export const translations = {
     },
     // Welcome Booklet
     livret: {
-      title: 'Welcome Booklet',
+      title: 'Practical Information',
       subtitle: 'Welcome to Ker Enia',
       intro: 'All the useful information to guide you during your stay.',
       tabs: {
@@ -534,7 +534,7 @@ export const translations = {
     },
     // Guía de Bienvenida
     livret: {
-      title: 'Guía de Bienvenida',
+      title: 'Información práctica',
       subtitle: 'Bienvenido a Ker Enia',
       intro: 'Toda la información útil para guiarle durante su estancia.',
       tabs: {
@@ -723,7 +723,7 @@ export const translations = {
     },
     // Ongietorri Liburuxka
     livret: {
-      title: 'Ongietorri Liburuxka',
+      title: 'Informazio praktikoa',
       subtitle: 'Ongi etorri Ker Eniara',
       intro: 'Zure egonaldian zehar gidatzeko informazio erabilgarri guztia.',
       tabs: {
