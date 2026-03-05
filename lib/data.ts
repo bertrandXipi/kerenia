@@ -96,8 +96,40 @@ export const APARTMENTS_DATA: Record<Locale, Apartment[]> = {
       capacity: '2 a 3 huéspedes',
       description: 'Nuestros apartamentos más grandes. Espaciosos, con una cama grande y un sofá cama. Perfecto para estancias largas o familias pequeñas.',
       features: ['Cama grande (140 o 160cm)', 'Sofá cama', 'Sala de estar espaciosa', 'Terraza grande', 'Cocina completa'],
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2021/04/DSC_7357.jpg',
+      imageUrl: '/images/confort-kerenia.jpg',
       priceFrom: '90€ / noche'
+    }
+  ],
+  eu: [
+    {
+      id: 'studio',
+      title: 'Estudioa',
+      size: '29 m²',
+      capacity: '2 pertsona',
+      description: 'Beheko solairuan kokatua, estudio eroso honek lo egiteko eremua eta egongela banatzen ditu gortina dotore baten bidez. Bikoteentzat edo bainuetxeko bezeroentzat aproposa.',
+      features: ['Ohe bikoitza 140cm', 'Beheko solairua', 'Aire girotua', 'Dohainikako Wifi-a', 'Sukalde hornitua'],
+      imageUrl: '/images/studio-kerenia.jpg',
+      priceFrom: '65€ / gaua'
+    },
+    {
+      id: 'standard',
+      title: 'Apartamentu Estandarra',
+      size: '28 - 30 m²',
+      capacity: '2 pertsona',
+      description: 'Gune argitsua logela bereizi batekin pribatutasun handiagoa izateko. Dekorazio zaindua eta ekipamendu modernoa etxean bezala egoteko.',
+      features: ['Logela bereizia (140cm-ko ohea)', 'Aire girotua', 'Dohainikako Wifi-a', 'Terraza', 'Ontzi-garbigailua'],
+      imageUrl: '/images/standard-kerenia.jpg',
+      priceFrom: '75€ / gaua'
+    },
+    {
+      id: 'comfort',
+      title: 'Apartamentu Erosoa',
+      size: '35 - 45 m²',
+      capacity: '2 - 3 pertsona',
+      description: 'Gure apartamenturik handienak. Zabala, ohe handi batekin eta sofa ohe batekin. Ezin hobea egonaldi luzeetarako edo familia txikientzat.',
+      features: ['Ohe handia (140 edo 160cm)', 'Sofa ohea', 'Egongela zabala', 'Terraza handia', 'Sukalde osoa'],
+      imageUrl: '/images/confort-kerenia.jpg',
+      priceFrom: '90€ / gaua'
     }
   ]
 };
@@ -169,8 +201,31 @@ export const ACTIVITIES_DATA: Record<Locale, Activity[]> = {
       id: 'rhune',
       title: 'La Rhune',
       description: 'La cumbre mítica del País Vasco. Accesible a pie o mediante el pequeño tren de cremallera para un panorama de 360°.',
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2020/02/2948014906_ca81a12c2d_z.jpg',
+      imageUrl: '/images/la-rhune.jpg',
       link: 'https://www.rhune.com/es/'
+    }
+  ],
+  eu: [
+    {
+      id: 'arnaga',
+      title: 'Arnaga Etxea',
+      description: 'Edmond Rostanden ohiz kanpoko egoitza. Frantziako Museoa, parke miresgarri eta frantziar lorategi batez inguratua.',
+      imageUrl: '/images/villa-arnaga.jpg',
+      link: 'http://www.arnaga.com/'
+    },
+    {
+      id: 'pas-de-roland',
+      title: 'Errolanen Urratsa',
+      description: 'Ibilaldi polit eta erraza Errobi ibaian zehar, Itsasun. Ibaiak zulatutako haitzartea, euskal kondairen lekua.',
+      imageUrl: '/images/pas-de-roland.jpg',
+      link: '#'
+    },
+    {
+      id: 'rhune',
+      title: 'Larrun',
+      description: 'Euskal Herriko gailur mitikoa. Oinez ala kremailera-tren txikian irits daiteke 360°-ko ikuspegiaz gozatzeko.',
+      imageUrl: '/images/la-rhune.jpg',
+      link: 'https://www.rhune.com/eu/'
     }
   ]
 };
@@ -200,6 +255,14 @@ export const AMENITIES_DATA: Record<Locale, Array<{ icon: any; label: string }>>
     { icon: Tv, label: 'TV Pantalla Plana' },
     { icon: Car, label: 'Parking Privado' },
     { icon: Waves, label: 'Piscina Climatizada' },
+  ],
+  eu: [
+    { icon: Wifi, label: 'Dohainikako Wifi-a' },
+    { icon: Thermometer, label: 'Aire Girotua' },
+    { icon: Coffee, label: 'Sukalde Hornitua' },
+    { icon: Tv, label: 'Pantaila Lameko Telebista' },
+    { icon: Car, label: 'Aparkaleku Pribatua' },
+    { icon: Waves, label: 'Igerileku Berotua' },
   ]
 };
 
@@ -219,6 +282,11 @@ export const GALLERY_CATEGORIES: Record<Locale, Record<string, string>> = {
     'Intérieur': 'Interior',
     'Extérieur': 'Exterior',
     'Alentours': 'Alrededores'
+  },
+  eu: {
+    'Intérieur': 'Barrualdea',
+    'Extérieur': 'Kanpoaldea',
+    'Alentours': 'Inguruak'
   }
 };
 
