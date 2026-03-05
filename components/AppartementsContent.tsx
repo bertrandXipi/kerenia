@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { BOOKING_URL, getApartments, getAmenities } from '@/lib/constants';
 import { Check } from 'lucide-react';
 import { useLocale } from '@/components/LocaleProvider';
+import LivretAccordions from '@/components/LivretContent';
 
 const AppartementsContent: React.FC = () => {
   const { t, locale } = useLocale();
@@ -103,6 +104,13 @@ const AppartementsContent: React.FC = () => {
           <p className="text-slate-600 font-light">
             {t.apartments.accessibilityText}
           </p>
+        </div>
+      </div>
+      {/* Livret d'accueil Accordions */}
+      <div className="container mx-auto px-6 mt-16 mb-16">
+        <h3 className="font-script text-4xl text-brick-600 mb-8 text-center">{t.livret.title}</h3>
+        <div className="max-w-4xl mx-auto">
+          <LivretAccordions />
         </div>
       </div>
     </div>

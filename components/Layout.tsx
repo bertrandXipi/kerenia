@@ -25,7 +25,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     { label: t.nav.apartments, path: '/appartements' },
     { label: t.nav.gallery, path: '/galerie' },
     { label: t.nav.surroundings, path: '/autour-de-nous' },
-    { label: t.nav.livret, path: '/livret' },
     { label: t.nav.contact, path: '/contact' },
   ];
 
@@ -110,8 +109,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               target="_blank"
               rel="noopener noreferrer"
               className={`font-condensed font-bold uppercase tracking-wide px-8 py-3 transition-all transform hover:scale-105 shadow-md rounded-sm border-2 ${isTransparent
-                  ? 'bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-brick-900'
-                  : 'bg-brick-600 border-brick-600 text-white hover:bg-brick-700 hover:border-brick-700'
+                ? 'bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-brick-900'
+                : 'bg-brick-600 border-brick-600 text-white hover:bg-brick-700 hover:border-brick-700'
                 }`}
             >
               {t.nav.book}
@@ -305,7 +304,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                   <li><Link href="/appartements" className="hover:text-white transition-colors hover:translate-x-1 inline-block">{t.nav.apartments}</Link></li>
                   <li><Link href="/galerie" className="hover:text-white transition-colors hover:translate-x-1 inline-block">{t.nav.gallery}</Link></li>
                   <li><Link href="/autour-de-nous" className="hover:text-white transition-colors hover:translate-x-1 inline-block">{t.nav.surroundings}</Link></li>
-                  <li><Link href="/livret" className="hover:text-white transition-colors hover:translate-x-1 inline-block">{t.nav.livret}</Link></li>
                   <li><Link href="/contact" className="hover:text-white transition-colors hover:translate-x-1 inline-block">{t.nav.contact}</Link></li>
                 </ul>
               </div>
