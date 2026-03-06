@@ -175,8 +175,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               >
                 <a href={`tel:${CONTACT_INFO.phone}`} className="hover:text-white transition-colors"><Phone size={24} /></a>
                 <a href={`mailto:${CONTACT_INFO.email}`} className="hover:text-white transition-colors"><Mail size={24} /></a>
-                <a href="#" className="hover:text-white transition-colors"><Instagram size={24} /></a>
-                <a href="#" className="hover:text-white transition-colors"><Facebook size={24} /></a>
+                <a href="https://www.instagram.com/residence.ker.enia/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Instagram size={24} /></a>
+                <a href="https://www.facebook.com/kereniacambo" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Facebook size={24} /></a>
               </motion.div>
             </motion.div>
           )}
@@ -211,7 +211,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 </p>
                 <div className="flex gap-4">
                   <a
-                    href="https://www.facebook.com/kerenia"
+                    href="https://www.facebook.com/kereniacambo"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 rounded-full bg-brick-700 hover:bg-brick-600 flex items-center justify-center transition-all hover:scale-110"
@@ -219,7 +219,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                     <Facebook size={20} />
                   </a>
                   <a
-                    href="https://www.instagram.com/kerenia_residence/"
+                    href="https://www.instagram.com/residence.ker.enia/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 rounded-full bg-brick-700 hover:bg-brick-600 flex items-center justify-center transition-all hover:scale-110"

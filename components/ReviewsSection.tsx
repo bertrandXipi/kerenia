@@ -6,7 +6,7 @@ import { Star, ExternalLink } from 'lucide-react';
 import { REVIEWS } from '@/lib/constants';
 import { useLocale } from '@/components/LocaleProvider';
 
-const GOOGLE_REVIEWS_URL = 'https://www.google.com/maps/place/R%C3%A9sidence+Ker+Enia/@43.3598538,-1.4026367,17z/data=!4m8!3m7!1s0xd511674338e530b:0xd49b2915832a8e1a!8m2!3d43.3598538!4d-1.4000618!9m1!1b1!16s%2Fg%2F11c1p3_8jy';
+const GOOGLE_REVIEWS_URL = 'https://www.google.com/search?num=10&newwindow=1&sca_esv=f611135b2ad8de8f&rlz=1C5CHFA_enES1100ES1100&sxsrf=ANbL-n4YJeqqJBd63W5zNaAYGREVhr9N8w:1772798612746&q=ker+enia&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOVExn9eQ_7AKQDTVJ5poO4YgfsjYdGH32-6RIF69Iq5-oJLi4VrZ-CbUjBPxt_mkpCBoEfU%3D&uds=ALYpb_kiiUNHkONghgvqB_3sKPHusR2nsw8Bynb1VBzcg7Xr095frAki8LFfZ6Dif3EpJUp9UFvcG3TjTeIe7WXptD48VoFyfoxZ5yG-89yx8CADuQudlRo&sa=X&ved=2ahUKEwjSsci8nYuTAxWOVaQEHU4XDTAQ3PALegQIIRAE&biw=1540&bih=800&dpr=1';
 
 const ReviewCard: React.FC<{ review: typeof REVIEWS[0] }> = ({ review }) => (
   <div className="flex-shrink-0 w-[340px] md:w-[400px] bg-cream-50 rounded-2xl p-8 shadow-md border border-cream-300 hover:shadow-xl transition-shadow duration-300 mx-3">

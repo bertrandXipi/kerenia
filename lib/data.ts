@@ -314,68 +314,100 @@ export const GALLERY_CATEGORIES: Record<Locale, Record<string, string>> = {
 export const REVIEWS: Review[] = [
   {
     id: '1',
-    author: 'Jean-Luc REMY',
-    rating: 5,
-    text: 'Appartement propre, bien équipé et très calme. Accueil irréprochable.',
-    source: 'Google',
-    date: 'sept. 2025' // Note: Kept date exactly as provided in user's prompt
-  },
-  {
-    id: '2',
-    author: 'wonderbasque',
-    rating: 5,
-    text: 'Qualité de l\'appartement et réactivité du personnel excellentes.',
-    source: 'Tripadvisor', // Note: Using source from prompt
-    date: 'il y a 4 mois'
-  },
-  {
-    id: '3',
     author: 'LUCIE',
     rating: 5,
-    text: 'Résidence très confortable. Le calme a permis de bien récupérer.',
+    text: 'Excellent séjour dans cette résidence très confortable du mobilier à l\'emplacement. Le calme nous a permis de récupérer le trajet du week-end du 01/08. Sans compter que Stephanie nous a très gentiment reçu avec un accueil parfait. À revenir sans hésiter !',
     source: 'Google',
     date: 'août 2025'
   },
   {
-    id: '4',
-    author: 'Véronique Ls',
+    id: '2',
+    author: 'jeanlucr977',
     rating: 5,
-    text: 'Accueil exceptionval par une personne souriante et délicate.',
+    text: 'Nous n\'avons séjourné qu\'une nuit à Ker Enia mais nous avons trouvé l\'appartement propre, bien équipé, et surtout très calme, aucun bruit de voiture ni de voisins. L\'accueil est agréable, souriant et très professionnel, irréprochable.',
+    source: 'Tripadvisor',
+    date: 'il y a 5 mois'
+  },
+  {
+    id: '3',
+    author: 'Jean-Luc REMY',
+    rating: 5,
+    text: 'Nous n\'avons passé qu\'une nuit a Ker Enia le 19 Septembre 2025 mais nous avons trouvé l\'appartement très propre, particulièrement calme ( aucun bruit ni de la route ni des voisins ), très bien équipé et très fonctionnel. Ajoutons que l\'accueil est agréable et irréprochable!, et que les directives pour une arrivée tardive sont juste parfaites! Nous avions même recu une vidéo explicative pour ouvrir la boîte à clefs! 😁',
     source: 'Google',
-    date: 'juil. 2025'
+    date: 'sept. 2025'
+  },
+  {
+    id: '4',
+    author: 'faynot odile',
+    rating: 5,
+    text: 'très bon séjour dans cette résidence bien placée au calme et dotée de tout le confort. L\'accueil est chaleureux et la communication excellente. Le parking est un plus. L\'appartement est confortable; bonne literie; grande douche à l\'italienne. Le petit balcon est top pour déjeuner au soleil. L\'équipement de cuisine est de bonne qualité. Je recommande vivement',
+    source: 'Google',
+    date: 'avr. 2025'
   },
   {
     id: '5',
-    author: 'Titouan FEVRE',
+    author: 'wonderbasque',
     rating: 5,
-    text: 'Une expérience parfaite du début à la fin !',
-    source: 'Google',
-    date: 'sept. 2024'
+    text: 'Parfait!! Tant à l\'accueil qu\'à la qualité de l\'appartement !! Les renseignements et les informations ainsi que les demandes sont prises en compte de façon agréable et réactive !! Nous sommes restés une nuit mais c\'est à refaire plus longtemps !!',
+    source: 'Tripadvisor',
+    date: 'il y a 5 mois'
   },
   {
     id: '6',
-    author: 'Marta',
+    author: 'Isa',
     rating: 5,
-    text: 'Lieu parfait pour se reposer. Gentillesse du personnel excellente.',
+    text: 'Super résidence. Très bien située, proche du centre. Accueil chaleureux. La responsable est adorable, cherchant toujours à nous satisfaire. C\'est sur on reviendra !',
     source: 'Google',
-    date: 'janv. 2025'
+    date: 'sept. 2025'
   },
   {
     id: '7',
     author: 'Rémy Legeay',
     rating: 5,
-    text: 'Logements spacieux, très propres et parfaitement aménagés.',
+    text: 'Nous sommes venus rendre visite à des amis qui y étaient en location, c\'est vraiment une très belle résidence appart hôtel. Les logements sont spacieux Tres propres et parfaitement aménagés.',
     source: 'Google',
     date: 'août 2025'
   },
   {
     id: '8',
-    author: 'Isa',
+    author: 'Cy Cy',
     rating: 5,
-    text: 'Très bien située proche du centre. La responsable est adorable.',
+    text: 'Nous y sommes restées qu\'une nuit car de passage seulement et nous regrettons fortement ! La localisation est top, proche du centre ville à pied, et c\'est très calme. Un parking sécurisé donc rassurant. Nous avions une chambre comfort qui était très propre, la déco était chouette aussi. Le personnel très sympa ! Des instructions claires et précises. Le petit déjeuner est sympa aussi ! Une belle vue sur la montagne également, très agréable. Que du positif et nous reviendrons ☺️',
     source: 'Google',
-    date: 'sept. 2025'
-  }
+    date: 'mars 2025'
+  },
+  {
+    id: '9',
+    author: 'Martine Teyssier',
+    rating: 5,
+    text: 'La résidence est très jolie, calme et bien située dans Cambo. Avec la piscine, les jours de grosses chaleurs est très appréciable. Les appartements sont très bien agencés et agréables à vivre. La responsable, Stéphanie, à la réception est attentive à notre bien-être, l\'équipe d\'entretien très sympathique et efficace. Mon séjour a été délicieux et reposant. Merci à vous tous à Ker Enia !',
+    source: 'Google',
+    date: 'juin 2025'
+  },
+  {
+    id: '10',
+    author: 'Émilie Paredes',
+    rating: 5,
+    text: 'Avant même notre arrivée, l\'établissement nous a contacté pour nous donner les instructions pour récupérer les clefs car nous allions arriver tard. A notre grande surprise, l\'appartement était très spacieux, propre et surtout le chauffage avait été mis en amont, et l\'appartement était chauffé à notre arrivée avec notre bébé de 3 mois. Tout a été réfléchis par les propriétaires pour rendre le séjour agréable. Toutes les instructions ménage sont claires, un buanderie à disposition, parking privé sur place, climatisation réversible dans la salle principale et chambre, accueil chaleureux... Le top !',
+    source: 'Google',
+    date: 'janv. 2025'
+  },
+  {
+    id: '11',
+    author: 'Marta',
+    rating: 5,
+    text: 'Un lieu parfait pour se reposer et découvrir la région. Les appartements sont très bien équipés, propre, rien ne manque et le parking est spacieux. Et l\'accueil et la gentillesse du personnel ont été excellents. Comme c\'était l\'hiver, nous n\'avons pas pu profiter de la piscine. Mais c\'est une extra encore plus fantastique. Sans dout à répéter.',
+    source: 'Google',
+    date: 'janv. 2025'
+  },
+  {
+    id: '12',
+    author: 'Titouan FEVRE',
+    rating: 5,
+    text: 'Une expérience parfaite du début à la fin ! Nous avons passé un séjour absolument merveilleux dans ce superbe établissement qui a été notre pied à terre pour decouvrir le Pays Basque. Dès notre arrivée, nous avons été accueillis chaleureusement par le personnel, qui s\'est montré à la fois professionnel et attentionné tout au long de notre séjour. Le logement était impeccable, très propre, bien équipé, et décoré avec goût. Nous avons particulièrement apprécié la literie de grande qualité qui nous a permis de bien nous reposer chaque nuit. La piscine est un véritable atout : bien entretenue, spacieuse, et entourée d\'un cadre apaisant.',
+    source: 'Google',
+    date: 'janv. 2025'
+  },
 ];
 
 // Livret d'Accueil Data (Currently in French for all locales, structural translation only at UI level if needed)

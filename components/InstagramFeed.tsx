@@ -7,7 +7,7 @@ import Script from 'next/script';
 import { Instagram } from 'lucide-react';
 import { useLocale } from '@/components/LocaleProvider';
 
-const INSTAGRAM_URL = 'https://www.instagram.com/kerenia_residence/';
+const INSTAGRAM_URL = 'https://www.instagram.com/residence.ker.enia/';
 
 // Le widget Behold gère maintenant l'affichage
 // On garde INSTAGRAM_URL pour le bouton CTA
@@ -56,7 +56,7 @@ const InstagramFeed: React.FC = () => {
           >
             <Instagram size={28} className="text-brick-600 group-hover:scale-110 transition-transform" />
             <span className="font-condensed font-bold text-sm uppercase tracking-[0.2em] text-brick-600 group-hover:text-brick-800 transition-colors">
-              @kerenia_residence
+              @residence.ker.enia
             </span>
           </a>
           <h2 className="font-script text-5xl md:text-6xl text-brick-600 mb-3">
