@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Instagram } from 'lucide-react';
 import { useLocale } from '@/components/LocaleProvider';
 
@@ -25,10 +26,12 @@ const PostCard: React.FC<{ post: typeof INSTAGRAM_POSTS[0] }> = ({ post }) => (
     rel="noopener noreferrer"
     className="flex-shrink-0 w-[250px] md:w-[300px] aspect-square relative group overflow-hidden mx-1"
   >
-    <img
+    <Image
       src={post.src}
       alt={post.alt}
-      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+      fill
+      sizes="(max-width: 768px) 250px, 300px"
+      className="object-cover transition-transform duration-700 group-hover:scale-110"
     />
     <div className="absolute inset-0 bg-brick-900/0 group-hover:bg-brick-900/60 transition-all duration-300 flex items-center justify-center">
       <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center text-white">

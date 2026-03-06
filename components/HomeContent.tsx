@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Star, Calendar, Users, Search, Home, MapPin, Award } from 'lucide-react';
 import { REVIEWS, BOOKING_URL, getApartments } from '@/lib/constants';
@@ -295,7 +296,13 @@ const HomeContent: React.FC = () => {
                 className="bg-cream-50 shadow-lg group hover:shadow-2xl transition-shadow duration-300 border border-brick-100"
               >
                 <div className="h-64 overflow-hidden relative">
-                  <img src={apt.imageUrl} alt={apt.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <Image
+                    src={apt.imageUrl}
+                    alt={apt.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
                   <div className="absolute top-0 right-0 bg-brick-700 text-white px-5 py-2 text-xs font-condensed font-bold uppercase tracking-widest">
                     {t.home.apartments.from} {apt.priceFrom}
                   </div>

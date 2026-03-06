@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { BOOKING_URL, getApartments, getAmenities } from '@/lib/constants';
 import { Check } from 'lucide-react';
@@ -41,11 +42,15 @@ const AppartementsContent: React.FC = () => {
           >
             <div className="w-full md:w-1/2">
               <div className="relative shadow-xl">
-                <img
-                  src={apt.imageUrl}
-                  alt={apt.title}
-                  className="w-full h-[400px] object-cover"
-                />
+                <div className="relative w-full h-[400px]">
+                  <Image
+                    src={apt.imageUrl}
+                    alt={apt.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
                 <div className="absolute top-4 left-4 w-full h-full border-2 border-brick-600 -z-10 hidden md:block"></div>
               </div>
             </div>

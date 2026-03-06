@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Phone, Mail, MapPin, Instagram, Facebook, Star } from 'lucide-react';
 import { CONTACT_INFO, BOOKING_URL, NAV_ITEMS } from '@/lib/constants';
@@ -81,11 +82,13 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       >
         <div className="container mx-auto px-6 flex justify-between items-center h-20">
           <Link href="/" className="flex items-center gap-3 group relative z-50">
-            <div className="h-14 w-auto transition-transform duration-300 origin-left">
-              <img
+            <div className="h-14 w-auto relative aspect-[4/1] transition-transform duration-300 origin-left">
+              <Image
                 src={isTransparent ? "/images/logo-kerenia-white-text.svg" : "/images/logo-kerenia.svg"}
                 alt="Résidence Ker Enia"
-                className={`h-full w-auto object-contain transition-all duration-500 ${logoClasses()}`}
+                fill
+                priority
+                className={`object-contain transition-all duration-500 ${logoClasses()}`}
               />
             </div>
           </Link>
@@ -192,11 +195,12 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               {/* Colonne gauche - Branding */}
               <div>
-                <div className="mb-6 h-20 w-auto">
-                  <img
+                <div className="mb-6 h-20 w-auto relative aspect-[4/1]">
+                  <Image
                     src="/images/logo-kerenia-white-text.svg"
                     alt="Résidence Ker Enia"
-                    className="h-full w-auto object-contain"
+                    fill
+                    className="object-contain"
                   />
                 </div>
                 <p className="font-script text-3xl md:text-4xl text-brick-300 mb-6 transform -rotate-1">

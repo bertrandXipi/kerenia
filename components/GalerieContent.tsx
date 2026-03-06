@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 import { GALLERY_IMAGES } from '@/lib/constants';
@@ -11,15 +12,15 @@ const GalerieContent: React.FC = () => {
   const { t, locale } = useLocale();
   const [filter, setFilter] = useState(t.gallery.all);
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
-  
+
   const translateCategory = (category: string) => {
     return GALLERY_CATEGORIES[locale]?.[category] || category;
   };
 
   const categories = [t.gallery.all, ...Array.from(new Set(GALLERY_IMAGES.map(img => translateCategory(img.category))))];
 
-  const filteredImages = filter === t.gallery.all 
-    ? GALLERY_IMAGES 
+  const filteredImages = filter === t.gallery.all
+    ? GALLERY_IMAGES
     : GALLERY_IMAGES.filter(img => translateCategory(img.category) === filter);
 
   const navigateImage = useCallback((direction: number) => {
@@ -66,11 +67,10 @@ const GalerieContent: React.FC = () => {
           <button
             key={cat}
             onClick={() => setFilter(cat)}
-            className={`px-6 py-2 rounded-full text-sm font-condensed font-bold uppercase tracking-wider transition-all duration-300 border-2 ${
-              filter === cat
+            className={`px-6 py-2 rounded-full text-sm font-condensed font-bold uppercase tracking-wider transition-all duration-300 border-2 ${filter === cat
                 ? 'bg-brick-600 text-white border-brick-600 shadow-md'
                 : 'bg-cream-50 text-slate-500 border-brick-200 hover:border-brick-600 hover:text-brick-600'
-            }`}
+              }`}
           >
             {cat}
           </button>
@@ -91,8 +91,14 @@ const GalerieContent: React.FC = () => {
                 className="group relative cursor-pointer overflow-hidden rounded-sm shadow-sm hover:shadow-xl transition-shadow"
                 onClick={() => setSelectedImageIndex(GALLERY_IMAGES.indexOf(image))}
               >
-                <div className="aspect-[4/3] overflow-hidden bg-stone-100">
-                  <img src={image.src} alt={image.alt} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="aspect-[4/3] overflow-hidden bg-stone-100 relative">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
                 </div>
                 <div className="absolute inset-0 bg-brick-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white">
                   <ZoomIn size={32} className="mb-2" />
@@ -122,15 +128,14 @@ const GalerieContent: React.FC = () => {
             <button onClick={(e: React.MouseEvent) => { e.stopPropagation(); navigateImage(1); }} className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors p-2 bg-black/20 hover:bg-black/50 rounded-full">
               <ChevronRight size={40} />
             </button>
-            <div className="relative max-w-6xl max-h-[85vh] w-full flex flex-col items-center" onClick={(e: React.MouseEvent) => e.stopPropagation()}>
-              <motion.img
+            <div className="relative max-w-6xl max-h-[85vh] w-full flex flex-col items-center aspect-[16/9]" onClick={(e: React.MouseEvent) => e.stopPropagation()}>
+              <Image
                 key={selectedImageIndex}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3 }}
                 src={GALLERY_IMAGES[selectedImageIndex].src}
                 alt={GALLERY_IMAGES[selectedImageIndex].alt}
-                className="max-h-[80vh] w-auto object-contain shadow-2xl rounded-sm"
+                fill
+                priority
+                className="object-contain shadow-2xl rounded-sm"
               />
             </div>
           </motion.div>

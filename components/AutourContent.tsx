@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { getActivities } from '@/lib/constants';
 import { motion } from 'framer-motion';
 import { ExternalLink, MapPin } from 'lucide-react';
@@ -9,7 +10,7 @@ import { useLocale } from '@/components/LocaleProvider';
 const AutourContent: React.FC = () => {
   const { t, locale } = useLocale();
   const activities = getActivities(locale);
-  
+
   return (
     <div className="pb-20 pt-24 bg-cream-50">
       <div className="bg-cream-100 py-16 mb-16 border-b border-brick-200">
@@ -26,7 +27,7 @@ const AutourContent: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 gap-16">
           {activities.map((activity, index) => (
-            <motion.div 
+            <motion.div
               key={activity.id}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -35,10 +36,12 @@ const AutourContent: React.FC = () => {
               className="flex flex-col md:flex-row h-full md:h-[400px] group"
             >
               <div className="md:w-1/2 h-64 md:h-full relative overflow-hidden">
-                <img 
-                  src={activity.imageUrl} 
-                  alt={activity.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                <Image
+                  src={activity.imageUrl}
+                  alt={activity.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
               <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-cream-50 border border-brick-200 border-l-0">
@@ -48,9 +51,9 @@ const AutourContent: React.FC = () => {
                   {activity.description}
                 </p>
                 {activity.link && activity.link !== '#' && (
-                  <a 
-                    href={activity.link} 
-                    target="_blank" 
+                  <a
+                    href={activity.link}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-brick-600 font-bold hover:text-brick-800 transition-colors font-condensed uppercase tracking-wider text-sm border-b border-brick-600 pb-1 self-start"
                   >
@@ -66,10 +69,12 @@ const AutourContent: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Image des thermes */}
             <div className="relative h-72 lg:h-auto overflow-hidden">
-              <img 
+              <Image
                 src="https://www.kerenia.fr/wp-content/uploads/2017/05/thermes-de-cambo_chaine-thermale-du-soleil_13.jpg?id=1329"
                 alt="Thermes de Cambo-les-Bains"
-                className="w-full h-full object-cover"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-brick-800/40 hidden lg:block"></div>
             </div>
@@ -84,11 +89,14 @@ const AutourContent: React.FC = () => {
 
               {/* Logo Thermes partenaire */}
               <div className="flex items-center gap-4 pt-6 border-t border-brick-700 justify-center lg:justify-start">
-                <img 
-                  src="https://www.kerenia.fr/wp-content/uploads/2020/05/LOGO-THERMES.jpg"
-                  alt="Logo Thermes de Cambo-les-Bains"
-                  className="h-16 w-auto rounded bg-white p-1"
-                />
+                <div className="relative h-16 w-32">
+                  <Image
+                    src="https://www.kerenia.fr/wp-content/uploads/2020/05/LOGO-THERMES.jpg"
+                    alt="Logo Thermes de Cambo-les-Bains"
+                    fill
+                    className="object-contain rounded bg-white p-1"
+                  />
+                </div>
                 <div className="text-left">
                   <p className="text-brick-200 font-condensed font-bold uppercase tracking-wider text-xs">{t.surroundings.partner}</p>
                   <p className="text-white font-medium">{t.surroundings.thermalSpa}</p>
