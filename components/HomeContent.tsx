@@ -80,8 +80,13 @@ const HomeContent: React.FC = () => {
 
         <div className="relative z-10 container mx-auto px-6 text-center mt-8 md:mt-0">
           <motion.div style={{ opacity }}>
-            <div className="inline-block relative mb-12">
-              <div className="absolute inset-0 bg-brick-900/90 shadow-2xl" />
+            <div className="inline-block relative mb-12 overflow-hidden">
+              <motion.div
+                className="absolute inset-0 bg-brick-900/90 shadow-2xl origin-left"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
+              />
               <div className="relative z-10 px-8 py-6 md:px-16 md:py-8">
                 <h1 className="font-condensed font-light text-3xl md:text-6xl text-white uppercase tracking-[0.2em] leading-tight">
                   {t.home.heroTitle} <span className="text-gold-500 text-2xl md:text-4xl align-top ml-2">***</span>

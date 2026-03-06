@@ -14,7 +14,7 @@ export const translations = {
     },
     // Home page
     home: {
-      tagline: "Ker Enia a Cambo les Bains",
+      tagline: "Ker Enia à Cambo-les-Bains",
       subtitle: 'un lieu confortable pour se sentir comme à la maison',
       heroTitle: 'Résidence Ker Enia',
       intro: {
