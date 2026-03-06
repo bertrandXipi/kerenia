@@ -3,23 +3,24 @@ import { Inter, Oswald, Dancing_Script, Cormorant_Garamond } from 'next/font/goo
 import './globals.css';
 import TransitionProvider from '@/components/TransitionProvider';
 import { LocaleProvider } from '@/components/LocaleProvider';
+import CookieManager from '@/components/CookieManager';
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
 });
 
-const oswald = Oswald({ 
+const oswald = Oswald({
   subsets: ['latin'],
   variable: '--font-oswald',
 });
 
-const dancingScript = Dancing_Script({ 
+const dancingScript = Dancing_Script({
   subsets: ['latin'],
   variable: '--font-dancing',
 });
 
-const cormorant = Cormorant_Garamond({ 
+const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-cormorant',
@@ -50,6 +51,7 @@ export default function RootLayout({
           <TransitionProvider>
             {children}
           </TransitionProvider>
+          <CookieManager />
         </LocaleProvider>
       </body>
     </html>

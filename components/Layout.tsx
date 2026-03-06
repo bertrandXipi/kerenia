@@ -10,6 +10,7 @@ import InstagramFeed from '@/components/InstagramFeed';
 import AccessibilityWidget from '@/components/AccessibilityWidget';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { useLocale } from '@/components/LocaleProvider';
+import { revokeCookies } from '@/app/actions/cookie';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -334,10 +335,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                     <span className="text-brick-400">•</span>
                     <a href="https://www.chainethermale.fr/cambo-les-bains" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">{t.footer.spa}</a>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-brick-400">•</span>
-                    <span>{t.footer.pets}</span>
-                  </li>
                 </ul>
               </div>
 
@@ -381,11 +378,19 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-brick-400">
               <p>&copy; {new Date().getFullYear()} Résidence Ker Enia. {t.footer.rights}</p>
               <div className="flex gap-6">
-                <Link href="#" className="hover:text-brick-200 transition-colors">{t.footer.legal}</Link>
+                <Link href="/mentions-legales" className="hover:text-brick-200 transition-colors">{t.footer.legal}</Link>
                 <Link href="#" className="hover:text-brick-200 transition-colors">{t.footer.privacy}</Link>
-                <Link href="#" className="hover:text-brick-200 transition-colors">{t.footer.terms}</Link>
+                <button
+                  onClick={async () => { await revokeCookies(); window.location.reload(); }}
+                  className="hover:text-brick-200 transition-colors text-left"
+                >
+                  {t.cookieConsent?.manage ?? 'Gérer les cookies'}
+                </button>
               </div>
-              <p className="font-script text-base text-brick-300">{t.footer.tagline}</p>
+              <div className="flex items-center gap-4">
+                <p className="font-script text-base text-brick-300">{t.footer.tagline}</p>
+                <a href="https://www.xipirons.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Mis à flot par XIPIRONS</a>
+              </div>
             </div>
           </div>
         </div>

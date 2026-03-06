@@ -2,8 +2,9 @@
 
 import React, { useState } from 'react';
 import { CONTACT_INFO } from '@/lib/constants';
-import { Phone, Mail, MapPin, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, AlertCircle, Loader2 } from 'lucide-react';
 import { useLocale } from '@/components/LocaleProvider';
+import { sendContactEmail } from '@/app/actions/contact';
 
 const ContactContent: React.FC = () => {
   const { t, locale } = useLocale();
@@ -14,12 +15,24 @@ const ContactContent: React.FC = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setTimeout(() => {
+    setIsSubmitting(true);
+    setErrorMsg(null);
+
+    const formData = new FormData(e.currentTarget);
+    const result = await sendContactEmail(formData);
+
+    if (result.success) {
       setIsSubmitted(true);
-    }, 1000);
+    } else {
+      setErrorMsg(result.error || 'Erreur lors de l’envoi. Veuillez réessayer.');
+    }
+
+    setIsSubmitting(false);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -61,6 +74,12 @@ const ContactContent: React.FC = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
+                {errorMsg && (
+                  <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-md flex items-center gap-3 mb-6">
+                    <AlertCircle size={20} />
+                    <p className="text-sm">{errorMsg}</p>
+                  </div>
+                )}
                 <div>
                   <label htmlFor="name" className="block text-sm font-bold text-brick-800 mb-2 uppercase tracking-wide font-condensed">{t.contact.fullName}</label>
                   <input
@@ -82,6 +101,15 @@ const ContactContent: React.FC = () => {
                     required
                     value={formState.email}
                     onChange={handleChange}
+                    className="w-full px-4 py-3 bg-stone-50 border border-stone-200 focus:border-brick-500 focus:ring-1 focus:ring-brick-500 outline-none transition-all rounded-sm"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-bold text-brick-800 mb-2 uppercase tracking-wide font-condensed">{t.contact.phone}</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
                     className="w-full px-4 py-3 bg-stone-50 border border-stone-200 focus:border-brick-500 focus:ring-1 focus:ring-brick-500 outline-none transition-all rounded-sm"
                   />
                 </div>
@@ -114,9 +142,11 @@ const ContactContent: React.FC = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-brick-600 text-white font-condensed font-bold uppercase tracking-widest py-4 hover:bg-brick-700 transition-all shadow-md rounded-sm"
+                  disabled={isSubmitting}
+                  className="w-full bg-brick-600 text-white font-condensed font-bold uppercase tracking-widest py-4 hover:bg-brick-700 transition-all shadow-md rounded-sm flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  {t.contact.send}
+                  {isSubmitting ? <Loader2 size={20} className="animate-spin" /> : <Send size={20} />}
+                  {isSubmitting ? 'Envoi...' : t.contact.send}
                 </button>
               </form>
             )}

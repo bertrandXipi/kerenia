@@ -58,6 +58,15 @@ export const translations = {
       adults: 'Adultes',
       availability: 'Disponibilités',
     },
+    // Cookie Consent
+    cookieConsent: {
+      title: 'Vos préférences de navigation',
+      description: 'En cliquant sur « Accepter », vous acceptez l’utilisation de cookies à usages partagés, pour mesurer l’audience du site et pour les améliorations techniques. Vous pouvez paramétrer vos choix à tout moment.',
+      accept: 'Accepter l\'essentiel',
+      acceptAll: 'Tout accepter',
+      reject: 'Refuser',
+      manage: 'Gérer les cookies',
+    },
     // Footer
     footer: {
       tagline: "L'expérience bien-être.",
@@ -79,7 +88,6 @@ export const translations = {
       parking: 'Parking privé gratuit',
       pool: 'Piscine chauffée',
       spa: 'Thermes à 5 min',
-      pets: 'Animaux acceptés',
       residence: 'Résidence 3 étoiles',
       atoutFrance: 'Classement Atout France',
       thermalPartner: 'Partenaire Chaîne Thermale',
@@ -246,6 +254,15 @@ export const translations = {
       adult: 'Adult',
       adults: 'Adults',
       availability: 'Availability',
+    },
+    // Cookie Consent
+    cookieConsent: {
+      title: 'Your browsing preferences',
+      description: 'By clicking "Accept", you consent to the use of shared-use cookies to measure site audience and for technical improvements. You can manage your choices at any time.',
+      accept: 'Accept essential',
+      acceptAll: 'Accept all',
+      reject: 'Reject',
+      manage: 'Manage cookies',
     },
     // Footer
     footer: {
@@ -436,6 +453,15 @@ export const translations = {
       adults: 'Adultos',
       availability: 'Disponibilidad',
     },
+    // Cookie Consent
+    cookieConsent: {
+      title: 'Tus preferencias de navegación',
+      description: 'Al hacer clic en "Aceptar", aceptas el uso de cookies compartidas para medir la audiencia del sitio y para mejoras técnicas. Puedes configurar tus opciones en cualquier momento.',
+      accept: 'Aceptar lo esencial',
+      acceptAll: 'Aceptar todo',
+      reject: 'Rechazar',
+      manage: 'Gestionar cookies',
+    },
     // Footer
     footer: {
       tagline: 'La experiencia bienestar.',
@@ -624,6 +650,15 @@ export const translations = {
       adult: 'Heldua',
       adults: 'Helduak',
       availability: 'Erabilgarritasuna',
+    },
+    // Cookie Consent
+    cookieConsent: {
+      title: 'Zure nabigazio hobespenak',
+      description: '"Onartu" sakatuz gero, erabilera partekatuko cookie-ak onartzen dituzu, gunearen audientzia neurtzeko eta hobekuntza teknikoak egiteko. Zure aukerak edozein unetan konfigura ditzakezu.',
+      accept: 'Ezinbestekoak onartu',
+      acceptAll: 'Denak onartu',
+      reject: 'Baztertu',
+      manage: 'Cookie-ak kudeatu',
     },
     // Footer
     footer: {
