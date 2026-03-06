@@ -1,51 +1,41 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Script from 'next/script';
 import { Instagram } from 'lucide-react';
 import { useLocale } from '@/components/LocaleProvider';
 
 const INSTAGRAM_URL = 'https://www.instagram.com/kerenia_residence/';
 
-const INSTAGRAM_POSTS = [
-  { id: 1, src: 'https://www.kerenia.fr/wp-content/uploads/2020/07/piscine-kerenia.jpg', alt: 'Piscine chauffée Ker Enia' },
-  { id: 2, src: 'https://www.kerenia.fr/wp-content/uploads/2021/04/DSC_7309.jpg', alt: 'Appartement lumineux' },
-  { id: 3, src: 'https://www.kerenia.fr/wp-content/uploads/2017/05/Villa_Arnaga.jpg', alt: 'Villa Arnaga' },
-  { id: 4, src: 'https://www.kerenia.fr/wp-content/uploads/2021/04/DSC_7357.jpg', alt: 'Salon confort' },
-  { id: 5, src: 'https://www.kerenia.fr/wp-content/uploads/2020/07/appartement3-kerenia.jpg', alt: 'Décoration intérieure' },
-  { id: 6, src: 'https://www.kerenia.fr/wp-content/uploads/2021/04/DSC_7223.jpg', alt: 'Studio cosy' },
-  { id: 7, src: 'https://www.kerenia.fr/wp-content/uploads/2020/02/5191788684_a9edc8110e_c.jpg', alt: 'Pas de Roland' },
-  { id: 8, src: 'https://www.kerenia.fr/wp-content/uploads/2020/02/2948014906_ca81a12c2d_z.jpg', alt: 'La Rhune' },
-];
+// Le widget Behold gère maintenant l'affichage
+// On garde INSTAGRAM_URL pour le bouton CTA
 
-const PostCard: React.FC<{ post: typeof INSTAGRAM_POSTS[0] }> = ({ post }) => (
-  <a
-    href={INSTAGRAM_URL}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex-shrink-0 w-[250px] md:w-[300px] aspect-square relative group overflow-hidden mx-1"
-  >
-    <Image
-      src={post.src}
-      alt={post.alt}
-      fill
-      sizes="(max-width: 768px) 250px, 300px"
-      className="object-cover transition-transform duration-700 group-hover:scale-110"
-    />
-    <div className="absolute inset-0 bg-brick-900/0 group-hover:bg-brick-900/60 transition-all duration-300 flex items-center justify-center">
-      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center text-white">
-        <Instagram size={32} className="mx-auto mb-2" />
-        <span className="text-sm font-light">{post.alt}</span>
-      </div>
-    </div>
-  </a>
-);
 
 const InstagramFeed: React.FC = () => {
   const { t } = useLocale();
-  // Double les posts pour le loop infini
-  const allPosts = [...INSTAGRAM_POSTS, ...INSTAGRAM_POSTS];
+
+  useEffect(() => {
+    // Tentative de masquage via JS (utile si dans Shadow DOM)
+    const hideBranding = () => {
+      const widget = document.querySelector('behold-widget');
+      if (widget) {
+        // Recherche classique
+        const branding = widget.querySelector('behold-branding') as HTMLElement;
+        if (branding) branding.style.display = 'none';
+
+        // Recherche dans le Shadow DOM
+        if (widget.shadowRoot) {
+          const shadowBranding = widget.shadowRoot.querySelector('behold-branding') as HTMLElement;
+          if (shadowBranding) shadowBranding.style.display = 'none';
+        }
+      }
+    };
+
+    const interval = setInterval(hideBranding, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="py-16 bg-cream-100 overflow-hidden">
@@ -78,12 +68,16 @@ const InstagramFeed: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* Marquee CSS */}
-      <div className="relative group/marquee">
-        <div className="flex animate-marquee group-hover/marquee:[animation-play-state:paused]">
-          {allPosts.map((post, i) => (
-            <PostCard key={`a-${post.id}-${i}`} post={post} />
-          ))}
+      {/* Marquee remplacé par Behold Widget */}
+      <div className="container mx-auto px-6">
+        <Script
+          src="https://w.behold.so/widget.js"
+          type="module"
+          strategy="lazyOnload"
+        />
+        <div className="rounded-sm overflow-hidden shadow-sm border border-brick-100 bg-white p-2">
+          {/* @ts-ignore - behold-widget est un custom element */}
+          <behold-widget feed-id="qHoHMzpglKs9yWHM1uJf"></behold-widget>
         </div>
       </div>
 

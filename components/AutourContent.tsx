@@ -70,7 +70,7 @@ const AutourContent: React.FC = () => {
             {/* Image des thermes */}
             <div className="relative h-72 lg:h-auto overflow-hidden">
               <Image
-                src="https://www.kerenia.fr/wp-content/uploads/2017/05/thermes-de-cambo_chaine-thermale-du-soleil_13.jpg?id=1329"
+                src="/images/remote/thermes-cambo.webp"
                 alt="Thermes de Cambo-les-Bains"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -91,7 +91,7 @@ const AutourContent: React.FC = () => {
               <div className="flex items-center gap-4 pt-6 border-t border-brick-700 justify-center lg:justify-start">
                 <div className="relative h-16 w-32">
                   <Image
-                    src="https://www.kerenia.fr/wp-content/uploads/2020/05/LOGO-THERMES.jpg"
+                    src="/images/remote/logo-thermes.webp"
                     alt="Logo Thermes de Cambo-les-Bains"
                     fill
                     className="object-contain rounded bg-white p-1"

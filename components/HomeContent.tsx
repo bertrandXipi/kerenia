@@ -65,12 +65,14 @@ const HomeContent: React.FC = () => {
         <div className="absolute inset-0 z-0 overflow-hidden">
           <motion.div style={{ y }} className="w-full h-full">
             <KenBurnsImage
-              src="https://www.kerenia.fr/wp-content/uploads/2020/07/piscine-kerenia.jpg"
+              src="/images/remote/piscine-kerenia.webp"
               alt="Résidence Ker Enia Piscine"
               className="w-full h-full"
               duration={25}
               direction="in"
               overlay={false}
+              priority={true}
+              quality={40}
             />
             <div className="absolute inset-0 bg-black/20 bg-gradient-to-b from-black/50 via-transparent to-black/40"></div>
           </motion.div>
@@ -79,48 +81,28 @@ const HomeContent: React.FC = () => {
         <div className="relative z-10 container mx-auto px-6 text-center mt-8 md:mt-0">
           <motion.div style={{ opacity }}>
             <div className="inline-block relative mb-12">
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: "100%" }}
-                transition={{ duration: 1, ease: "easeInOut" }}
-                className="absolute inset-0 bg-brick-900/90 shadow-2xl"
-              />
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8, duration: 0.8 }}
-                className="relative z-10 px-8 py-6 md:px-16 md:py-8"
-              >
+              <div className="absolute inset-0 bg-brick-900/90 shadow-2xl" />
+              <div className="relative z-10 px-8 py-6 md:px-16 md:py-8">
                 <h1 className="font-condensed font-light text-3xl md:text-6xl text-white uppercase tracking-[0.2em] leading-tight">
                   {t.home.heroTitle} <span className="text-gold-500 text-2xl md:text-4xl align-top ml-2">***</span>
                 </h1>
-              </motion.div>
+              </div>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2, duration: 0.8 }}
-              className="text-white drop-shadow-lg"
-            >
+            <div className="text-white drop-shadow-lg">
               <p className="font-script text-4xl md:text-6xl mb-6 text-white font-light">
                 {t.home.tagline},
               </p>
-              <GoldSeparator width="w-16" delay={1.6} className="mb-6" />
+              <GoldSeparator width="w-16" className="mb-6" />
               <p className="font-sans font-light text-xs md:text-sm tracking-[0.3em] uppercase text-white/90">
                 {t.home.subtitle}
               </p>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
 
         {/* Booking Bar */}
-        <motion.div
-          initial={{ opacity: 0, y: "100%", x: "-50%" }}
-          animate={{ opacity: 1, y: "50%", x: "-50%" }}
-          transition={{ delay: 1.5, duration: 0.8, type: "spring", stiffness: 40 }}
-          className="absolute bottom-0 left-1/2 z-30 w-[95%] max-w-5xl"
-        >
+        <div className="absolute bottom-0 left-1/2 z-30 w-[95%] max-w-5xl transform translate-y-1/2 -translate-x-1/2">
           <div className="glass bg-white/80 rounded-[2rem] shadow-2xl p-2 md:p-3 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-4 border border-white/60 relative ring-1 ring-black/5">
             <div
               ref={calendarRef}
@@ -193,7 +175,7 @@ const HomeContent: React.FC = () => {
               <span className="font-condensed font-bold uppercase tracking-[0.15em] text-xs whitespace-nowrap relative z-10">{t.booking.availability}</span>
             </motion.button>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Intro Section */}
@@ -228,13 +210,14 @@ const HomeContent: React.FC = () => {
                   {t.home.intro.p3.split('comme à la maison')[0]}<strong className="font-medium text-brick-800">{t.home.intro.p3.match(/comme à la maison|just like home|como en casa/)?.[0]}</strong>{t.home.intro.p3.split(/comme à la maison|just like home|como en casa/)[1]}
                 </p>
               </div>
-              <div className="relative group">
-                <motion.img
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.5 }}
-                  src="https://www.kerenia.fr/wp-content/uploads/2020/07/appartement3-kerenia.jpg"
+              <div className="relative group aspect-[3/2]">
+                <Image
+                  src="/images/remote/appartement3.webp"
                   alt="Appartement Ker Enia Interior"
-                  className="shadow-2xl w-full rounded-sm"
+                  fill
+                  quality={75}
+                  className="shadow-2xl w-full rounded-sm object-cover"
+                  sizes="(max-width: 768px) 100vw, 450px"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-cream-50 p-6 shadow-xl border border-gold-200 hidden md:block z-20">
                   <div className="flex items-center gap-2 mb-1">
@@ -325,20 +308,18 @@ const HomeContent: React.FC = () => {
 
 
 
-      {/* Parallax Image Banner */}
+      {/* Parallax Image Banner - Optimized with next/image */}
       <section className="relative h-[400px] md:h-[500px] overflow-hidden">
-        {/* Parallax Background */}
-        <motion.div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: 'url(https://es.cambolesbains.com/wp-content/uploads/2024/03/Vue-drone-Cambo-les-Bains-Pays-basque-Komcebo-Mathieu-Mengaillou.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundAttachment: 'fixed',
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50"></div>
-        </motion.div>
+        <Image
+          src="/images/remote/thermes-cambo.webp"
+          alt="Thermes de Cambo-les-Bains"
+          fill
+          priority
+          quality={50}
+          className="object-cover"
+          sizes="(max-width: 1024px) 100vw, 1200px"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50 z-10"></div>
       </section>
 
       {/* Reviews Section */}

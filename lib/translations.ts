@@ -796,6 +796,36 @@ export const translations = {
 
 export type TranslationKeys = typeof translations.fr;
 
+/**
+ * Simple helper for deep merging objects
+ */
+function deepMerge(target: any, source: any) {
+  for (const key in source) {
+    if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])) {
+      if (!target[key]) target[key] = {};
+      deepMerge(target[key], source[key]);
+    } else {
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
+
+import { getSiteConfig } from './site-config';
+
 export function getTranslations(locale: Locale): TranslationKeys {
-  return translations[locale] || translations.fr;
+  const baseTranslations = translations[locale] || translations.fr;
+
+  // Note: For now, siteConfig doesn't have its own translations field, 
+  // but we'll add it to the interface later if needed for full custom sites.
+  // We can also override specific keys based on the site.
+
+  const siteConfig = getSiteConfig();
+
+  // Example of site-specific overrides logic
+  // if (siteConfig.id === 'site2') {
+  //   return deepMerge({ ...baseTranslations }, site2Translations[locale]);
+  // }
+
+  return baseTranslations;
 }
