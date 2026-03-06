@@ -27,7 +27,7 @@ export const CONTACT_INFO = {
   address: '9 Rue de la Bergerie, 64250 Cambo-les-Bains',
   phone: '+33 (0) 559 647 200',
   email: 'contact@kerenia.fr',
-  mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2903.097034237142!2d-1.402636684293992!3d43.35985877913253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd511674338e530b%3A0xd49b2915832a8e1a!2sR%C3%A9sidence%20Ker%20Enia!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr'
+  mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11603.579849702171!2d-1.4125996802687515!3d43.35830767545562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd513bde8e105d53%3A0xd49a1d40c1fa8fda!2sR%C3%A9sidence%20Ker%20Enia%20Meubl%C3%A9s%20de%20Tourisme!5e0!3m2!1sfr!2sfr!4v1772799419105!5m2!1sfr!2sfr'
 };
 
 export const GALLERY_IMAGES = [
