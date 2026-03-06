@@ -54,8 +54,7 @@ const HomeContent: React.FC = () => {
     if (checkIn) params.append('checkin', formatDateForUrl(checkIn));
     if (checkOut) params.append('checkout', formatDateForUrl(checkOut));
     params.append('adults', adults.toString());
-    const separator = BOOKING_URL.includes('?') ? '&' : '?';
-    window.open(`${BOOKING_URL}${separator}${params.toString()}`, '_blank');
+    window.open(`${BOOKING_URL}?${params.toString()}`, '_blank');
   };
 
   return (
@@ -82,10 +81,11 @@ const HomeContent: React.FC = () => {
           <motion.div style={{ opacity }}>
             <div className="inline-block relative mb-12">
               <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: "100%" }}
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
                 transition={{ duration: 1, ease: "easeInOut" }}
-                className="absolute inset-0 bg-brick-900/90 shadow-2xl"
+                className="absolute inset-0 shadow-2xl origin-left"
+                style={{ backgroundColor: 'rgba(66, 26, 15, 0.85)' }}
               />
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -109,7 +109,7 @@ const HomeContent: React.FC = () => {
                 {t.home.tagline},
               </p>
               <GoldSeparator width="w-16" className="mb-6" />
-              <p className="font-sans font-light text-xs md:text-sm tracking-[0.3em] uppercase text-white/90">
+              <p className="font-sans font-normal text-sm md:text-base tracking-[0.3em] uppercase text-white">
                 {t.home.subtitle}
               </p>
             </motion.div>
@@ -121,26 +121,47 @@ const HomeContent: React.FC = () => {
           <div className="glass bg-white/80 rounded-[2rem] shadow-2xl p-2 md:p-3 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-4 border border-white/60 relative ring-1 ring-black/5">
             <div
               ref={calendarRef}
-              onClick={() => setIsCalendarOpen(!isCalendarOpen)}
-              className="relative flex items-center gap-4 flex-[1.5] w-full md:w-auto p-4 hover:bg-stone-50 rounded-2xl transition-colors cursor-pointer group"
+              className="relative flex items-center gap-2 flex-[2] w-full md:w-auto"
             >
-              <div className="w-10 h-10 rounded-full bg-brick-50 flex items-center justify-center text-brick-600 group-hover:bg-brick-600 group-hover:text-white transition-all duration-300 shrink-0 border border-brick-100 group-hover:border-brick-600">
-                <Calendar size={18} />
+              {/* Arrivée */}
+              <div
+                onClick={() => setIsCalendarOpen(!isCalendarOpen)}
+                className="flex items-center gap-3 flex-1 p-4 hover:bg-stone-50 rounded-2xl transition-colors cursor-pointer group"
+              >
+                <div className="w-10 h-10 rounded-full bg-brick-50 flex items-center justify-center text-brick-600 group-hover:bg-brick-600 group-hover:text-white transition-all duration-300 shrink-0 border border-brick-100 group-hover:border-brick-600">
+                  <Calendar size={18} />
+                </div>
+                <div className="text-left">
+                  <p className="font-condensed font-bold uppercase text-brick-800 text-[10px] tracking-[0.2em] mb-1">{t.booking.arrival}</p>
+                  <div className="min-h-[24px]">
+                    {checkIn ? (
+                      <span className="text-brick-700 font-medium text-sm border-b border-brick-300">{formatDateForDisplay(checkIn)}</span>
+                    ) : (
+                      <span className="opacity-50 text-xs text-slate-600">{t.booking.select}</span>
+                    )}
+                  </div>
+                </div>
               </div>
-              <div className="text-left w-full">
-                <p className="font-condensed font-bold uppercase text-brick-800 text-[10px] tracking-[0.2em] mb-1">{t.booking.arrival} - {t.booking.departure}</p>
-                <div className="flex items-center gap-2 text-slate-600 text-sm font-light uppercase tracking-widest w-full min-h-[24px]">
-                  {checkIn ? (
-                    <span className="text-brick-700 font-medium border-b border-brick-300">{formatDateForDisplay(checkIn)}</span>
-                  ) : (
-                    <span className="opacity-50 border-b border-transparent text-xs">{t.booking.select}</span>
-                  )}
-                  <span className="text-stone-300 mx-1">-</span>
-                  {checkOut ? (
-                    <span className="text-brick-700 font-medium border-b border-brick-300">{formatDateForDisplay(checkOut)}</span>
-                  ) : (
-                    <span className="opacity-50 border-b border-transparent text-xs">...</span>
-                  )}
+
+              <span className="text-stone-300 text-lg hidden md:block">→</span>
+
+              {/* Départ */}
+              <div
+                onClick={() => setIsCalendarOpen(!isCalendarOpen)}
+                className="flex items-center gap-3 flex-1 p-4 hover:bg-stone-50 rounded-2xl transition-colors cursor-pointer group"
+              >
+                <div className="w-10 h-10 rounded-full bg-brick-50 flex items-center justify-center text-brick-600 group-hover:bg-brick-600 group-hover:text-white transition-all duration-300 shrink-0 border border-brick-100 group-hover:border-brick-600">
+                  <Calendar size={18} />
+                </div>
+                <div className="text-left">
+                  <p className="font-condensed font-bold uppercase text-brick-800 text-[10px] tracking-[0.2em] mb-1">{t.booking.departure}</p>
+                  <div className="min-h-[24px]">
+                    {checkOut ? (
+                      <span className="text-brick-700 font-medium text-sm border-b border-brick-300">{formatDateForDisplay(checkOut)}</span>
+                    ) : (
+                      <span className="opacity-50 text-xs text-slate-600">...</span>
+                    )}
+                  </div>
                 </div>
               </div>
 
