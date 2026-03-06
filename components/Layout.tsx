@@ -65,8 +65,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   };
 
   const logoClasses = () => {
-    if (isMobileMenuOpen) return 'brightness-0 invert';
-    if (isTransparent) return 'brightness-0 invert drop-shadow-md';
+    if (isMobileMenuOpen) return '';
+    if (isTransparent) return 'drop-shadow-md';
     return '';
   };
 
@@ -82,7 +82,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <Link href="/" className="flex items-center gap-3 group relative z-50">
             <div className="h-14 w-auto transition-transform duration-300 origin-left">
               <img
-                src="https://www.kerenia.fr/wp-content/uploads/2020/07/logo_ker_enia-1.svg"
+                src={isTransparent ? "/images/logo-kerenia-white-text.svg" : "/images/logo-kerenia.svg"}
                 alt="Résidence Ker Enia"
                 className={`h-full w-auto object-contain transition-all duration-500 ${logoClasses()}`}
               />
@@ -193,9 +193,9 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               <div>
                 <div className="mb-6 h-20 w-auto">
                   <img
-                    src="https://www.kerenia.fr/wp-content/uploads/2020/07/logo_ker_enia-1.svg"
+                    src="/images/logo-kerenia-white-text.svg"
                     alt="Résidence Ker Enia"
-                    className="h-full w-auto object-contain brightness-0 invert"
+                    className="h-full w-auto object-contain"
                   />
                 </div>
                 <p className="font-script text-3xl md:text-4xl text-brick-300 mb-6 transform -rotate-1">

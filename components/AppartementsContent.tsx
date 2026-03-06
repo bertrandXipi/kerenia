@@ -26,17 +26,7 @@ const AppartementsContent: React.FC = () => {
         </div>
       </div>
 
-      {/* Global Amenities */}
-      <div className="container mx-auto px-6 mb-20">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-          {amenities.map((amenity, idx) => (
-            <div key={idx} className="flex flex-col items-center text-center p-6 border border-brick-200 bg-cream-50 rounded-lg hover:shadow-md hover:bg-cream-100 transition-all">
-              <amenity.icon className="w-8 h-8 text-brick-600 mb-3" />
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-700">{amenity.label}</span>
-            </div>
-          ))}
-        </div>
-      </div>
+
 
       {/* Listings */}
       <div className="container mx-auto px-6 space-y-24">
@@ -106,8 +96,22 @@ const AppartementsContent: React.FC = () => {
           </p>
         </div>
       </div>
-      {/* Livret d'accueil Accordions */}
+      {/* Livret d'accueil Accordions (With Amenities moved above) */}
       <div className="container mx-auto px-6 mt-16 mb-16">
+
+        {/* Global Amenities moved above Livret content */}
+        <div className="mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {amenities.map((amenity, idx) => (
+              <div key={idx} className="flex flex-col items-center text-center p-6 border border-brick-200 bg-cream-50 rounded-lg hover:shadow-md hover:bg-cream-100 transition-all">
+                <amenity.icon className="w-8 h-8 text-brick-600 mb-3" />
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-700">{amenity.label}</span>
+                {amenity.description && <span className="text-[10px] text-slate-500 mt-2">{amenity.description}</span>}
+              </div>
+            ))}
+          </div>
+        </div>
+
         <h3 className="font-script text-4xl text-brick-600 mb-8 text-center">{t.livret.title}</h3>
         <div className="max-w-4xl mx-auto">
           <LivretAccordions />

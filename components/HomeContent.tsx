@@ -19,7 +19,7 @@ const HomeContent: React.FC = () => {
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
   const { t, locale } = useLocale();
   const apartments = getApartments(locale);
-  
+
   const calendarRef = useRef<HTMLDivElement>(null);
   const targetRef = useRef<HTMLDivElement>(null);
 
@@ -78,13 +78,13 @@ const HomeContent: React.FC = () => {
         <div className="relative z-10 container mx-auto px-6 text-center mt-8 md:mt-0">
           <motion.div style={{ opacity }}>
             <div className="inline-block relative mb-12">
-              <motion.div 
+              <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
                 transition={{ duration: 1, ease: "easeInOut" }}
                 className="absolute inset-0 bg-brick-900/90 shadow-2xl"
               />
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
@@ -95,8 +95,8 @@ const HomeContent: React.FC = () => {
                 </h1>
               </motion.div>
             </div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2, duration: 0.8 }}
@@ -114,14 +114,14 @@ const HomeContent: React.FC = () => {
         </div>
 
         {/* Booking Bar */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: "100%", x: "-50%" }}
           animate={{ opacity: 1, y: "50%", x: "-50%" }}
           transition={{ delay: 1.5, duration: 0.8, type: "spring", stiffness: 40 }}
           className="absolute bottom-0 left-1/2 z-30 w-[95%] max-w-5xl"
         >
           <div className="glass bg-white/80 rounded-[2rem] shadow-2xl p-2 md:p-3 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-4 border border-white/60 relative ring-1 ring-black/5">
-            <div 
+            <div
               ref={calendarRef}
               onClick={() => setIsCalendarOpen(!isCalendarOpen)}
               className="relative flex items-center gap-4 flex-[1.5] w-full md:w-auto p-4 hover:bg-stone-50 rounded-2xl transition-colors cursor-pointer group"
@@ -145,10 +145,10 @@ const HomeContent: React.FC = () => {
                   )}
                 </div>
               </div>
-              
+
               {isCalendarOpen && (
                 <div onClick={(e) => e.stopPropagation()}>
-                  <CustomCalendar 
+                  <CustomCalendar
                     checkIn={checkIn}
                     checkOut={checkOut}
                     onSelect={(start: Date | null, end: Date | null) => {
@@ -169,7 +169,7 @@ const HomeContent: React.FC = () => {
               </div>
               <div className="text-left w-full">
                 <p className="font-condensed font-bold uppercase text-brick-800 text-[10px] tracking-[0.2em] mb-1">{t.booking.travelers}</p>
-                <select 
+                <select
                   value={adults}
                   onChange={(e) => setAdults(Number(e.target.value))}
                   className="bg-transparent w-full text-brick-700 font-medium text-sm border-none focus:ring-0 p-0 cursor-pointer appearance-none outline-none tracking-wider"
@@ -181,7 +181,7 @@ const HomeContent: React.FC = () => {
               </div>
             </div>
 
-            <motion.button 
+            <motion.button
               onClick={handleSearch}
               className="relative overflow-hidden bg-brick-700 hover:bg-brick-800 text-white rounded-full px-8 py-4 flex items-center gap-3 transition-all shadow-lg hover:shadow-brick-700/30 w-full md:w-auto justify-center group"
               whileHover={{ scale: 1.02, y: -2 }}
@@ -208,13 +208,13 @@ const HomeContent: React.FC = () => {
             <h2 className="font-serif font-medium text-3xl md:text-5xl text-brick-800 mb-2 leading-tight">
               {t.home.intro.title}
             </h2>
-            
+
             <h3 className="font-script text-4xl md:text-5xl text-brick-600 mb-12 mt-6 transform -rotate-1">
               {t.home.intro.subtitle}
             </h3>
 
             <GoldSeparator className="mb-12" />
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-left">
               <div className="text-slate-600 space-y-6 text-lg font-light leading-relaxed">
                 <p>
@@ -228,16 +228,16 @@ const HomeContent: React.FC = () => {
                 </p>
               </div>
               <div className="relative group">
-                <motion.img 
+                <motion.img
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.5 }}
-                  src="https://www.kerenia.fr/wp-content/uploads/2020/07/appartement3-kerenia.jpg" 
-                  alt="Appartement Ker Enia Interior" 
+                  src="https://www.kerenia.fr/wp-content/uploads/2020/07/appartement3-kerenia.jpg"
+                  alt="Appartement Ker Enia Interior"
                   className="shadow-2xl w-full rounded-sm"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-cream-50 p-6 shadow-xl border border-gold-200 hidden md:block z-20">
                   <div className="flex items-center gap-2 mb-1">
-                    <div className="bg-[#0F9D58] rounded-full p-1"><Star size={14} className="text-white" fill="white"/></div>
+                    <div className="bg-[#0F9D58] rounded-full p-1"><Star size={14} className="text-white" fill="white" /></div>
                     <span className="font-bold text-slate-800 text-xl">4.9 / 5</span>
                   </div>
                   <span className="text-xs text-slate-500 font-bold uppercase tracking-widest">Excellent sur Google</span>
@@ -252,19 +252,19 @@ const HomeContent: React.FC = () => {
       <section className="py-20 bg-cream-50 border-y border-brick-200">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
-            <AnimatedCounter 
-              end={16} 
+            <AnimatedCounter
+              end={16}
               label={t.home.stats.apartments}
               icon={<Home size={28} />}
             />
-            <AnimatedCounter 
-              end={4.9} 
+            <AnimatedCounter
+              end={4.9}
               decimals={1}
               label={t.home.stats.rating}
               icon={<Award size={28} />}
             />
-            <AnimatedCounter 
-              end={20} 
+            <AnimatedCounter
+              end={20}
               suffix=" min"
               label={t.home.stats.distance}
               icon={<MapPin size={28} />}
@@ -316,10 +316,12 @@ const HomeContent: React.FC = () => {
         </div>
       </section>
 
-      {/* Parallax Quote Banner */}
+
+
+      {/* Parallax Image Banner */}
       <section className="relative h-[400px] md:h-[500px] overflow-hidden">
         {/* Parallax Background */}
-        <motion.div 
+        <motion.div
           className="absolute inset-0"
           style={{
             backgroundImage: 'url(https://es.cambolesbains.com/wp-content/uploads/2024/03/Vue-drone-Cambo-les-Bains-Pays-basque-Komcebo-Mathieu-Mengaillou.jpg)',
@@ -330,29 +332,6 @@ const HomeContent: React.FC = () => {
         >
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50"></div>
         </motion.div>
-
-        {/* Content */}
-        <div className="relative z-10 h-full flex items-center justify-center px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="text-center max-w-4xl"
-          >
-            <div className="mb-6">
-              <svg className="w-16 h-16 mx-auto text-brick-300 opacity-50" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
-              </svg>
-            </div>
-            <p className="font-script text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-relaxed">
-              {t.home.quote}
-            </p>
-            <p className="text-white/80 text-lg md:text-xl font-light tracking-wide">
-              — Christopher McCandless
-            </p>
-          </motion.div>
-        </div>
       </section>
 
       {/* Reviews Section */}
