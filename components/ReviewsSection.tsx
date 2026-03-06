@@ -64,12 +64,17 @@ const ReviewsSection: React.FC = () => {
     let animationId: number;
     let scrollPos = 0;
     const speed = 0.5; // px per frame
+    let halfWidth = container.scrollWidth / 2;
+
+    const handleResize = () => {
+      halfWidth = container.scrollWidth / 2;
+    };
+
+    window.addEventListener('resize', handleResize);
 
     const scroll = () => {
       if (!isPaused && container) {
         scrollPos += speed;
-        // Reset when we've scrolled through the first set
-        const halfWidth = container.scrollWidth / 2;
         if (scrollPos >= halfWidth) {
           scrollPos = 0;
         }
@@ -79,7 +84,10 @@ const ReviewsSection: React.FC = () => {
     };
 
     animationId = requestAnimationFrame(scroll);
-    return () => cancelAnimationFrame(animationId);
+    return () => {
+      cancelAnimationFrame(animationId);
+      window.removeEventListener('resize', handleResize);
+    };
   }, [isPaused]);
 
   const totalReviews = REVIEWS.length;

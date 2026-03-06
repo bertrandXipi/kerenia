@@ -3,6 +3,44 @@
 @tailwind utilities;
 
 :root {
+  /* Default Kerenia Colors mapped to variables */
+  --color-cream-50: #fdfcfa;
+  --color-cream-100: #faf8f5;
+  --color-cream-200: #f5f1eb;
+  --color-cream-300: #ebe4da;
+  --color-cream-400: #ddd2c3;
+
+  --color-sage-50: #f2f7f4;
+  --color-sage-100: #e1ede6;
+  --color-sage-200: #c5dccf;
+  --color-sage-300: #9dc2b0;
+  --color-sage-400: #74a28d;
+  --color-sage-500: #548670;
+  --color-sage-600: #416b58;
+  --color-sage-700: #365648;
+  --color-sage-800: #2d463b;
+  --color-sage-900: #263a32;
+
+  --color-brick-50: #fbf5f3;
+  --color-brick-100: #f5e8e4;
+  --color-brick-200: #edd2c9;
+  --color-brick-300: #e0b2a3;
+  --color-brick-400: #ce856f;
+  --color-brick-500: #9f341a;
+  --color-brick-600: #7d2914;
+  --color-brick-700: #632110;
+  --color-brick-800: #521d0f;
+  --color-brick-900: #421a0f;
+
+  --color-gold-100: #faf6f0;
+  --color-gold-200: #f0e6d2;
+  --color-gold-300: #e8d7b8;
+  --color-gold-400: #dcc89a;
+  --color-gold-500: #D4A574;
+  --color-gold-600: #c89555;
+  --color-gold-700: #b8803d;
+  --color-gold-800: #9a6a2f;
+
   --font-sans: var(--font-inter);
   --font-condensed: var(--font-oswald);
   --font-script: var(--font-dancing);
@@ -42,16 +80,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f5f5f4;
+  background: var(--color-cream-200);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #7d2914 0%, #9f341a 100%);
+  background: linear-gradient(180deg, var(--color-brick-600) 0%, var(--color-brick-500) 100%);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #632110 0%, #7d2914 100%);
+  background: linear-gradient(180deg, var(--color-brick-700) 0%, var(--color-brick-600) 100%);
 }
 
 /* Effet glassmorphism */
@@ -71,7 +109,11 @@ body {
 }
 
 /* Transition fluide pour tous les éléments interactifs */
-a, button, input, select, textarea {
+a,
+button,
+input,
+select,
+textarea {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -111,7 +153,15 @@ body {
   letter-spacing: calc(0em * var(--letter-spacing-multiplier, 1));
 }
 
-p, li, span, div {
+p,
+li,
+span,
+div {
   line-height: calc(1.6 * var(--line-height-multiplier, 1));
   letter-spacing: calc(0.01em * var(--letter-spacing-multiplier, 1));
+}
+
+/* Masquer uniquement le branding Behold.so */
+behold-branding {
+  display: none !important;
 }

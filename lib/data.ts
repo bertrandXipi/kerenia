@@ -12,7 +12,7 @@ export const APARTMENTS_DATA: Record<Locale, Apartment[]> = {
       capacity: '2 personnes',
       description: 'Situé en rez-de-chaussée, ce studio cosy offre une séparation intelligente entre l\'espace nuit et la pièce à vivre par un rideau élégant. Idéal pour les couples ou les curistes.',
       features: ['Lit double 140cm', 'Climatisation', 'Wifi gratuit', 'Cuisine équipée', 'Terrasse'],
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2021/04/DSC_7223.jpg',
+      imageUrl: '/images/remote/studio-cosy.webp',
       priceFrom: '65€ / nuit'
     },
     {
@@ -22,7 +22,7 @@ export const APARTMENTS_DATA: Record<Locale, Apartment[]> = {
       capacity: '2 personnes',
       description: 'Un espace lumineux avec une chambre séparée pour plus d\'intimité. Décoration soignée et équipements modernes pour un séjour comme à la maison.',
       features: ['Chambre séparée (lit en 140)', 'Climatisation', 'Wifi gratuit', 'Terrasse ou balcon', 'Lave-vaisselle'],
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2021/04/DSC_7309.jpg',
+      imageUrl: '/images/remote/appartement-lumineux.webp',
       priceFrom: '75€ / nuit'
     },
     {
@@ -32,7 +32,7 @@ export const APARTMENTS_DATA: Record<Locale, Apartment[]> = {
       capacity: '2 à 3 personnes',
       description: 'Nos plus grands appartements. Spacieux, avec un grand lit et un canapé convertible. Parfait pour les longs séjours ou les petites familles.',
       features: ['Grand lit (140 ou 160cm)', 'Canapé convertible (dans certains appartements)', 'Espace salon spacieux', 'Terrasse ou balcon'],
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2021/04/DSC_7357.jpg',
+      imageUrl: '/images/remote/salon-confort.webp',
       priceFrom: '90€ / nuit'
     }
   ],
@@ -44,7 +44,7 @@ export const APARTMENTS_DATA: Record<Locale, Apartment[]> = {
       capacity: '2 guests',
       description: 'Located on the ground floor, this cozy studio offers a smart separation between the sleeping area and the living space with an elegant curtain. Ideal for couples or spa guests.',
       features: ['Double bed 140cm', 'Air conditioning', 'Free wifi', 'Equipped kitchen', 'Terrace'],
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2021/04/DSC_7223.jpg',
+      imageUrl: '/images/remote/studio-cosy.webp',
       priceFrom: '€65 / night'
     },
     {
@@ -54,7 +54,7 @@ export const APARTMENTS_DATA: Record<Locale, Apartment[]> = {
       capacity: '2 guests',
       description: 'A bright space with a separate bedroom for more privacy. Careful decoration and modern equipment for a stay like home.',
       features: ['Separate bedroom (140cm bed)', 'Air conditioning', 'Free wifi', 'Terrace or balcony', 'Dishwasher'],
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2021/04/DSC_7309.jpg',
+      imageUrl: '/images/remote/appartement-lumineux.webp',
       priceFrom: '€75 / night'
     },
     {
@@ -64,7 +64,7 @@ export const APARTMENTS_DATA: Record<Locale, Apartment[]> = {
       capacity: '2 to 3 guests',
       description: 'Our largest apartments. Spacious, with a large bed and a sofa bed. Perfect for long stays or small families.',
       features: ['Large bed (140 or 160cm)', 'Sofa bed (in some apts)', 'Spacious living area', 'Terrace or balcony'],
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2021/04/DSC_7357.jpg',
+      imageUrl: '/images/remote/salon-confort.webp',
       priceFrom: '€90 / night'
     }
   ],
@@ -76,7 +76,7 @@ export const APARTMENTS_DATA: Record<Locale, Apartment[]> = {
       capacity: '2 huéspedes',
       description: 'Situado en planta baja, este acogedor estudio ofrece una separación inteligente entre el área de dormir y el espacio de estar con una elegante cortina. Ideal para parejas o curistas.',
       features: ['Cama doble 140cm', 'Aire acondicionado', 'Wifi gratis', 'Cocina equipada', 'Terraza'],
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2021/04/DSC_7223.jpg',
+      imageUrl: '/images/remote/studio-cosy.webp',
       priceFrom: '65€ / noche'
     },
     {
@@ -86,7 +86,7 @@ export const APARTMENTS_DATA: Record<Locale, Apartment[]> = {
       capacity: '2 huéspedes',
       description: 'Un espacio luminoso con un dormitorio separado para más privacidad. Decoración cuidada y equipamiento moderno para una estancia como en casa.',
       features: ['Dormitorio separado (cama en 140)', 'Aire acondicionado', 'Wifi gratis', 'Terraza o balcón', 'Lavavajillas'],
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2021/04/DSC_7309.jpg',
+      imageUrl: '/images/remote/appartement-lumineux.webp',
       priceFrom: '75€ / noche'
     },
     {
@@ -108,7 +108,7 @@ export const APARTMENTS_DATA: Record<Locale, Apartment[]> = {
       capacity: '2 pertsona',
       description: 'Beheko solairuan kokatua, estudio eroso honek lo egiteko eremua eta egongela banatzen ditu gortina dotore baten bidez. Bikoteentzat edo bainuetxeko bezeroentzat aproposa.',
       features: ['Ohe bikoitza 140cm', 'Aire girotua', 'Dohainikako Wifi-a', 'Sukalde hornitua', 'Terraza'],
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2021/04/DSC_7223.jpg',
+      imageUrl: '/images/remote/studio-cosy.webp',
       priceFrom: '65€ / gaua'
     },
     {
@@ -118,7 +118,7 @@ export const APARTMENTS_DATA: Record<Locale, Apartment[]> = {
       capacity: '2 pertsona',
       description: 'Gune argitsua logela bereizi batekin pribatutasun handiagoa izateko. Dekorazio zaindua eta ekipamendu modernoa etxean bezala egoteko.',
       features: ['Logela bereizia (140cm-ko ohea)', 'Aire girotua', 'Dohainikako Wifi-a', 'Terraza edo balkoia', 'Ontzi-garbigailua'],
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2021/04/DSC_7309.jpg',
+      imageUrl: '/images/remote/appartement-lumineux.webp',
       priceFrom: '75€ / gaua'
     },
     {
@@ -128,7 +128,7 @@ export const APARTMENTS_DATA: Record<Locale, Apartment[]> = {
       capacity: '2 - 3 pertsona',
       description: 'Gure apartamenturik handienak. Zabala, ohe handi batekin eta sofa ohe batekin. Ezin hobea egonaldi luzeetarako edo familia txikientzat.',
       features: ['Ohe handia (140 edo 160cm)', 'Sofa ohea (apartamentu batzuetan)', 'Egongela zabala', 'Terraza edo balkoia'],
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2021/04/DSC_7357.jpg',
+      imageUrl: '/images/remote/salon-confort.webp',
       priceFrom: '90€ / gaua'
     }
   ]
@@ -141,21 +141,21 @@ export const ACTIVITIES_DATA: Record<Locale, Activity[]> = {
       id: 'arnaga',
       title: 'Villa Arnaga',
       description: 'Demeure exceptionnelle d\'Edmond Rostand. Musée de France entouré d\'un magnifique parc et jardin à la française.',
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2017/05/Villa_Arnaga.jpg',
+      imageUrl: '/images/remote/villa-arnaga.webp',
       link: 'http://www.arnaga.com/'
     },
     {
       id: 'pas-de-roland',
       title: 'Le Pas de Roland',
       description: 'Une jolie promenade facile le long de la Nive à Itxassou. Une gorge creusée par la rivière, lieu de légendes basques.',
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2020/02/5191788684_a9edc8110e_c.jpg',
+      imageUrl: '/images/remote/pas-de-roland.webp',
       link: '#'
     },
     {
       id: 'rhune',
       title: 'La Rhune',
       description: 'Le sommet mythique du Pays Basque. Accessible à pied ou via le petit train à crémaillère pour un panorama à 360°.',
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2020/02/2948014906_ca81a12c2d_z.jpg',
+      imageUrl: '/images/remote/la-rhune.webp',
       link: 'https://www.rhune.com/fr/'
     }
   ],
@@ -164,21 +164,21 @@ export const ACTIVITIES_DATA: Record<Locale, Activity[]> = {
       id: 'arnaga',
       title: 'Villa Arnaga',
       description: 'Exceptional residence of Edmond Rostand. Museum of France surrounded by a magnificent park and French garden.',
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2017/05/Villa_Arnaga.jpg',
+      imageUrl: '/images/remote/villa-arnaga.webp',
       link: 'http://www.arnaga.com/'
     },
     {
       id: 'pas-de-roland',
       title: 'Pas de Roland',
       description: 'A nice easy walk along the Nive in Itxassou. A gorge carved by the river, place of Basque legends.',
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2020/02/5191788684_a9edc8110e_c.jpg',
+      imageUrl: '/images/remote/pas-de-roland.webp',
       link: '#'
     },
     {
       id: 'rhune',
       title: 'La Rhune',
       description: 'The mythical summit of the Basque Country. Accessible on foot or via the small rack railway for a 360° panorama.',
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2020/02/2948014906_ca81a12c2d_z.jpg',
+      imageUrl: '/images/remote/la-rhune.webp',
       link: 'https://www.rhune.com/en/'
     }
   ],
@@ -187,14 +187,14 @@ export const ACTIVITIES_DATA: Record<Locale, Activity[]> = {
       id: 'arnaga',
       title: 'Villa Arnaga',
       description: 'Residencia excepcional de Edmond Rostand. Museo de Francia rodeado de un magnífico parque y jardín francés.',
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2017/05/Villa_Arnaga.jpg',
+      imageUrl: '/images/remote/villa-arnaga.webp',
       link: 'http://www.arnaga.com/'
     },
     {
       id: 'pas-de-roland',
       title: 'Pas de Roland',
       description: 'Un bonito paseo fácil a lo largo del Nive en Itxassou. Una garganta excavada por el río, lugar de leyendas vascas.',
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2020/02/5191788684_a9edc8110e_c.jpg',
+      imageUrl: '/images/remote/pas-de-roland.webp',
       link: '#'
     },
     {
@@ -210,22 +210,22 @@ export const ACTIVITIES_DATA: Record<Locale, Activity[]> = {
       id: 'arnaga',
       title: 'Arnaga Etxea',
       description: 'Edmond Rostanden ohiz kanpoko egoitza. Frantziako Museoa, parke miresgarri eta frantziar lorategi batez inguratua.',
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2017/05/Villa_Arnaga.jpg',
+      imageUrl: '/images/remote/villa-arnaga.webp',
       link: 'http://www.arnaga.com/'
     },
     {
       id: 'pas-de-roland',
       title: 'Errolanen Urratsa',
       description: 'Ibilaldi polit eta erraza Errobi ibaian zehar, Itsasun. Ibaiak zulatutako haitzartea, euskal kondairen lekua.',
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2020/02/5191788684_a9edc8110e_c.jpg',
+      imageUrl: '/images/remote/pas-de-roland.webp',
       link: '#'
     },
     {
       id: 'rhune',
       title: 'Larrun',
       description: 'Euskal Herriko gailur mitikoa. Oinez ala kremailera-tren txikian irits daiteke 360°-ko ikuspegiaz gozatzeko.',
-      imageUrl: 'https://www.kerenia.fr/wp-content/uploads/2020/02/2948014906_ca81a12c2d_z.jpg',
-      link: 'https://www.rhune.com/eu/'
+      imageUrl: '/images/remote/la-rhune.webp',
+      link: '/images/remote/appartement3.webp'
     }
   ]
 };

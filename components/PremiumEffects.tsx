@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, HTMLMotionProps } from 'framer-motion';
+import Image from 'next/image';
 
 // Ken Burns Image Effect
 interface KenBurnsImageProps {
@@ -11,6 +12,8 @@ interface KenBurnsImageProps {
   duration?: number;
   direction?: 'in' | 'out' | 'left' | 'right';
   overlay?: boolean;
+  priority?: boolean;
+  quality?: number;
 }
 
 export const KenBurnsImage: React.FC<KenBurnsImageProps> = ({
@@ -20,6 +23,8 @@ export const KenBurnsImage: React.FC<KenBurnsImageProps> = ({
   duration = 20,
   direction = 'in',
   overlay = true,
+  priority = false,
+  quality,
 }) => {
   const getAnimation = () => {
     switch (direction) {
@@ -38,10 +43,8 @@ export const KenBurnsImage: React.FC<KenBurnsImageProps> = ({
 
   return (
     <div className={`relative overflow-hidden ${className}`}>
-      <motion.img
-        src={src}
-        alt={alt}
-        className="w-full h-full object-cover"
+      <motion.div
+        className="w-full h-full"
         animate={getAnimation()}
         transition={{
           duration,
@@ -49,7 +52,17 @@ export const KenBurnsImage: React.FC<KenBurnsImageProps> = ({
           repeatType: 'reverse',
           ease: 'linear',
         }}
-      />
+      >
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          priority={priority}
+          quality={quality || 50}
+          className="object-cover"
+          sizes="(max-width: 1280px) 100vw, 1920px"
+        />
+      </motion.div>
       {overlay && (
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20 pointer-events-none" />
       )}

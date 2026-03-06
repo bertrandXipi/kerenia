@@ -25,5 +25,10 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.0",
     "typescript": "~5.8.2"
-  }
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not dead"
+  ]
 }
