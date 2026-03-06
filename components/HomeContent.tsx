@@ -80,21 +80,31 @@ const HomeContent: React.FC = () => {
 
         <div className="relative z-10 container mx-auto px-6 text-center mt-8 md:mt-0">
           <motion.div style={{ opacity }}>
-            <div className="inline-block relative mb-12 overflow-hidden">
+            <div className="inline-block relative mb-12">
               <motion.div
-                className="absolute inset-0 bg-brick-900/90 shadow-2xl origin-left"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
+                initial={{ width: 0 }}
+                animate={{ width: "100%" }}
+                transition={{ duration: 1, ease: "easeInOut" }}
+                className="absolute inset-0 bg-brick-900/90 shadow-2xl"
               />
-              <div className="relative z-10 px-8 py-6 md:px-16 md:py-8">
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.8 }}
+                className="relative z-10 px-8 py-6 md:px-16 md:py-8"
+              >
                 <h1 className="font-condensed font-light text-3xl md:text-6xl text-white uppercase tracking-[0.2em] leading-tight">
                   {t.home.heroTitle} <span className="text-gold-500 text-2xl md:text-4xl align-top ml-2">***</span>
                 </h1>
-              </div>
+              </motion.div>
             </div>
 
-            <div className="text-white drop-shadow-lg">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.8 }}
+              className="text-white drop-shadow-lg"
+            >
               <p className="font-script text-4xl md:text-6xl mb-6 text-white font-light">
                 {t.home.tagline},
               </p>
@@ -102,7 +112,7 @@ const HomeContent: React.FC = () => {
               <p className="font-sans font-light text-xs md:text-sm tracking-[0.3em] uppercase text-white/90">
                 {t.home.subtitle}
               </p>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
 
