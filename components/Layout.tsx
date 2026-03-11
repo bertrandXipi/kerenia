@@ -58,7 +58,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     };
   }, [isMobileMenuOpen]);
 
-  const isTransparent = isHomePage && !isScrolled && !isMobileMenuOpen;
+  const isTransparent = !isScrolled && !isMobileMenuOpen;
+  const isOverHero = isHomePage && isTransparent;
 
   const getNavClasses = () => {
     if (isMobileMenuOpen) return 'bg-brick-900 shadow-none py-2';
@@ -68,7 +69,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   const logoClasses = () => {
     if (isMobileMenuOpen) return '';
-    if (isTransparent) return 'drop-shadow-md';
+    if (isOverHero) return 'drop-shadow-md';
     return '';
   };
 
@@ -84,7 +85,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <Link href="/" className="flex items-center gap-3 group relative z-50">
             <div className="h-14 w-auto relative aspect-[4/1] transition-transform duration-300 origin-left">
               <Image
-                src={isTransparent ? "/images/logo-kerenia-white-text.svg" : "/images/logo-kerenia.svg"}
+                src={isOverHero ? "/images/logo-kerenia-white-text.svg" : "/images/logo-kerenia.svg"}
                 alt="Résidence Ker Enia"
                 fill
                 priority
@@ -98,21 +99,21 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               <Link
                 key={item.path}
                 href={item.path}
-                className={`font-condensed font-bold text-lg uppercase tracking-tight transition-all relative group py-2 ${isTransparent ? 'text-white' : 'text-brick-800'
-                  } ${pathname === item.path && !isTransparent ? 'text-brick-600' : ''}`}
+                className={`font-condensed font-bold text-lg uppercase tracking-tight transition-all relative group py-2 ${isOverHero ? 'text-white' : 'text-brick-800'
+                  } ${pathname === item.path && !isOverHero ? 'text-brick-600' : ''}`}
               >
                 {item.label}
-                <span className={`absolute bottom-0 left-0 w-full h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${isTransparent ? 'bg-white' : 'bg-brick-600'}`}></span>
+                <span className={`absolute bottom-0 left-0 w-full h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${isOverHero ? 'bg-white' : 'bg-brick-600'}`}></span>
               </Link>
             ))}
 
-            <LanguageSwitcher isTransparent={isTransparent} />
+            <LanguageSwitcher isTransparent={isOverHero} />
 
             <a
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className={`font-condensed font-bold uppercase tracking-wide px-8 py-3 transition-all transform hover:scale-105 shadow-md rounded-sm border-2 ${isTransparent
+              className={`font-condensed font-bold uppercase tracking-wide px-8 py-3 transition-all transform hover:scale-105 shadow-md rounded-sm border-2 ${isOverHero
                 ? 'bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-brick-900'
                 : 'bg-brick-600 border-brick-600 text-white hover:bg-brick-700 hover:border-brick-700'
                 }`}
@@ -122,7 +123,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           </div>
 
           <button
-            className={`lg:hidden focus:outline-none relative z-50 transition-colors duration-300 ${isMobileMenuOpen || isTransparent ? 'text-white' : 'text-brick-800'}`}
+            className={`lg:hidden focus:outline-none relative z-50 transition-colors duration-300 ${isMobileMenuOpen || isOverHero ? 'text-white' : 'text-brick-800'}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
