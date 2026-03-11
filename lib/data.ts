@@ -289,24 +289,28 @@ export const AMENITIES_DATA: Record<Locale, Array<{ icon: any; label: string; de
 // Gallery categories by locale
 export const GALLERY_CATEGORIES: Record<Locale, Record<string, string>> = {
   fr: {
-    'Intérieur': 'Intérieur',
-    'Extérieur': 'Extérieur',
-    'Alentours': 'Alentours'
+    'Studio': 'Studio',
+    'Standard': 'Standard',
+    'Confort': 'Confort',
+    'Résidence': 'Résidence',
   },
   en: {
-    'Intérieur': 'Interior',
-    'Extérieur': 'Exterior',
-    'Alentours': 'Surroundings'
+    'Studio': 'Studio',
+    'Standard': 'Standard',
+    'Confort': 'Comfort',
+    'Résidence': 'Residence',
   },
   es: {
-    'Intérieur': 'Interior',
-    'Extérieur': 'Exterior',
-    'Alentours': 'Alrededores'
+    'Studio': 'Estudio',
+    'Standard': 'Estándar',
+    'Confort': 'Confort',
+    'Résidence': 'Residencia',
   },
   eu: {
-    'Intérieur': 'Barrualdea',
-    'Extérieur': 'Kanpoaldea',
-    'Alentours': 'Inguruak'
+    'Studio': 'Estudioa',
+    'Standard': 'Estandarra',
+    'Confort': 'Erosoa',
+    'Résidence': 'Egoitza',
   }
 };
 
