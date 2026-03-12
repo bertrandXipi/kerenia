@@ -5,6 +5,9 @@ import AutourContent from '@/components/AutourContent';
 export const metadata: Metadata = {
   title: 'Autour de nous | Résidence Ker Enia - Activités Pays Basque',
   description: 'Découvrez les activités et sites touristiques autour de Cambo-les-Bains : Villa Arnaga, La Rhune, Pas de Roland, thermes et bien plus.',
+  alternates: {
+    canonical: 'https://www.kerenia.fr/autour-de-nous',
+  },
 };
 
 export default function AutourDeNous() {

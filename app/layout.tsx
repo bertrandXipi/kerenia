@@ -67,6 +67,8 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${inter.variable} ${oswald.variable} ${dancingScript.variable} ${cormorant.variable}`}>
       <head>
+        <link rel="icon" href="/favicon-96x96.png" sizes="96x96" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon-96x96.png" />
       </head>
       <body className="bg-cream-50 text-slate-700 font-sans antialiased">
         <ThemeManager />

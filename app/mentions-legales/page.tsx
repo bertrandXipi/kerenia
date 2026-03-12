@@ -1,5 +1,17 @@
 import React from 'react';
+import { Metadata } from 'next';
 import Layout from '@/components/Layout';
+
+export const metadata: Metadata = {
+  title: 'Mentions Légales | Résidence Ker Enia',
+  description: 'Mentions légales de la Résidence Ker Enia, résidence de tourisme à Cambo-les-Bains.',
+  alternates: {
+    canonical: 'https://www.kerenia.fr/mentions-legales',
+  },
+  robots: {
+    index: false,
+  },
+};
 
 export default function MentionsLegalesPage() {
     return (
@@ -40,12 +52,10 @@ export default function MentionsLegalesPage() {
                         <section className="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-brick-100">
                             <h2 className="font-condensed font-bold text-xl uppercase tracking-wider text-brick-800 mb-4">Hébergeur</h2>
                             <p className="mb-4">
-                                <strong>OVH GS</strong><br />
-                                SAS au capital social de 50.000 €<br />
-                                Inscrite au RCS de LILLE sous le numéro 520 598 186<br />
-                                Dont le siège social est situé 2 rue Kellermann – 59100 ROUBAIX – France
+                                <strong>Google Cloud Platform</strong><br />
+                                Google Ireland Limited<br />
+                                Gordon House, Barrow Street, Dublin 4, Irlande
                             </p>
-                            <p><strong>Tél :</strong> +33 9 72 10 10 07</p>
                         </section>
 
                         <section className="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-brick-100">
