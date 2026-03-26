@@ -3,15 +3,15 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { BOOKING_URL, getApartments, getAmenities } from '@/lib/constants';
+import { BOOKING_URL, getApartments } from '@/lib/constants';
 import { Check } from 'lucide-react';
 import { useLocale } from '@/components/LocaleProvider';
-import LivretAccordions from '@/components/LivretContent';
+import { LIVRET_DATA } from '@/lib/data';
+import { Leaf } from 'lucide-react';
 
 const AppartementsContent: React.FC = () => {
   const { t, locale } = useLocale();
   const apartments = getApartments(locale);
-  const amenities = getAmenities(locale);
 
   return (
     <div key={locale} className="pb-20 pt-24 bg-cream-50">
@@ -101,25 +101,32 @@ const AppartementsContent: React.FC = () => {
           </p>
         </div>
       </div>
-      {/* Livret d'accueil Accordions (With Amenities moved above) */}
-      <div className="container mx-auto px-6 mt-16 mb-16">
+      {/* Nos Valeurs - bloc pleine largeur */}
+      <div className="bg-cream-100 border-t border-b border-brick-200 mt-24">
+        <div className="container mx-auto px-6 py-20">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <Leaf className="text-brick-600" size={28} />
+              <h2 className="font-script text-4xl md:text-5xl text-brick-600">{t.livret.tabs.values}</h2>
+            </div>
+            <div className="w-16 h-1 bg-brick-600 mx-auto mb-8"></div>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
+              {(LIVRET_DATA[locale] || LIVRET_DATA['fr']).valeurs.engagement_environnemental}
+            </p>
+          </div>
 
-        {/* Global Amenities moved above Livret content */}
-        <div className="mb-16">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {amenities.map((amenity, idx) => (
-              <div key={idx} className="flex flex-col items-center text-center p-6 border border-brick-200 bg-cream-50 rounded-lg hover:shadow-md hover:bg-cream-100 transition-all">
-                <amenity.icon className="w-8 h-8 text-brick-600 mb-3" />
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-700">{amenity.label}</span>
-                {amenity.description && <span className="text-[10px] text-slate-500 mt-2">{amenity.description}</span>}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto mb-12">
+            {(LIVRET_DATA[locale] || LIVRET_DATA['fr']).valeurs.consignes_eco.map((c: string, i: number) => (
+              <div key={i} className="flex items-start gap-4 p-5 bg-white border border-brick-200 rounded-lg shadow-sm">
+                <Leaf className="text-brick-500 shrink-0 mt-0.5" size={18} />
+                <p className="text-slate-700 text-sm font-light leading-relaxed">{c}</p>
               </div>
             ))}
           </div>
-        </div>
 
-        <h3 className="font-script text-4xl text-brick-600 mb-8 text-center">{t.livret.title}</h3>
-        <div className="max-w-4xl mx-auto">
-          <LivretAccordions />
+          <p className="text-center font-script text-4xl md:text-5xl text-brick-500">
+            {(LIVRET_DATA[locale] || LIVRET_DATA['fr']).valeurs.biodiversite}
+          </p>
         </div>
       </div>
     </div>

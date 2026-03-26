@@ -21,7 +21,7 @@ export const APARTMENTS_DATA: Record<Locale, Apartment[]> = {
       size: '28 - 30 m²',
       capacity: '2 personnes',
       description: 'Un espace lumineux avec une chambre séparée pour plus d\'intimité. Décoration soignée et équipements modernes pour un séjour comme à la maison.',
-      features: ['Chambre séparée (lit en 140)', 'Climatisation', 'Wifi gratuit', 'Terrasse ou balcon', 'Lave-vaisselle'],
+      features: ['Chambre séparée (lit en 140)', 'Climatisation', 'Wifi gratuit', 'Terrasse ou balcon', 'Cuisine équipée'],
       imageUrl: '/images/remote/appartement-lumineux.webp',
       priceFrom: '75€ / nuit'
     },
@@ -31,7 +31,7 @@ export const APARTMENTS_DATA: Record<Locale, Apartment[]> = {
       size: '35 - 45 m²',
       capacity: '2 à 3 personnes',
       description: 'Nos plus grands appartements. Spacieux, avec un grand lit et un canapé convertible. Parfait pour les longs séjours ou les petites familles.',
-      features: ['Grand lit (140 ou 160cm)', 'Canapé convertible (dans certains appartements)', 'Espace salon spacieux', 'Terrasse ou balcon'],
+      features: ['Grand lit (140 ou 160cm)', 'Canapé convertible (dans certains appartements)', 'Espace salon spacieux', 'Terrasse ou balcon', 'Cuisine équipée'],
       imageUrl: '/images/remote/salon-confort.webp',
       priceFrom: '90€ / nuit'
     }
@@ -53,7 +53,7 @@ export const APARTMENTS_DATA: Record<Locale, Apartment[]> = {
       size: '28 - 30 m²',
       capacity: '2 guests',
       description: 'A bright space with a separate bedroom for more privacy. Careful decoration and modern equipment for a stay like home.',
-      features: ['Separate bedroom (140cm bed)', 'Air conditioning', 'Free wifi', 'Terrace or balcony', 'Dishwasher'],
+      features: ['Separate bedroom (140cm bed)', 'Air conditioning', 'Free wifi', 'Terrace or balcony', 'Equipped kitchen'],
       imageUrl: '/images/remote/appartement-lumineux.webp',
       priceFrom: '€75 / night'
     },
@@ -63,7 +63,7 @@ export const APARTMENTS_DATA: Record<Locale, Apartment[]> = {
       size: '35 - 45 m²',
       capacity: '2 to 3 guests',
       description: 'Our largest apartments. Spacious, with a large bed and a sofa bed. Perfect for long stays or small families.',
-      features: ['Large bed (140 or 160cm)', 'Sofa bed (in some apts)', 'Spacious living area', 'Terrace or balcony'],
+      features: ['Large bed (140 or 160cm)', 'Sofa bed (in some apts)', 'Spacious living area', 'Terrace or balcony', 'Equipped kitchen'],
       imageUrl: '/images/remote/salon-confort.webp',
       priceFrom: '€90 / night'
     }
@@ -85,7 +85,7 @@ export const APARTMENTS_DATA: Record<Locale, Apartment[]> = {
       size: '28 - 30 m²',
       capacity: '2 huéspedes',
       description: 'Un espacio luminoso con un dormitorio separado para más privacidad. Decoración cuidada y equipamiento moderno para una estancia como en casa.',
-      features: ['Dormitorio separado (cama en 140)', 'Aire acondicionado', 'Wifi gratis', 'Terraza o balcón', 'Lavavajillas'],
+      features: ['Dormitorio separado (cama en 140)', 'Aire acondicionado', 'Wifi gratis', 'Terraza o balcón', 'Cocina equipada'],
       imageUrl: '/images/remote/appartement-lumineux.webp',
       priceFrom: '75€ / noche'
     },
@@ -95,7 +95,7 @@ export const APARTMENTS_DATA: Record<Locale, Apartment[]> = {
       size: '35 - 45 m²',
       capacity: '2 a 3 huéspedes',
       description: 'Nuestros apartamentos más grandes. Espaciosos, con una cama grande y un sofá cama. Perfecto para estancias largas o familias pequeñas.',
-      features: ['Cama grande (140 o 160cm)', 'Sofá cama (en algunos aptos)', 'Sala de estar espaciosa', 'Terraza o balcón'],
+      features: ['Cama grande (140 o 160cm)', 'Sofá cama (en algunos aptos)', 'Sala de estar espaciosa', 'Terraza o balcón', 'Cocina equipada'],
       imageUrl: '/images/confort-kerenia.jpg',
       priceFrom: '90€ / noche'
     }
@@ -117,7 +117,7 @@ export const APARTMENTS_DATA: Record<Locale, Apartment[]> = {
       size: '28 - 30 m²',
       capacity: '2 pertsona',
       description: 'Gune argitsua logela bereizi batekin pribatutasun handiagoa izateko. Dekorazio zaindua eta ekipamendu modernoa etxean bezala egoteko.',
-      features: ['Logela bereizia (140cm-ko ohea)', 'Aire girotua', 'Dohainikako Wifi-a', 'Terraza edo balkoia', 'Ontzi-garbigailua'],
+      features: ['Logela bereizia (140cm-ko ohea)', 'Aire girotua', 'Dohainikako Wifi-a', 'Terraza edo balkoia', 'Sukalde ekipatua'],
       imageUrl: '/images/remote/appartement-lumineux.webp',
       priceFrom: '75€ / gaua'
     },
@@ -127,7 +127,7 @@ export const APARTMENTS_DATA: Record<Locale, Apartment[]> = {
       size: '35 - 45 m²',
       capacity: '2 - 3 pertsona',
       description: 'Gure apartamenturik handienak. Zabala, ohe handi batekin eta sofa ohe batekin. Ezin hobea egonaldi luzeetarako edo familia txikientzat.',
-      features: ['Ohe handia (140 edo 160cm)', 'Sofa ohea (apartamentu batzuetan)', 'Egongela zabala', 'Terraza edo balkoia'],
+      features: ['Ohe handia (140 edo 160cm)', 'Sofa ohea (apartamentu batzuetan)', 'Egongela zabala', 'Terraza edo balkoia', 'Sukalde ekipatua'],
       imageUrl: '/images/remote/salon-confort.webp',
       priceFrom: '90€ / gaua'
     }
