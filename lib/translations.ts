@@ -20,7 +20,7 @@ export const translations = {
       intro: {
         title: 'Ker Enia à Cambo-les-Bains, un lieu confortable pour ceux qui veulent se sentir comme à la maison.',
         subtitle: 'Réveillez-vous au pied des montagnes basques',
-        p1: "Ici, nous célébrons la générosité et l'authenticité, nous accueillons autour de l'esprit convivial, chaleureux et festif du Pays basque.",
+        p1: "Ici, nous célébrons la générosité et l'authenticité, nous vous accueillons autour de l'esprit convivial, chaleureux et festif du Pays basque.",
         p2: 'Installez-vous confortablement, vous êtes chez vous.',
         p3: "Faîtes l'expérience d'un séjour qui vous ressemble – une plus grande liberté qu'à l'hôtel tout en conservant vos habitudes, comme à la maison !",
       },
