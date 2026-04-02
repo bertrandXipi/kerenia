@@ -24,8 +24,12 @@ const nextConfig = {
       { source: '/fr/appartements/', destination: '/appartements', permanent: true },
       { source: '/en/apartments', destination: '/appartements', permanent: true },
       { source: '/en/apartments/', destination: '/appartements', permanent: true },
+      { source: '/en/apartments-rental-cambo-les-bains', destination: '/appartements', permanent: true },
+      { source: '/en/apartments-rental-cambo-les-bains/', destination: '/appartements', permanent: true },
       { source: '/es/apartamentos', destination: '/appartements', permanent: true },
       { source: '/es/apartamentos/', destination: '/appartements', permanent: true },
+      { source: '/es/apartamentos-alquiler-cambo-les-bains', destination: '/appartements', permanent: true },
+      { source: '/es/apartamentos-alquiler-cambo-les-bains/', destination: '/appartements', permanent: true },
 
       // ── Galerie ─────────────────────────────────────────────
       { source: '/fr/galerie', destination: '/galerie', permanent: true },
@@ -44,8 +48,12 @@ const nextConfig = {
       { source: '/en/around-us/', destination: '/autour-de-nous', permanent: true },
       { source: '/en/around-us-what-to-do-cambo-les-bains', destination: '/autour-de-nous', permanent: true },
       { source: '/en/around-us-what-to-do-cambo-les-bains/', destination: '/autour-de-nous', permanent: true },
+      { source: '/en/explore-what-to-do-in-cambo-les-bains', destination: '/autour-de-nous', permanent: true },
+      { source: '/en/explore-what-to-do-in-cambo-les-bains/', destination: '/autour-de-nous', permanent: true },
       { source: '/es/alrededor-de-nosotros', destination: '/autour-de-nous', permanent: true },
       { source: '/es/alrededor-de-nosotros/', destination: '/autour-de-nous', permanent: true },
+      { source: '/es/explorar-que-hacer-cambo-les-bains', destination: '/autour-de-nous', permanent: true },
+      { source: '/es/explorar-que-hacer-cambo-les-bains/', destination: '/autour-de-nous', permanent: true },
 
       // ── Contact ─────────────────────────────────────────────
       { source: '/fr/contact', destination: '/contact', permanent: true },
@@ -62,6 +70,10 @@ const nextConfig = {
       { source: '/fr/mentions-legales-residence-ker-enia-cambo-les-bains/', destination: '/mentions-legales', permanent: true },
       { source: '/en/legal-notice', destination: '/mentions-legales', permanent: true },
       { source: '/en/legal-notice/', destination: '/mentions-legales', permanent: true },
+      { source: '/en/legal-notice-residence-ker-enia-cambo-les-bains', destination: '/mentions-legales', permanent: true },
+      { source: '/en/legal-notice-residence-ker-enia-cambo-les-bains/', destination: '/mentions-legales', permanent: true },
+      { source: '/es/aviso-legal', destination: '/mentions-legales', permanent: true },
+      { source: '/es/aviso-legal/', destination: '/mentions-legales', permanent: true },
 
       // ── Pages 404 WordPress ─────────────────────────────────
       { source: '/fr/erreur-404', destination: '/', permanent: false },
