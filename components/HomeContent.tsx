@@ -45,15 +45,23 @@ const HomeContent: React.FC = () => {
 
   const formatDateForUrl = (date: Date | null) => {
     if (!date) return '';
-    return date.toISOString().split('T')[0];
+    // D-EDGE expects yyyy-MM-dd format in URL parameters
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${year}-${month}-${day}`;
   };
 
   const handleSearch = (e: React.MouseEvent) => {
     e.preventDefault();
+    // D-EDGE parameter names: arrivalDate, departureDate, selectedAdultCount, language
     const params = new URLSearchParams();
-    if (checkIn) params.append('checkin', formatDateForUrl(checkIn));
-    if (checkOut) params.append('checkout', formatDateForUrl(checkOut));
-    params.append('adults', adults.toString());
+    if (checkIn) params.append('arrivalDate', formatDateForUrl(checkIn));
+    if (checkOut) params.append('departureDate', formatDateForUrl(checkOut));
+    params.append('selectedAdultCount', adults.toString());
+    // Map site locale to D-EDGE language code
+    const langMap: Record<string, string> = { fr: 'fr-FR', en: 'en-GB', es: 'ES' };
+    params.append('language', langMap[locale] || 'fr-FR');
     window.open(`${BOOKING_URL}?${params.toString()}`, '_blank');
   };
 
