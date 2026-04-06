@@ -355,11 +355,11 @@ const HomeContent: React.FC = () => {
       {/* Parallax Image Banner - Optimized with next/image */}
       <section className="relative h-[400px] md:h-[500px] overflow-hidden">
         <Image
-          src="/images/remote/thermes-cambo.webp"
-          alt="Thermes de Cambo-les-Bains"
+          src="/images/remote/cambo-panoramic.webp"
+          alt="Vue panoramique de Cambo-les-Bains"
           fill
           priority
-          quality={50}
+          quality={80}
           className="object-cover"
           sizes="(max-width: 1024px) 100vw, 1200px"
         />
