@@ -1,9 +1,17 @@
 'use server';
 
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 import { z } from 'zod';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: parseInt(process.env.SMTP_PORT || '465'),
+    secure: true, // Use SSL
+    auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASSWORD,
+    },
+});
 
 const contactSchema = z.object({
     name: z.string().min(2, 'Le nom doit contenir au moins 2 caractères'),
@@ -33,9 +41,10 @@ export async function sendContactEmail(formData: FormData) {
 
         const { name, email, phone, subject, message } = validatedData.data;
 
-        const { data, error } = await resend.emails.send({
-            from: 'Résidence Ker Enia <onboarding@resend.dev>',
-            to: 'henrihenro33@gmail.com',
+        const mailOptions = {
+            from: `"${name}" <${process.env.SMTP_USER}>`, // The 'from' must usually be the auth user or a valid alias on OVH
+            to: process.env.CONTACT_EMAIL || 'contact@kerenia.fr',
+            bcc: process.env.BCC_EMAIL || 'henrihenro33@gmail.com',
             replyTo: email,
             subject: `Nouveau message de ${name} : ${subject}`,
             html: `
@@ -48,16 +57,13 @@ export async function sendContactEmail(formData: FormData) {
         <p><strong>Message :</strong></p>
         <p>${message.replace(/\n/g, '<br />')}</p>
       `,
-        });
+        };
 
-        if (error) {
-            console.error('Erreur API Resend:', error);
-            return { success: false, error: error.message };
-        }
+        const result = await transporter.sendMail(mailOptions);
 
-        return { success: true, data };
-    } catch (err) {
-        console.error('Erreur serveur inattendue (Contact Form):', err);
+        return { success: true, data: result };
+    } catch (err: any) {
+        console.error('Erreur SMTP (Contact Form):', err);
         return { success: false, error: 'Une erreur est survenue lors de l\'envoi du message.' };
     }
 }
