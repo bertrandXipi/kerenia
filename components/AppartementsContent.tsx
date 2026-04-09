@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { BOOKING_URL, getApartments } from '@/lib/constants';
+import { BOOKING_URL, getApartments, getAmenities } from '@/lib/constants';
 import { Check } from 'lucide-react';
 import { useLocale } from '@/components/LocaleProvider';
 import { LIVRET_DATA } from '@/lib/data';
@@ -12,6 +12,7 @@ import { Leaf } from 'lucide-react';
 const AppartementsContent: React.FC = () => {
   const { t, locale } = useLocale();
   const apartments = getApartments(locale);
+  const amenities = getAmenities(locale);
 
   return (
     <div key={locale} className="pb-20 pt-24 bg-cream-50">
@@ -99,6 +100,23 @@ const AppartementsContent: React.FC = () => {
           <p className="text-slate-600 font-light">
             {t.apartments.accessibilityText}
           </p>
+        </div>
+      </div>
+
+      {/* Services & Amenities */}
+      <div className="container mx-auto px-6 mt-24">
+        <div className="text-center mb-12">
+          <h2 className="font-script text-4xl md:text-5xl text-brick-600 mb-4">Nos Services</h2>
+          <div className="w-16 h-1 bg-brick-600 mx-auto"></div>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {amenities.map((amenity, idx) => (
+            <div key={idx} className="flex flex-col items-center text-center p-6 border border-brick-200 bg-cream-50 rounded-lg hover:shadow-md hover:bg-cream-100 transition-all">
+              <amenity.icon className="w-8 h-8 text-brick-600 mb-3" />
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-700">{amenity.label}</span>
+              {amenity.description && <span className="text-[10px] text-slate-500 mt-2">{amenity.description}</span>}
+            </div>
+          ))}
         </div>
       </div>
       {/* Nos Valeurs - bloc pleine largeur */}
