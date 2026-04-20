@@ -21,8 +21,56 @@ const contactSchema = z.object({
     message: z.string().min(10, 'Le message doit contenir au moins 10 caractères'),
 });
 
+// Simple in-memory rate limiter (resets on server restart)
+const rateLimitMap = new Map<string, { count: number; firstRequest: number }>();
+const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+const RATE_LIMIT_MAX = 3; // max 3 submissions per IP per hour
+
+function checkRateLimit(ip: string): boolean {
+    const now = Date.now();
+    const entry = rateLimitMap.get(ip);
+
+    if (!entry || now - entry.firstRequest > RATE_LIMIT_WINDOW_MS) {
+        rateLimitMap.set(ip, { count: 1, firstRequest: now });
+        return true;
+    }
+
+    if (entry.count >= RATE_LIMIT_MAX) {
+        return false;
+    }
+
+    entry.count++;
+    return true;
+}
+
 export async function sendContactEmail(formData: FormData) {
     try {
+        // --- Anti-spam: honeypot field (must be empty) ---
+        const honeypot = formData.get('website') as string;
+        if (honeypot && honeypot.trim() !== '') {
+            // Bot filled the hidden field — silently succeed to not reveal detection
+            return { success: true };
+        }
+
+        // --- Anti-spam: minimum time check (bots submit instantly) ---
+        const formLoadedAt = parseInt(formData.get('_t') as string || '0', 10);
+        const elapsed = Date.now() - formLoadedAt;
+        if (formLoadedAt === 0 || elapsed < 3000) {
+            return { success: false, error: 'Soumission trop rapide. Veuillez réessayer.' };
+        }
+
+        // --- Anti-spam: rate limiting by IP ---
+        const { headers } = await import('next/headers');
+        const headersList = headers();
+        const ip =
+            headersList.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+            headersList.get('x-real-ip') ||
+            'unknown';
+
+        if (!checkRateLimit(ip)) {
+            return { success: false, error: 'Trop de messages envoyés. Veuillez réessayer dans une heure.' };
+        }
+
         const rawData = {
             name: formData.get('name') as string,
             email: formData.get('email') as string,

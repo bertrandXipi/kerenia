@@ -8,6 +8,7 @@ import { sendContactEmail } from '@/app/actions/contact';
 
 const ContactContent: React.FC = () => {
   const { t, locale } = useLocale();
+  const [formLoadedAt] = useState(() => Date.now());
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -74,6 +75,13 @@ const ContactContent: React.FC = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Honeypot anti-spam: hidden field, must stay empty */}
+                <div style={{ display: 'none' }} aria-hidden="true">
+                  <label htmlFor="website">Ne pas remplir</label>
+                  <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" />
+                </div>
+                {/* Timestamp anti-spam */}
+                <input type="hidden" name="_t" value={formLoadedAt} />
                 {errorMsg && (
                   <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-md flex items-center gap-3 mb-6">
                     <AlertCircle size={20} />
