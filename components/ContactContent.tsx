@@ -80,6 +80,11 @@ const ContactContent: React.FC = () => {
                   <label htmlFor="website">Ne pas remplir</label>
                   <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" />
                 </div>
+                {/* Second honeypot with different name */}
+                <div style={{ position: 'absolute', left: '-9999px' }} aria-hidden="true">
+                  <label htmlFor="url">Website</label>
+                  <input type="text" id="url" name="url" tabIndex={-1} autoComplete="off" />
+                </div>
                 {/* Timestamp anti-spam */}
                 <input type="hidden" name="_t" value={formLoadedAt} />
                 {errorMsg && (

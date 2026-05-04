@@ -14,17 +14,31 @@ const transporter = nodemailer.createTransport({
 });
 
 const contactSchema = z.object({
-    name: z.string().min(2, 'Le nom doit contenir au moins 2 caractères'),
-    email: z.string().email('Email invalide'),
+    name: z.string().min(2, 'Le nom doit contenir au moins 2 caractères').max(100, 'Le nom ne peut pas dépasser 100 caractères'),
+    email: z.string().email('Email invalide').max(254, 'Email trop long'),
     phone: z.string().optional(),
-    subject: z.string().min(1, 'Veuillez sélectionner un sujet'),
-    message: z.string().min(10, 'Le message doit contenir au moins 10 caractères'),
+    subject: z.enum(['reservation', 'info', 'other'], {
+        errorMap: () => ({ message: 'Sujet invalide' })
+    }),
+    message: z.string().min(10, 'Le message doit contenir au moins 10 caractères').max(5000, 'Le message ne peut pas dépasser 5000 caractères'),
 });
 
 // Simple in-memory rate limiter (resets on server restart)
 const rateLimitMap = new Map<string, { count: number; firstRequest: number }>();
 const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
-const RATE_LIMIT_MAX = 3; // max 3 submissions per IP per hour
+const RATE_LIMIT_MAX = 5; // max 5 submissions per IP per hour
+
+// Spam pattern detection
+const SPAM_PATTERNS = [
+    /\b(viagra|cialis|casino|lottery|winner|prize|click here|buy now)\b/i,
+    /https?:\/\/[^\s]{50,}/i, // URLs trop longues
+    /<script|<iframe|javascript:/i, // Tentatives XSS
+    /\b[A-Z]{20,}\b/, // Trop de majuscules consécutives
+];
+
+function containsSpamPatterns(text: string): boolean {
+    return SPAM_PATTERNS.some(pattern => pattern.test(text));
+}
 
 function checkRateLimit(ip: string): boolean {
     const now = Date.now();
@@ -47,7 +61,8 @@ export async function sendContactEmail(formData: FormData) {
     try {
         // --- Anti-spam: honeypot field (must be empty) ---
         const honeypot = formData.get('website') as string;
-        if (honeypot && honeypot.trim() !== '') {
+        const honeypot2 = formData.get('url') as string;
+        if ((honeypot && honeypot.trim() !== '') || (honeypot2 && honeypot2.trim() !== '')) {
             // Bot filled the hidden field — silently succeed to not reveal detection
             return { success: true };
         }
@@ -55,8 +70,14 @@ export async function sendContactEmail(formData: FormData) {
         // --- Anti-spam: minimum time check (bots submit instantly) ---
         const formLoadedAt = parseInt(formData.get('_t') as string || '0', 10);
         const elapsed = Date.now() - formLoadedAt;
+        const ONE_HOUR_MS = 60 * 60 * 1000;
+        
         if (formLoadedAt === 0 || elapsed < 3000) {
             return { success: false, error: 'Soumission trop rapide. Veuillez réessayer.' };
+        }
+        
+        if (elapsed > ONE_HOUR_MS) {
+            return { success: false, error: 'Le formulaire a expiré. Veuillez recharger la page.' };
         }
 
         // --- Anti-spam: rate limiting by IP ---
@@ -78,6 +99,14 @@ export async function sendContactEmail(formData: FormData) {
             subject: formData.get('subject') as string,
             message: formData.get('message') as string,
         };
+
+        // --- Anti-spam: détection de patterns suspects ---
+        if (containsSpamPatterns(rawData.name) || 
+            containsSpamPatterns(rawData.message) ||
+            containsSpamPatterns(rawData.email)) {
+            // Retourner succès silencieux pour ne pas alerter le spammeur
+            return { success: true };
+        }
 
         // Validation avec Zod
         const validatedData = contactSchema.safeParse(rawData);
